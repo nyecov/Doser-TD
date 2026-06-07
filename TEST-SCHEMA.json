@@ -1,0 +1,339 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TrapdoorTestRecord",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/TestDesign"
+    },
+    {
+      "$ref": "#/$defs/TestExecution"
+    },
+    {
+      "$ref": "#/$defs/TestSuite"
+    }
+  ],
+  "$defs": {
+    "GherkinStep": {
+      "properties": {
+        "order": {
+          "title": "Order",
+          "type": "integer"
+        },
+        "keyword": {
+          "title": "Keyword",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "order",
+        "keyword",
+        "text"
+      ],
+      "title": "GherkinStep",
+      "type": "object"
+    },
+    "TestDesign": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "level": {
+          "default": "feature",
+          "title": "Level",
+          "type": "string"
+        },
+        "format": {
+          "default": "gherkin",
+          "title": "Format",
+          "type": "string"
+        },
+        "gherkin": {
+          "default": "",
+          "title": "Gherkin",
+          "type": "string"
+        },
+        "steps": {
+          "items": {
+            "$ref": "#/$defs/GherkinStep"
+          },
+          "title": "Steps",
+          "type": "array"
+        },
+        "preconditions": {
+          "default": "",
+          "title": "Preconditions",
+          "type": "string"
+        },
+        "suite_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Suite Id"
+        },
+        "item_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Item Id"
+        },
+        "priority": {
+          "default": "medium",
+          "title": "Priority",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        },
+        "status": {
+          "default": "draft",
+          "title": "Status",
+          "type": "string"
+        },
+        "flaky": {
+          "default": false,
+          "title": "Flaky",
+          "type": "boolean"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "updated_at": {
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title"
+      ],
+      "title": "TestDesign",
+      "type": "object"
+    },
+    "Artifact": {
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "step": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Step"
+        }
+      },
+      "required": [
+        "type",
+        "path"
+      ],
+      "title": "Artifact",
+      "type": "object"
+    },
+    "StepResult": {
+      "properties": {
+        "order": {
+          "title": "Order",
+          "type": "integer"
+        },
+        "result": {
+          "default": "pass",
+          "title": "Result",
+          "type": "string"
+        },
+        "duration_ms": {
+          "default": 0,
+          "title": "Duration Ms",
+          "type": "integer"
+        },
+        "error": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error"
+        }
+      },
+      "required": [
+        "order"
+      ],
+      "title": "StepResult",
+      "type": "object"
+    },
+    "TestExecution": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "test_design_id": {
+          "title": "Test Design Id",
+          "type": "string"
+        },
+        "run_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Run Id"
+        },
+        "phase": {
+          "default": "green",
+          "title": "Phase",
+          "type": "string"
+        },
+        "executed_by": {
+          "default": "agent",
+          "title": "Executed By",
+          "type": "string"
+        },
+        "framework": {
+          "default": "unknown",
+          "title": "Framework",
+          "type": "string"
+        },
+        "environment": {
+          "default": "",
+          "title": "Environment",
+          "type": "string"
+        },
+        "result": {
+          "default": "pass",
+          "title": "Result",
+          "type": "string"
+        },
+        "started_at": {
+          "title": "Started At",
+          "type": "string"
+        },
+        "completed_at": {
+          "title": "Completed At",
+          "type": "string"
+        },
+        "duration_ms": {
+          "default": 0,
+          "title": "Duration Ms",
+          "type": "integer"
+        },
+        "step_results": {
+          "items": {
+            "$ref": "#/$defs/StepResult"
+          },
+          "title": "Step Results",
+          "type": "array"
+        },
+        "artifacts": {
+          "items": {
+            "$ref": "#/$defs/Artifact"
+          },
+          "title": "Artifacts",
+          "type": "array"
+        },
+        "bug_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Bug Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "test_design_id"
+      ],
+      "title": "TestExecution",
+      "type": "object"
+    },
+    "TestSuite": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "item_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Item Id"
+        },
+        "description": {
+          "default": "",
+          "title": "Description",
+          "type": "string"
+        },
+        "designs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Designs",
+          "type": "array"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "title": "TestSuite",
+      "type": "object"
+    }
+  }
+}

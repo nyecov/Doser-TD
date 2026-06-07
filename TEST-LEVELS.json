@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "levels": {
+    "unit": {
+      "description": "Individual function/class tests"
+    },
+    "integration": {
+      "description": "Module interaction tests"
+    },
+    "contract": {
+      "description": "API contract compliance"
+    },
+    "feature": {
+      "description": "BDD/Gherkin scenarios"
+    },
+    "e2e": {
+      "description": "Full user workflow tests"
+    },
+    "visual": {
+      "description": "Visual regression"
+    },
+    "performance": {
+      "description": "Load/stress tests"
+    },
+    "security": {
+      "description": "SAST/DAST/dependency scan"
+    },
+    "accessibility": {
+      "description": "a11y compliance"
+    },
+    "manual-exploratory": {
+      "description": "Human-driven exploratory testing"
+    }
+  }
+}

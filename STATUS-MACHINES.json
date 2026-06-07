@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "_default": {
+    "states": [
+      "triage",
+      "backlog",
+      "ready",
+      "in_progress",
+      "in_review",
+      "done",
+      "cancelled"
+    ],
+    "transitions": {
+      "triage": [
+        "backlog",
+        "cancelled"
+      ],
+      "backlog": [
+        "ready",
+        "cancelled"
+      ],
+      "ready": [
+        "in_progress",
+        "backlog",
+        "cancelled"
+      ],
+      "in_progress": [
+        "in_review",
+        "backlog"
+      ],
+      "in_review": [
+        "done",
+        "in_progress"
+      ],
+      "done": [],
+      "cancelled": []
+    }
+  },
+  "kinds": {
+    "epic": {
+      "states": [
+        "triage",
+        "backlog",
+        "ready",
+        "in_progress",
+        "in_review",
+        "done",
+        "cancelled"
+      ],
+      "transitions": {
+        "triage": [
+          "backlog",
+          "cancelled"
+        ],
+        "backlog": [
+          "ready",
+          "cancelled"
+        ],
+        "ready": [
+          "in_progress",
+          "backlog",
+          "cancelled"
+        ],
+        "in_progress": [
+          "in_review",
+          "backlog"
+        ],
+        "in_review": [
+          "done",
+          "in_progress"
+        ],
+        "done": [],
+        "cancelled": []
+      }
+    },
+    "story": {
+      "states": [
+        "triage",
+        "backlog",
+        "ready",
+        "in_progress",
+        "in_review",
+        "done",
+        "cancelled"
+      ],
+      "transitions": {
+        "triage": [
+          "backlog",
+          "cancelled"
+        ],
+        "backlog": [
+          "ready",
+          "cancelled"
+        ],
+        "ready": [
+          "in_progress",
+          "backlog",
+          "cancelled"
+        ],
+        "in_progress": [
+          "in_review",
+          "backlog"
+        ],
+        "in_review": [
+          "done",
+          "in_progress"
+        ],
+        "done": [],
+        "cancelled": []
+      }
+    },
+    "bug": {
+      "states": [
+        "triage",
+        "backlog",
+        "ready",
+        "in_progress",
+        "in_review",
+        "done",
+        "cancelled"
+      ],
+      "transitions": {
+        "triage": [
+          "backlog",
+          "cancelled"
+        ],
+        "backlog": [
+          "ready",
+          "cancelled"
+        ],
+        "ready": [
+          "in_progress",
+          "backlog",
+          "cancelled"
+        ],
+        "in_progress": [
+          "in_review",
+          "backlog"
+        ],
+        "in_review": [
+          "done",
+          "in_progress"
+        ],
+        "done": [],
+        "cancelled": []
+      }
+    },
+    "task": {
+      "states": [
+        "triage",
+        "backlog",
+        "ready",
+        "in_progress",
+        "in_review",
+        "done",
+        "cancelled"
+      ],
+      "transitions": {
+        "triage": [
+          "backlog",
+          "cancelled"
+        ],
+        "backlog": [
+          "ready",
+          "cancelled"
+        ],
+        "ready": [
+          "in_progress",
+          "backlog",
+          "cancelled"
+        ],
+        "in_progress": [
+          "in_review",
+          "backlog"
+        ],
+        "in_review": [
+          "done",
+          "in_progress"
+        ],
+        "done": [],
+        "cancelled": []
+      }
+    },
+    "incident": {
+      "states": [
+        "detecting",
+        "triaging",
+        "mitigating",
+        "resolved",
+        "post_mortem",
+        "closed"
+      ],
+      "transitions": {
+        "detecting": [
+          "triaging"
+        ],
+        "triaging": [
+          "mitigating",
+          "resolved"
+        ],
+        "mitigating": [
+          "resolved"
+        ],
+        "resolved": [
+          "post_mortem",
+          "closed"
+        ],
+        "post_mortem": [
+          "closed"
+        ],
+        "closed": []
+      }
+    },
+    "iteration": {
+      "states": [
+        "planning",
+        "active",
+        "completed",
+        "closed"
+      ],
+      "transitions": {
+        "planning": [
+          "active",
+          "closed"
+        ],
+        "active": [
+          "completed"
+        ],
+        "completed": [
+          "closed"
+        ],
+        "closed": []
+      }
+    },
+    "plan": {
+      "states": [
+        "drafting",
+        "planned",
+        "executing",
+        "complete",
+        "abandoned",
+        "superseded"
+      ],
+      "transitions": {
+        "drafting": [
+          "planned",
+          "superseded",
+          "abandoned"
+        ],
+        "planned": [
+          "executing",
+          "superseded",
+          "abandoned"
+        ],
+        "executing": [
+          "complete",
+          "superseded"
+        ],
+        "complete": [],
+        "abandoned": [],
+        "superseded": []
+      }
+    }
+  }
+}

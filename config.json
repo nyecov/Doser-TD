@@ -1,0 +1,7 @@
+{
+  "storage_format": "yaml",
+  "sync_mode": "manual",
+  "artifact_dir": ".trapdoor-artifacts",
+  "instance_id": "29c1",
+  "session_timeout_minutes": 60
+}

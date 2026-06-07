@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "relations": {
+    "blocks": {
+      "inverse": "blocked_by",
+      "description": "This item prevents another from progressing"
+    },
+    "blocked_by": {
+      "inverse": "blocks",
+      "description": "This item is blocked by another"
+    },
+    "causes": {
+      "inverse": "caused_by",
+      "description": "This item introduces or causes the target"
+    },
+    "caused_by": {
+      "inverse": "causes",
+      "description": "This item is introduced or caused by another"
+    },
+    "duplicates": {
+      "inverse": "duplicated_by",
+      "description": "This item duplicates another"
+    },
+    "duplicated_by": {
+      "inverse": "duplicates",
+      "description": "This item is a duplicate of another"
+    },
+    "relates_to": {
+      "inverse": "relates_to",
+      "description": "Symmetric relationship"
+    },
+    "plans_for": {
+      "inverse": "planned_by",
+      "description": "This item is a plan for the target item"
+    },
+    "planned_by": {
+      "inverse": "plans_for",
+      "description": "This item has a plan that plans it"
+    }
+  }
+}
