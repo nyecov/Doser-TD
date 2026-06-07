@@ -1,0 +1,17 @@
+id: WI-29c1-045
+title: Global Swap Flowchart
+description: 'Displacement chain flowchart for Global Swap: commit / rollback / cycle
+  resolution. Visual representation of the Global Swap mechanic''s state transitions.'
+status: triage
+priority: low
+kind: task
+labels:
+- doc
+- flowchart
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:32.203621Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:32.203621Z'
+updated_at: '2026-06-07T22:49:32.203621Z'

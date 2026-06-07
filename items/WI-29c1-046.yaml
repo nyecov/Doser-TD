@@ -1,0 +1,17 @@
+id: WI-29c1-046
+title: Loop Detection Flowchart
+description: Scheduling displacement loop flowchart for Phase 4/5. Visual representation
+  of loop detection and resolution in transactional allocation.
+status: triage
+priority: low
+kind: task
+labels:
+- doc
+- flowchart
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:32.862631Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:32.862631Z'
+updated_at: '2026-06-07T22:49:32.862631Z'

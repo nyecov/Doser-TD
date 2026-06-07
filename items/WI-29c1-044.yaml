@@ -1,0 +1,17 @@
+id: WI-29c1-044
+title: Complex Path Flowchart
+description: Full solver flowchart with reversals, substitutions, goals, tags, and
+  synergies. Complex path showing all solver mechanics in action.
+status: triage
+priority: low
+kind: task
+labels:
+- doc
+- flowchart
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:31.452936Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:31.452936Z'
+updated_at: '2026-06-07T22:49:31.452936Z'

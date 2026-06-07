@@ -244,5 +244,65 @@
     "kind": "task",
     "status": "triage",
     "title": "Decisions Log - Architectural Decisions"
+  },
+  {
+    "id": "WI-29c1-042",
+    "kind": "task",
+    "status": "triage",
+    "title": "Refinement - Dynamic Formulas"
+  },
+  {
+    "id": "WI-29c1-043",
+    "kind": "task",
+    "status": "triage",
+    "title": "Happy Path Flowchart"
+  },
+  {
+    "id": "WI-29c1-044",
+    "kind": "task",
+    "status": "triage",
+    "title": "Complex Path Flowchart"
+  },
+  {
+    "id": "WI-29c1-045",
+    "kind": "task",
+    "status": "triage",
+    "title": "Global Swap Flowchart"
+  },
+  {
+    "id": "WI-29c1-046",
+    "kind": "task",
+    "status": "triage",
+    "title": "Loop Detection Flowchart"
+  },
+  {
+    "id": "WI-29c1-047",
+    "kind": "task",
+    "status": "triage",
+    "title": "System State Machine"
+  },
+  {
+    "id": "WI-29c1-048",
+    "kind": "task",
+    "status": "triage",
+    "title": "Product Lifecycle State Machine"
+  },
+  {
+    "id": "WI-29c1-049",
+    "kind": "task",
+    "status": "triage",
+    "title": "Dynamic RDI Guidelines"
+  },
+  {
+    "id": "WI-29c1-050",
+    "kind": "task",
+    "status": "triage",
+    "title": "Mathematical Specification"
+  },
+  {
+    "id": "WI-29c1-051",
+    "kind": "task",
+    "status": "triage",
+    "title": "Timed Synergy Memo"
   }
 ]

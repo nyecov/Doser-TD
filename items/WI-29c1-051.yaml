@@ -1,0 +1,18 @@
+id: WI-29c1-051
+title: Timed Synergy Memo
+description: "Synergistic SeparationHours > 0 \u2014 informational only. Memo documenting\
+  \ how timed synergies work when ingredients have required separation hours for optimal\
+  \ absorption."
+status: triage
+priority: low
+kind: task
+labels:
+- doc
+- spec
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:39.475805Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:39.475805Z'
+updated_at: '2026-06-07T22:49:39.475805Z'
