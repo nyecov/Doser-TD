@@ -1,0 +1,19 @@
+id: WI-29c1-024
+title: Database Schema - SQLite V3
+description: 'SQLite V3 database schema. Tables: products, product_ingredients, ingredients,
+  user_inventory, user_settings, medical_pin_schedule, product_serving_schedule, time_buckets,
+  weekly_schedule, plans, plan_dosing_recommendations, garmin_metrics, interaction.'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- component
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:50.522292Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:50.522292Z'
+updated_at: '2026-06-07T22:47:50.522292Z'

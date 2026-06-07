@@ -1,0 +1,17 @@
+id: WI-29c1-031
+title: Loop Detection - RDI and Scheduling Loop Resolution
+description: RDI loop and Scheduling loop resolution. Loop detection for Phase 4/5
+  Transactional Allocation to prevent infinite displacement chains.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:48:00.186655Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:48:00.186655Z'
+updated_at: '2026-06-07T22:48:00.186655Z'

@@ -1,0 +1,19 @@
+id: WI-29c1-029
+title: Inventory Mode - User's Owned Products
+description: Inventory Mode uses user's owned products only. Trimming to inventory_mode_max_products
+  (default 10) using deterministic cascade. Ghost Dose Prevention, Empty Inventory
+  Guard, Pin Sovereignty.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- solver
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:58.523085Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:58.523085Z'
+updated_at: '2026-06-07T22:47:58.523085Z'

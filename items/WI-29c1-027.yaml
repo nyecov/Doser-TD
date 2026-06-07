@@ -1,0 +1,18 @@
+id: WI-29c1-027
+title: BucketWeight - Bucket Priority Weighting
+description: BucketWeight defines relative importance weighting for time buckets.
+  Used in utility scoring to prioritize allocation to higher-weight buckets.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- concept
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:56.689247Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:56.689247Z'
+updated_at: '2026-06-07T22:47:56.689247Z'

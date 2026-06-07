@@ -1,0 +1,18 @@
+id: WI-29c1-026
+title: Goals & Restrictions - User Objectives
+description: Goals & Restrictions define user objectives and constraints applied to
+  the solver. Drive GoalBoost multipliers and enforce per-plan limitations.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- concept
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:55.900305Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:55.900305Z'
+updated_at: '2026-06-07T22:47:55.900305Z'

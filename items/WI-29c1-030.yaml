@@ -1,0 +1,18 @@
+id: WI-29c1-030
+title: Resolution Hierarchy - Sovereignty Ordering
+description: 'Full sovereignty ordering for solver decisions: Medical Pin (immovable)
+  > Regular Pin (sovereign with limits) > Solver Recommendation (flexible). Resolution
+  hierarchy defines conflict resolution precedence.'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:59.416735Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:59.416735Z'
+updated_at: '2026-06-07T22:47:59.416735Z'

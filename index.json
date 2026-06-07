@@ -124,5 +124,65 @@
     "kind": "task",
     "status": "triage",
     "title": "Garmin Sidecar - Python API Service"
+  },
+  {
+    "id": "WI-29c1-022",
+    "kind": "task",
+    "status": "triage",
+    "title": "Garmin Sync - Metric Synchronization"
+  },
+  {
+    "id": "WI-29c1-023",
+    "kind": "task",
+    "status": "triage",
+    "title": "Web UI - HTMX Dashboard"
+  },
+  {
+    "id": "WI-29c1-024",
+    "kind": "task",
+    "status": "triage",
+    "title": "Database Schema - SQLite V3"
+  },
+  {
+    "id": "WI-29c1-025",
+    "kind": "task",
+    "status": "triage",
+    "title": "Tags - Product and Ingredient Classification"
+  },
+  {
+    "id": "WI-29c1-026",
+    "kind": "task",
+    "status": "triage",
+    "title": "Goals & Restrictions - User Objectives"
+  },
+  {
+    "id": "WI-29c1-027",
+    "kind": "task",
+    "status": "triage",
+    "title": "BucketWeight - Bucket Priority Weighting"
+  },
+  {
+    "id": "WI-29c1-028",
+    "kind": "task",
+    "status": "triage",
+    "title": "Database Mode - Full Catalogue Solver Mode"
+  },
+  {
+    "id": "WI-29c1-029",
+    "kind": "task",
+    "status": "triage",
+    "title": "Inventory Mode - User's Owned Products"
+  },
+  {
+    "id": "WI-29c1-030",
+    "kind": "task",
+    "status": "triage",
+    "title": "Resolution Hierarchy - Sovereignty Ordering"
+  },
+  {
+    "id": "WI-29c1-031",
+    "kind": "task",
+    "status": "triage",
+    "title": "Loop Detection - RDI and Scheduling Loop Resolution"
   }
 ]

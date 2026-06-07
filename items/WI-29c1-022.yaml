@@ -1,0 +1,19 @@
+id: WI-29c1-022
+title: Garmin Sync - Metric Synchronization
+description: Dynamic plan synchronization with Garmin Cloud. Fetches user health metrics
+  and synchronizes them with the local database. Handles scale metric override and
+  stale decay enforcement.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- component
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:50.324295Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:50.324295Z'
+updated_at: '2026-06-07T22:47:50.324295Z'

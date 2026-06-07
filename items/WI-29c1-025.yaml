@@ -1,0 +1,19 @@
+id: WI-29c1-025
+title: Tags - Product and Ingredient Classification
+description: 'Tags classify products and ingredients. Three tiers: product-level (zero,
+  exclude, allow), ingredient-level (extend), operation-level (per-plan, per-category,
+  global). Drive Phase 1 Tag Pre-Pass and constraint enforcement.'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- concept
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:55.063592Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:55.063592Z'
+updated_at: '2026-06-07T22:47:55.063592Z'
