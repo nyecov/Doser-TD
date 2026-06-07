@@ -1,7 +1,51 @@
 id: WI-29c1-026
 title: Goals & Restrictions - User Objectives
-description: Goals & Restrictions define user objectives and constraints applied to
-  the solver. Drive GoalBoost multipliers and enforce per-plan limitations.
+description: '# Goals & Restrictions
+
+
+  #concept
+
+
+  User-defined intent signals that drive the RDI target and utility scoring. Every
+  goal has a multiplier and a priority.
+
+
+  ## Types
+
+  - Positive goal: multiplier > 1.0, priority >= 1 - Boost RDI target
+
+  - Additive-intent: multiplier = 1.0, priority >= 1 - No RDI change, contributes
+  to utility scoring and BucketWeight
+
+  - True neutral: multiplier = 1.0, priority 0 - No effect anywhere
+
+  - Restriction: multiplier < 1.0, priority >= 1 - Reduce RDI target
+
+
+  ## GoalBoost Rule
+
+  Only the strongest positive and strongest negative multipliers apply per ingredient.
+  Additive-intent goals (multiplier == 1.0, priority >= 1) are excluded from GoalBoost.
+
+
+  ## Impact on Utility Scoring
+
+  Utility += Amount_ing x GoalMultiplier_ing x GoalPriority_ing
+
+
+  ## Impact on BucketWeight
+
+  BucketWeight[bucket] = Sum(PreferenceWeight_ing x GoalBoost_ing) + Sum_additive(PreferenceWeight_ing
+  x AdditivePriority_ing / MaxPriority x AdditiveScale)
+
+
+  ## RDI Adjustment Mechanism (goal_adjustments)
+
+  - Absolute: Target = Value (Highest - ignores all other math)
+
+  - Percentage: Target = Target * Value (Medium)
+
+  - Delta: Target = Target + Value (Medium)'
 status: triage
 priority: high
 kind: task
@@ -15,4 +59,4 @@ valid_from: '2026-06-07T22:47:55.900305Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:55.900305Z'
-updated_at: '2026-06-07T22:47:55.900305Z'
+updated_at: '2026-06-07T22:56:38.392641Z'

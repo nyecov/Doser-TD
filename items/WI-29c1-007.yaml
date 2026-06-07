@@ -1,9 +1,59 @@
 id: WI-29c1-007
 title: Medical Pin - Prescribed Product
-description: 'A product prescribed by a doctor that the solver treats as an immovable
-  fact. Pre-loaded in Phase 0 before any dynamic logic runs. Properties: recurring
-  daily template, bypasses max_servings_per_day, bypasses all 5 gates in Transactional
-  Allocation, cannot be moved/reduced/excluded.'
+description: '# Medical Pin
+
+
+  #concept #pins
+
+
+  A product prescribed by a doctor that the solver treats as an immovable fact. Pre-loaded
+  in Phase 0 - Medical Pin Preload before any dynamic logic runs.
+
+
+  ## Properties
+
+  - Recurring daily template - stored per plan_id in medical_pin_schedule
+
+  - Dose and bucket schedule can differ between Training Day and Rest Day - each plan
+  has its own independent medical_pin_schedule rows
+
+  - Bypasses max_servings_per_day frequency caps
+
+  - Bypasses all 5 gates in Phase 4-5 - Transactional Allocation
+
+  - Cannot be moved, reduced, or excluded by the solver under any circumstances
+
+  - Supersedes any serving schedule for the same product
+
+
+  ## Medical Pin Selection (UI)
+
+  - Physician formulation type selector distinguishes: Pre-Formulated (single product),
+  Multi-Product Cocktail (multiple products combined)
+
+  - For Pre-Formulated: select a single product at a specific dose
+
+  - For Multi-Product Cocktail: select multiple products, each at their own dose
+
+  - Medical pin rows include brand_name, product_name, serving_amount, serving_unit,
+  bucket_id, user_notes, is_active
+
+  - All existing quantities in medical_pin_schedule and regular_pins are pre-populated
+  from user inventory at plan creation time
+
+
+  ## Headroom
+
+  Medical pins consume ctx.Remaining headroom but are not "stacked" onto ctx.BucketRawTotals
+  until Phase 4-5 treats the pin''s bucket dose as already placed. The solver accounts
+  for this via `ReservedIngredients` map.
+
+
+  ## DangerRating
+
+  When D4/Hazardous Medical Pins are detected, a CriticalSafetyViolation is raised
+  as a non-blocking conflict (the pin is still placed - the medical intent overrides
+  the safety alert). D4 medical pins surface a persistent alert icon on the plan card.'
 status: triage
 priority: high
 kind: task
@@ -18,4 +68,4 @@ valid_from: '2026-06-07T22:47:24.622447Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:24.622447Z'
-updated_at: '2026-06-07T22:47:24.622447Z'
+updated_at: '2026-06-07T22:56:45.204148Z'

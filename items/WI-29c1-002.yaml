@@ -1,10 +1,73 @@
 id: WI-29c1-002
 title: Architecture - Clean Architecture Design
-description: 'Doser V3 is a single-user, local-first application built on Clean Architecture
-  principles. Layers: Interfaces (HTMX templates, HTTP handlers), Application (use-case
-  services, orchestration), Domain (pure structs, business rules, RDI), Infrastructure
-  (SQLiteRepository, GarminClient). Cross-service orchestration follows strict synchronous
-  sequence.'
+description: '# Architecture
+
+
+  #component #design
+
+
+  Doser V3 is a **single-user, local-first application** built on Clean Architecture
+  principles - a full ground-up rebuild of V2''s monolithic structure.
+
+
+  ## Layers
+
+
+  - **Interfaces (internal/interfaces)** - HTMX templates, HTTP handlers
+
+  - **Application (internal/application)** - Use-case services, orchestration
+
+  - **Domain (internal/domain)** - Pure structs, business rules, RDI
+
+  - **Infrastructure** - SQLiteRepository, GarminClient
+
+
+  - Domain layer has zero knowledge of DB or Web
+
+  - Application services own all use cases (e.g. SyncUserGarminMetrics, RunSolver)
+
+  - Infrastructure holds specific implementations, never bleeds into domain
+
+
+  ## Key V2 -> V3 Fixes
+
+  - JSON-in-TEXT for Goals -> Relational tables
+
+  - GarminSessionData in domain -> Moved to Garmin Sidecar
+
+  - os.Exec Python bridge -> Persistent FastAPI sidecar
+
+  - Monolithic db.Repository -> Split into per-domain repositories
+
+  - Logic in web handlers -> Solver is a pure function
+
+  - is_pinned BOOLEAN -> Plan-scoped medical_pin_schedule & regular_pins
+
+  - Multi-user admin flag -> Removed (single-user)
+
+  - Password hash -> Removed (OS-level access control)
+
+  - consumption_log -> Renamed planned_doses with date column
+
+
+  ## Implementation Entrypoints
+
+  - internal/core/logic/solver.go - Pure solver function
+
+  - internal/infrastructure/db/migrations - SQLite schema
+
+  - internal/application/services/solver_service.go - Solver orchestration
+
+  - internal/interfaces/web/templates/dashboard.html - HTMX UI
+
+  - internal/interfaces/web/router.go - HTTP routing (Go 1.22+ Standard Library)
+
+
+  ## Shared Database Concurrency (SQLite)
+
+  Both Go Backend and Python Sidecar access the same doser.db. WAL mode with PRAGMA
+  journal_mode=WAL, synchronous=NORMAL, busy_timeout=5000. Python Sidecar writes only
+  health_profiles and garmin_session_state tables. Go Backend owns all other writes.'
 status: triage
 priority: high
 kind: task
@@ -19,4 +82,4 @@ valid_from: '2026-06-07T22:47:17.848083Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:17.848083Z'
-updated_at: '2026-06-07T22:47:17.848083Z'
+updated_at: '2026-06-07T22:56:15.386714Z'

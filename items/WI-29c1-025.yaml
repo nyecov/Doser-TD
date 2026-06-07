@@ -1,8 +1,67 @@
 id: WI-29c1-025
 title: Tags - Product and Ingredient Classification
-description: 'Tags classify products and ingredients. Three tiers: product-level (zero,
-  exclude, allow), ingredient-level (extend), operation-level (per-plan, per-category,
-  global). Drive Phase 1 Tag Pre-Pass and constraint enforcement.'
+description: '# Tags
+
+
+  #concept
+
+
+  Structured rules that the solver uses to constrain ingredient targets and product
+  inclusion. Separate from Goals & Restrictions in role: tags are constraints, goals
+  are intent multipliers.
+
+
+  ## Two Roles
+
+  - Constraint role (user_tags): Solver Phase 1 - Define zero/exclude/multiplier/ceiling
+  rules
+
+  - Semantic label role (ingredient_tags, product_tags): DB Mode candidate scoring
+  - Marketing/category labels for scoring overlap
+
+
+  ## Constraint Rule Types
+
+  - zero (ingredient_id): Ingredient excluded entirely (ZeroedIngredients)
+
+  - multiplier (ingredient_id): positive float - Override RDI target with result x
+  value
+
+  - absolute_ceiling (ingredient_id): absolute mass - RDI_target = min(result, value)
+
+  - zero (product_id): Product added to ExcludedProducts
+
+
+  ## Priority
+
+  effective_priority = priority + (is_medical x 10)
+
+  - User Tags: Effective Priority = priority (Range: 1-5)
+
+  - Medical Tags: Effective Priority = priority + 10 (Range: 11-15)
+
+
+  ## Conflict Resolution
+
+  1. Higher effective priority wins
+
+  2. Medical class wins (if tied)
+
+  3. Most restrictive rule wins (lowest absolute numerical target)
+
+  4. Deterministic fallback: lower tag_id ASC
+
+
+  ## absolute_ceiling vs MaxDailyLimit
+
+  Tag ceiling cannot raise the target above MaxDailyLimit. MaxDailyLimit always wins
+  as the final safety arbiter.
+
+
+  ## Tag vs Goal Priority
+
+  Tags override goals when more restrictive. If a goal pushes RDI higher but a tag
+  caps it lower, tag wins.'
 status: triage
 priority: high
 kind: task
@@ -16,4 +75,4 @@ valid_from: '2026-06-07T22:47:55.063592Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:55.063592Z'
-updated_at: '2026-06-07T22:47:55.063592Z'
+updated_at: '2026-06-07T22:56:36.631459Z'

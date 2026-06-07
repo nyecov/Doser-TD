@@ -1,13 +1,75 @@
 id: WI-29c1-003
 title: Solver - Core Optimization Engine
-description: 'Pure Go function in internal/core/logic/solver.go. Calculates the optimal
-  daily dosing schedule for a given plan. All state lives in SolverContext - no side
-  effects, no DB calls inside the solver.
+description: '# Solver
 
 
-  Phase Sequence: Phase 0 (Medical Pin Preload), Phase 1 (Tag Pre-Pass), Phase 2 (RDI
-  Computation), Phase 3 (Utility Scoring), Phase 3.5 (Serving Schedule Pre-Placement),
-  Phase 4&5 (Transactional Allocation), Phase 6 (Explanation Compilation).'
+  #component #solver
+
+
+  Pure Go function in internal/core/logic/solver.go. Calculates the optimal daily
+  dosing schedule for a given plan. All state lives in SolverContext - no side effects,
+  no DB calls inside the solver.
+
+
+  ## Signature
+
+  func Solve(ctx *SolverContext, products []domain.Product, allProducts map[int64]domain.Product,
+  buckets []domain.TimeBucket, prefs []domain.IngredientBucketPreference) ([]domain.DosingRecommendation,
+  []domain.ConflictReport)
+
+
+  ## Phase Sequence
+
+  Phase 0 (Medical Pin Preload) - Fix medical pins, consume headroom
+
+  Phase 1 (Tag Pre-Pass) - Build zero/exclude/multiplier/ceiling maps
+
+  Phase 2 (RDI Computation) - Compute dynamic RDI targets per ingredient
+
+  Phase 3 (Utility Scoring) - Score and sort candidate products
+
+  Phase 3.5 (Serving Schedule Pre-Placement) - Pre-place user-scheduled products
+
+  Phase 4&5 (Transactional Allocation) - Greedy allocation with gate checks
+
+  Phase 6 (Explanation Compilation) - Build reasoning chains
+
+
+  ## Solver Execution & State Sequence
+
+  1. Pre-flight (Phase 0): Aggregate all medical pin ingredient contributions into
+  ctx.PinnedIngredientTotals. ctx.Remaining is still uninitialized.
+
+  2. Constraint Mapping (Phase 1): Resolve all tag-based rules into exclusion and
+  ceiling maps.
+
+  3. Target Initialization (Phase 2): Compute dynamic RDI_target per ingredient. Initialize
+  ctx.Remaining = max(0, RDI_target - PinnedIngredientTotals).
+
+  4. Allocation (Phases 3.5 - 5): Tentatively place products and decrement ctx.Remaining
+  only upon successful placement.
+
+
+  ## Key Mechanics
+
+  - Reversal Mechanic - triggered when co-placement causes absorbed dose to breach
+  MaxDailyLimit
+
+  - Shortfall Re-run - re-fills RDI gap after a reversal reduces a serving
+
+  - Global Swap - look-ahead: move a placed product to free a better slot for a higher-utility
+  product
+
+  - Loop Detection - identifies the lowest-utility product in a displacement chain
+  and drops it
+
+
+  ## Conflict Types
+
+  SchedulingLoopConflict, ClashWarning, MedicalConstraintViolation, PrecisionConflict,
+  ShortfallConflict, MissingBucket, InventoryExhausted, ScheduleLimitBreach, ScheduleAlignmentError,
+  MissingBodyMetrics, ConfigurationError, EmptyInventoryConflict, PipelineLockedConflict,
+  CriticalSafetyViolation'
 status: triage
 priority: high
 kind: task
@@ -42,4 +104,4 @@ valid_from: '2026-06-07T22:47:17.922117Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:17.922117Z'
-updated_at: '2026-06-07T22:50:24.942127Z'
+updated_at: '2026-06-07T22:56:18.231345Z'

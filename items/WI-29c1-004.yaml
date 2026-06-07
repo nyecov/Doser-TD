@@ -1,7 +1,38 @@
 id: WI-29c1-004
 title: Data Flow - End-to-End Pipeline
-description: 'End-to-end pipeline from raw product URL to daily dosing schedule. Pipeline:
-  BioTechUSA shop URLs -> Scraper -> AI Parser -> Database Schema -> Solver -> Plan.'
+description: '# Data Flow
+
+
+  #design #pipeline
+
+
+  End-to-end pipeline from raw product URL to daily dosing schedule.
+
+
+  ## Pipeline
+
+  [BioTechUSA shop URLs] -> Scraper (product_cards/*.json) -> AI Parser (structured
+  nutrition + flavor mapping) -> Database Schema (ingredients, products, variants,
+  user_inventory) -> Garmin Sync -> Solver (Phase 0 -> Phase 6) -> DosingRecommendation[]
+  -> Web UI (HTMX dashboard, planned_doses)
+
+
+  ## Key Transitions
+
+  - Scraper: URL list -> {handle}.json product cards
+
+  - AI Parser: nutrition_html raw HTML -> Structured ingredient rows
+
+  - DB Import: Product cards -> products, variants, ingredient_amounts
+
+  - Solver: SolverContext (plan config, user profile) -> []DosingRecommendation
+
+  - Garmin Sync: Garmin API / scale data -> Updated health_profiles row
+
+  - Web UI: Recommendations -> planned_doses rows, rendered schedule
+
+
+  Corpus: Validated against test_links2.txt - 28 unique BioTechUSA products.'
 status: triage
 priority: high
 kind: task
@@ -16,4 +47,4 @@ valid_from: '2026-06-07T22:47:17.998380Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:17.998380Z'
-updated_at: '2026-06-07T22:47:17.998380Z'
+updated_at: '2026-06-07T22:56:23.114800Z'

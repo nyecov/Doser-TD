@@ -1,9 +1,57 @@
 id: WI-29c1-008
 title: Regular Pin - User-Selected Product
-description: A product the user wants included in the plan regardless of solver recommendations.
-  Subject to more rules than Medical Pin but still sovereign within limits. Tag override,
-  minimum score floor (UtilityScore >= reg_pin_score_floor), excluded from displacement
-  voting.
+description: '# Regular Pin
+
+
+  #concept #pins
+
+
+  A product the user wants included in the plan regardless of solver recommendations.
+  Subject to more rules than Medical Pin but still sovereign within limits.
+
+
+  ## Validation
+
+  - Missing/Archived Products: If a Regular Pin points to a product flagged as is_archived
+  = true, the solver emits a ClashWarning prompting the user to replace the discontinued
+  item, but still attempts placement. If the product record is physically missing,
+  the solver emits a ConfigurationError and gracefully skips the pin.
+
+
+  ## Privileges
+
+  - Tag override: bypasses tag-based exclusions and zeroing. Included with a clash
+  warning if a conflicting tag exists.
+
+  - Bypasses Gate 5 (displacement) - cannot be displaced by solver recommendations
+
+  - Subject to Gate 1 (separation checks), Gate 2 (frequency cap), Gate 3 (antagonist
+  interactions), Gate 4 (bucket capacity)
+
+  - Minimum score floor: If UtilityScore < reg_pin_score_floor (default 0.3), the
+  pin is excluded with a PinScoreFloorConflict
+
+  - Excluded from displacement voting (Global Swap) - cannot be evicted to make room
+  for another product
+
+
+  ## Interaction with Serving Schedule
+
+  If a product is both a Regular Pin and has an active serving schedule, the pin takes
+  precedence. The serving schedule entry is filtered out in Phase 3.5. The pin''s
+  scheduled bucket and dose override the serving schedule''s values.
+
+
+  ## Placement Flow
+
+  1. Sort by (UtilityScore DESC, CostPerServing ASC, ProductID ASC)
+
+  2. Attempt placement at the user''s preferred bucket
+
+  3. If preferred bucket is full (Gate 4) or fails placement (Gates 1-3), attempt
+  other buckets in time-order
+
+  4. If all buckets fail -> PinHardBlockedConflict'
 status: triage
 priority: high
 kind: task
@@ -18,4 +66,4 @@ valid_from: '2026-06-07T22:47:25.585814Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:25.585814Z'
-updated_at: '2026-06-07T22:47:25.585814Z'
+updated_at: '2026-06-07T22:56:48.393595Z'

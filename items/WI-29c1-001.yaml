@@ -1,21 +1,53 @@
 id: WI-29c1-001
 title: Home - Doser V3 Knowledge Map
-description: 'Single-user supplement optimization system. Connects Garmin body metrics
-  to a multi-product RDI solver with full explainability and plan scheduling.
+description: '# Doser V3 - Knowledge Map
 
 
-  System Components: Architecture, Data Flow, Scraper, AI Parser, Solver, Web UI,
-  Garmin Sidecar, Database Schema, Garmin Sync, Explainability Engine.
+  > Single-user supplement optimization system. Connects Garmin body metrics to a
+  multi-product RDI solver with full explainability and plan scheduling.
 
 
-  Solver Phases: Phase 0 (Medical Pin Preload) through Phase 6 (Explanation Compilation).
+  ## Meta
+
+  - Documentation Repository - **Repo Sovereignty: spec + implementation in one repo,
+  spec-first ordering**
+
+  - Design System - Cross-reference to Figma design artifacts and the doser-v3-design
+  skill
 
 
-  Solver Mechanics: Reversal Mechanic, Shortfall Re-run, Global Swap.
+  ## System Components
+
+  Architecture (Clean Architecture layers), Data Flow (End-to-end pipeline), Scraper
+  (BioTechUSA product card builder), AI Parser (Nutrition HTML -> structured data),
+  Solver (Core optimization engine), Web UI (HTMX dashboard), Garmin Sidecar (FastAPI
+  Python sidecar), Database Schema (SQLite V3 schema), Garmin Sync (Dynamic plan synchronization),
+  Explainability Engine (Open Box reasoning log)
 
 
-  Core Concepts: RDI, GoalBoost, Goals & Restrictions, Tags, Medical Pin, Regular
-  Pin, Buckets & Plans, BucketWeight, Interactions.'
+  ## Solver Phases
+
+  Phase 0 - Medical Pin Preload -> Phase 1 - Tag Pre-Pass -> Phase 2 - RDI Computation
+  -> Phase 3 - Utility Scoring -> Phase 3.5 - Serving Schedule Pre-Placement -> Phase
+  4-5 - Transactional Allocation -> Phase 6 - Explanation Compilation
+
+
+  ## Solver Mechanics
+
+  Reversal Mechanic (synergy-driven dose reduction), Shortfall Re-run (gap-filling
+  after a reversal), Global Swap (look-ahead bucket reassignment)
+
+
+  ## Core Concepts
+
+  RDI, GoalBoost, Goals & Restrictions, Tags, Medical Pin, Regular Pin, Buckets &
+  Plans, BucketWeight, Interactions
+
+
+  ## Solver Modes
+
+  Inventory Mode (user''s owned products), Database Mode (full catalogue + BaseNutritionalFit
+  scoring)'
 status: triage
 priority: high
 kind: task
@@ -49,4 +81,4 @@ valid_from: '2026-06-07T22:47:15.932205Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:15.932205Z'
-updated_at: '2026-06-07T22:50:20.262575Z'
+updated_at: '2026-06-07T22:56:12.629120Z'

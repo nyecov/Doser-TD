@@ -1,9 +1,64 @@
 id: WI-29c1-005
 title: RDI - Recommended Daily Intake
-description: "The dynamic, personalized RDI target computed per ingredient in Phase\
-  \ 2. Not a fixed lookup table \u2014 recalculated from body metrics every solver\
-  \ run. Requires valid body weight; graceful degradation for optional metrics. Core\
-  \ concepts: Baseline RDI, Dynamic Adjustment, GoalBoost integration."
+description: '# RDI - Recommended Daily Intake
+
+
+  #concept
+
+
+  The dynamic, personalized RDI target computed per ingredient in Phase 2 - RDI Computation.
+  Not a fixed lookup table - recalculated from body metrics every solver run.
+
+
+  ## Baseline Invariants
+
+  The solver requires a valid body weight to calculate personalized targets.
+
+  - Mandatory Metric: UserWeight must be > 0.
+
+  - Optional Metrics: EffectiveLeanMass, Stress, Sleep, etc.
+
+  - Graceful Degradation: If optional metrics are missing (NULL), the solver uses
+  identity multipliers (1.0) or statistical fallbacks (e.g., Lean Mass fallback to
+  Weight x 0.75).
+
+  - Hard Fail: If UserWeight is missing or invalid, the solver halts immediately (MissingBodyMetricsConflict).
+
+
+  ## Formula
+
+  ScalingWeight = min(UserWeight, EffectiveLeanMass x 1.25, MaxScalingWeight)
+
+  BaseTarget = ScalingWeight x base_rdi_per_kg
+
+  Anchor = BaseTarget x GoalBoost x ContextualMultiplier(Biometrics)
+
+  RDI_target = min(TagConstraint(Anchor x InteractionBoost), HardLimit_effective)
+
+
+  ## HardLimit Mechanics
+
+  - HardLimit_effective = ingredient.MaxDailyLimit (AI-seeded, user-editable)
+
+  - If MaxDailyLimit = 0 (unset): no hard ceiling for that ingredient
+
+  - Any clip by hard limit must be logged as ExplanationFactor
+
+
+  ## DangerRating Scale
+
+  0 Safe - No restrictions | 1 Low - No restrictions | 2 Moderate - No restrictions
+  | 3 High - Surfaces informational note | 4 D4/Hazardous - Blocks Regular Pin precision
+  override
+
+
+  Banned is a separate is_banned bool field on Ingredient - not a DangerRating value.
+
+
+  ## Data Freshness
+
+  < 7 days: Fresh | >= 7 days: Stale badge | >= 31 days (Scale/Manual): Blocked |
+  >= 7 days (Watch): Blocked'
 status: triage
 priority: high
 kind: task
@@ -17,4 +72,4 @@ valid_from: '2026-06-07T22:47:22.664237Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:22.664237Z'
-updated_at: '2026-06-07T22:47:22.664237Z'
+updated_at: '2026-06-07T22:56:25.648182Z'
