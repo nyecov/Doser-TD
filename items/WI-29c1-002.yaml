@@ -1,0 +1,22 @@
+id: WI-29c1-002
+title: Architecture - Clean Architecture Design
+description: 'Doser V3 is a single-user, local-first application built on Clean Architecture
+  principles. Layers: Interfaces (HTMX templates, HTTP handlers), Application (use-case
+  services, orchestration), Domain (pure structs, business rules, RDI), Infrastructure
+  (SQLiteRepository, GarminClient). Cross-service orchestration follows strict synchronous
+  sequence.'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- component
+- design
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:17.848083Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:17.848083Z'
+updated_at: '2026-06-07T22:47:17.848083Z'

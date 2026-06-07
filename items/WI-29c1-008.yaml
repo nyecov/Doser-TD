@@ -1,0 +1,21 @@
+id: WI-29c1-008
+title: Regular Pin - User-Selected Product
+description: A product the user wants included in the plan regardless of solver recommendations.
+  Subject to more rules than Medical Pin but still sovereign within limits. Tag override,
+  minimum score floor (UtilityScore >= reg_pin_score_floor), excluded from displacement
+  voting.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- concept
+- pins
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:25.585814Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:25.585814Z'
+updated_at: '2026-06-07T22:47:25.585814Z'

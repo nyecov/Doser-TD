@@ -1,0 +1,25 @@
+id: WI-29c1-003
+title: Solver - Core Optimization Engine
+description: 'Pure Go function in internal/core/logic/solver.go. Calculates the optimal
+  daily dosing schedule for a given plan. All state lives in SolverContext - no side
+  effects, no DB calls inside the solver.
+
+
+  Phase Sequence: Phase 0 (Medical Pin Preload), Phase 1 (Tag Pre-Pass), Phase 2 (RDI
+  Computation), Phase 3 (Utility Scoring), Phase 3.5 (Serving Schedule Pre-Placement),
+  Phase 4&5 (Transactional Allocation), Phase 6 (Explanation Compilation).'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- component
+- solver
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:17.922117Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:17.922117Z'
+updated_at: '2026-06-07T22:47:17.922117Z'

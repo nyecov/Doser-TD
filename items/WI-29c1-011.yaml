@@ -1,0 +1,20 @@
+id: WI-29c1-011
+title: Phase 0 - Medical Pin Preload
+description: Fix medical pins, consume headroom. Aggregate all medical pin ingredient
+  contributions into ctx.PinnedIngredientTotals. Medical pins consume RDI headroom
+  before any dynamic logic runs.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- solver
+- phase
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:35.221470Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:35.221470Z'
+updated_at: '2026-06-07T22:47:35.221470Z'

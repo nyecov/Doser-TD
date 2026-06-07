@@ -1,0 +1,20 @@
+id: WI-29c1-010
+title: Interactions - Synergy and Antagonism
+description: 'Ingredient-to-ingredient biological relationships. Two types: Synergy
+  (enhanced absorption) and Antagonism (impaired absorption or competition). Drive
+  both RDI target adjustments and Transactional Allocation gate logic.'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- concept
+- safety
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:27.181705Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:27.181705Z'
+updated_at: '2026-06-07T22:47:27.181705Z'

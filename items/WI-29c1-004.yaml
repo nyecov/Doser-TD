@@ -1,0 +1,19 @@
+id: WI-29c1-004
+title: Data Flow - End-to-End Pipeline
+description: 'End-to-end pipeline from raw product URL to daily dosing schedule. Pipeline:
+  BioTechUSA shop URLs -> Scraper -> AI Parser -> Database Schema -> Solver -> Plan.'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- design
+- pipeline
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:17.998380Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:17.998380Z'
+updated_at: '2026-06-07T22:47:17.998380Z'

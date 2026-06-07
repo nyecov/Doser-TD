@@ -1,7 +1,628 @@
 {
   "WI-29c1-001": {
     "children": [],
-    "relates": [],
+    "relates": [
+      {
+        "id": "WI-29c1-002",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-003",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-004",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-005",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-006",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-007",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-008",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-009",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-010",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-011",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-002": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-001",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-003",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-004",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-005",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-006",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-007",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-008",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-009",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-010",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-011",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-003": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-001",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-002",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-004",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-005",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-006",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-007",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-008",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-009",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-010",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-011",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-004": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-001",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-002",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-003",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-005",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-006",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-007",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-008",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-009",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-010",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-011",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-005": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-001",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-002",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-003",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-004",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-006",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-007",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-008",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-009",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-010",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-011",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-006": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-001",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-002",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-003",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-004",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-005",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-007",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-008",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-009",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-010",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-011",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-007": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-001",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-002",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-003",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-004",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-005",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-006",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-008",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-009",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-010",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-011",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-008": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-001",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-002",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-003",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-004",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-005",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-006",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-007",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-009",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-010",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-011",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-009": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-001",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-002",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-003",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-004",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-005",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-006",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-007",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-008",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-010",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-011",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-010": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-001",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-002",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-003",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-004",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-005",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-006",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-007",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-008",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-009",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-011",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-011": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-001",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-002",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-003",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-004",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-005",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-006",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-007",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-008",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-009",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      },
+      {
+        "id": "WI-29c1-010",
+        "relation": "relates_to",
+        "confidence": "inferred"
+      }
+    ],
     "tests": [],
     "referenced_by": []
   }

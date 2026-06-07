@@ -1,0 +1,20 @@
+id: WI-29c1-005
+title: RDI - Recommended Daily Intake
+description: "The dynamic, personalized RDI target computed per ingredient in Phase\
+  \ 2. Not a fixed lookup table \u2014 recalculated from body metrics every solver\
+  \ run. Requires valid body weight; graceful degradation for optional metrics. Core\
+  \ concepts: Baseline RDI, Dynamic Adjustment, GoalBoost integration."
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- concept
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:22.664237Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:22.664237Z'
+updated_at: '2026-06-07T22:47:22.664237Z'

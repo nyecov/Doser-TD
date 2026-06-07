@@ -1,0 +1,19 @@
+id: WI-29c1-006
+title: GoalBoost - Goal-Based RDI Amplification
+description: "GoalBoost amplifies specific RDI targets based on user-defined goals\
+  \ (e.g., muscle gain, immune support). F = G \xD7 B where G is the goal multiplier\
+  \ and B is the base RDI."
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- concept
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:23.649233Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:23.649233Z'
+updated_at: '2026-06-07T22:47:23.649233Z'

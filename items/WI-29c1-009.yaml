@@ -1,0 +1,19 @@
+id: WI-29c1-009
+title: Buckets & Plans - Time Slots and Day Configurations
+description: Buckets are named time slots in a day (e.g. Breakfast, Lunch, Pre-Workout).
+  Plans are configurations (e.g. Training Day, Rest Day) that share a weekly calendar.
+  Circular modulo-24 time comparison for antagonist separation.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- concept
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:26.406256Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:26.406256Z'
+updated_at: '2026-06-07T22:47:26.406256Z'

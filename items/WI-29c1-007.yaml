@@ -1,0 +1,21 @@
+id: WI-29c1-007
+title: Medical Pin - Prescribed Product
+description: 'A product prescribed by a doctor that the solver treats as an immovable
+  fact. Pre-loaded in Phase 0 before any dynamic logic runs. Properties: recurring
+  daily template, bypasses max_servings_per_day, bypasses all 5 gates in Transactional
+  Allocation, cannot be moved/reduced/excluded.'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- concept
+- pins
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:24.622447Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:24.622447Z'
+updated_at: '2026-06-07T22:47:24.622447Z'
