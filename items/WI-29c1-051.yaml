@@ -1,8 +1,47 @@
 id: WI-29c1-051
 title: Timed Synergy Memo
-description: "Synergistic SeparationHours > 0 \u2014 informational only. Memo documenting\
-  \ how timed synergies work when ingredients have required separation hours for optimal\
-  \ absorption."
+description: '# Timed Synergy Memo
+
+
+  A Synergistic interaction with SeparationHours > 0 represents timed synergy - the
+  two ingredients enhance each other when taken in sequence. This is valid, intentional
+  data.
+
+
+  ## What it is NOT
+
+  - Not a gate violation. Gate 1 applies only to Antagonistic interactions.
+
+  - Not a Gate 2 violation. Co-placement of synergistic ingredients is allowed.
+
+  - No SchedulingLoopConflict can originate from a Synergistic interaction.
+
+
+  ## When the Memo is Shown
+
+  After placement, if two synergistically-linked ingredients end up in buckets where
+  the gap is >= SeparationHours, surface an informational memo (not a warning, not
+  a conflict).
+
+
+  Gap calculation: diff = min(|t1 - t2|, 24 - |t1 - t2|) - circular modulo-24.
+
+
+  ## When No Memo is Shown
+
+  If ingredients are co-placed or closer than SeparationHours - not a problem. No
+  memo, no warning.
+
+
+  ## BucketWeight Bonus
+
+  Timed synergy reflected in fallback sort synergy score: +2 per timed-synergy match.
+
+
+  ## InteractionBoost Exemption
+
+  ImpactMultiplier is ignored (InteractionBoost = 1.0) during Phase 2 RDI Computation
+  for timed synergies.'
 status: triage
 priority: low
 kind: task
@@ -15,4 +54,4 @@ valid_from: '2026-06-07T22:49:39.475805Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:39.475805Z'
-updated_at: '2026-06-07T22:49:39.475805Z'
+updated_at: '2026-06-07T23:02:05.761337Z'

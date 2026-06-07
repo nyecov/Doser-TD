@@ -1,8 +1,40 @@
 id: WI-29c1-054
 title: Phantom Components
-description: Phantom components handling (deferred). Design for detecting and managing
-  phantom/physical multi-component products where one package contains multiple distinct
-  supplement forms.
+description: '# Phantom Components
+
+
+  Multi-component packs (e.g. arthro-forte-pack-30-csomag) contain physical sub-items
+  not individually defined as variants in the Shopify API. Handled via hierarchical
+  relational model.
+
+
+  ## Architecture
+
+  1. Hierarchy: Variant (Purchasable) -> Component (Dosing Unit) -> Ingredient (Chemical)
+
+  2. Atomic Allocation: Solver allocates at the Variant level. If user is recommended
+  a pack, they are implicitly taking all its components.
+
+  3. Indivisibility: Components cannot be split across buckets. If one component clashes,
+  the entire Variant is rejected.
+
+
+  ## Example: Arthro Forte Pack
+
+  Single purchasable unit (Variant ID 123) contains:
+
+  - Component A (Softgel): Omega-3, Vitamin D
+
+  - Component B (Tablet): Glucosamine, Chondroitin, MSM, Collagen, Vitamin C
+
+
+  Each component has its own dosing unit, ingredient profile, and measurement step.
+
+
+  ## Status
+
+  Deferred - Item 11 awaiting design session. The physical hierarchy model is specified
+  but the actual parser integration and solver modifications are pending.'
 status: triage
 priority: low
 kind: task
@@ -15,4 +47,4 @@ valid_from: '2026-06-07T22:49:44.878492Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:44.878492Z'
-updated_at: '2026-06-07T22:49:44.878492Z'
+updated_at: '2026-06-07T23:02:11.825522Z'

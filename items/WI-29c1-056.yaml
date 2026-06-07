@@ -1,9 +1,50 @@
 id: WI-29c1-056
 title: Smoke Test Protocol
-description: 'Autonomous, end-to-end execution of every real, valid Test Design. Entrypoint:
-  tools/Invoke-SmokeTest.ps1. Shallow-but-broad gate that executes every Test Design
-  with a discoverable executable binding and reports results. Primary mechanism for
-  catching regressions across all stories.'
+description: '# Smoke Test Protocol
+
+
+  Autonomous, end-to-end execution of every real, valid Test Design. Entrypoint: tools/Invoke-SmokeTest.ps1
+
+
+  ## Purpose
+
+  Shallow-but-broad gate: execute every Test Design that has a discoverable executable
+  binding, report results, and create TX records. Primary mechanism for catching regressions
+  across all stories.
+
+
+  A TD qualifies as real when:
+
+  - Matrix-dedicated: exactly one [x] in Test Surface and exactly one [x] in Test
+  Design Technique
+
+  - Has Gherkin: a gherkin block with at least one Scenario:
+
+  - Non-vacuous: no TBD, TODO, N/A, placeholder markers
+
+
+  ## Execution Flow
+
+  1. Discover all test designs from tests/designs/
+
+  2. For each TD, check its Automation Binding
+
+  3. If executable binding exists, run it
+
+  4. Capture stdout/stderr, exit code, duration
+
+  5. Create TX record with evidence
+
+  6. Aggregate results into summary report
+
+
+  ## Pass/Fail Criteria
+
+  - All executable TDs must pass for green smoke test
+
+  - Skipped TDs (no binding) are reported but don''t fail
+
+  - Regression: any previously passing TD that now fails blocks the run'
 status: triage
 priority: medium
 kind: task
@@ -17,4 +58,4 @@ valid_from: '2026-06-07T22:49:58.322917Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:58.322917Z'
-updated_at: '2026-06-07T22:49:58.322917Z'
+updated_at: '2026-06-07T23:02:16.120197Z'

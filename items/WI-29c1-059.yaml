@@ -1,7 +1,39 @@
 id: WI-29c1-059
 title: Doc Review Tasks
-description: Documentation review tasks tracking. Lists pending review items for documentation
+description: '# Doc Review Tasks
+
+
+  Documentation review tasks tracking. Lists pending review items for documentation
   quality and completeness.
+
+
+  ## Pending Reviews
+
+  - [ ] Verify all wiki-links resolve to existing spec files
+
+  - [ ] Check for spec contradictions across obsidian files
+
+  - [ ] Validate flowchart accuracy against actual solver behavior
+
+  - [ ] Ensure all Go type definitions match actual code
+
+  - [ ] Update any stale diagrams or mermaid sequences
+
+  - [ ] Review Mathematical Specification for formula accuracy
+
+  - [ ] Confirm Database Schema matches actual migration files
+
+
+  ## Review Priority
+
+  High: Core solver specs (Phases 0-6, Solver.md, RDI.md)
+
+  Medium: Supporting specs (Interactions, Tags, Goals)
+
+  Low: Reference docs (Design System, Flowcharts)
+
+
+  Last reviewed: 2026-06-07'
 status: triage
 priority: low
 kind: task
@@ -14,4 +46,4 @@ valid_from: '2026-06-07T22:50:00.509559Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:50:00.509559Z'
-updated_at: '2026-06-07T22:50:00.509559Z'
+updated_at: '2026-06-07T23:02:25.990304Z'

@@ -1,8 +1,52 @@
 id: WI-29c1-057
 title: Testing Study - Testing Taxonomy
-description: Complete testing taxonomy reference. Testing Pyramid (Unit -> Integration
-  -> System -> Acceptance/UI), test design techniques, and comprehensive testing strategy
-  for Doser V3.
+description: '# Testing Study - Testing Taxonomy
+
+
+  Complete testing taxonomy reference for Doser V3.
+
+
+  ## The Testing Pyramid (Scope Axis)
+
+  Unit -> Integration -> System -> Acceptance/UI
+
+  Fast, isolated -> Slow, realistic
+
+
+  ## Test Design Techniques
+
+  - Happy Path: Verify core functionality works under normal conditions
+
+  - Sad Path: Verify graceful handling of invalid input, errors, edge cases
+
+  - Boundary: Verify behavior at and around constraint limits
+
+  - State Transition: Verify FSM/lifecycle transitions
+
+
+  ## Coverage Matrix
+
+  Every story requires a 3x4 matrix: Unit/Feature/Integration x Happy/Sad/Boundary/State
+
+
+  ## Automation Framework
+
+  - Go unit tests: go test with standard testing package
+
+  - Go feature tests: godog (Cucumber/Gherkin for Go)
+
+  - UI tests: Playwright with data-testid locators
+
+  - Integration tests: Go httptest with test database
+
+
+  ## Key Principles
+
+  - Gherkin-first: All test designs use Cucumber/Gherkin syntax
+
+  - Real execution only: No synthetic TX pass counts
+
+  - Regression protocol: Previously passing TDs that fail block progress'
 status: triage
 priority: medium
 kind: task
@@ -16,4 +60,4 @@ valid_from: '2026-06-07T22:49:59.169252Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:59.169252Z'
-updated_at: '2026-06-07T22:49:59.169252Z'
+updated_at: '2026-06-07T23:02:21.978478Z'

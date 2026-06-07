@@ -1,9 +1,57 @@
 id: WI-29c1-055
 title: PROCESSING_ORDER - Foundation-First Sequence
-description: 'Foundation-first sequence for carving obsidian documentation into the
-  SDLC backlog. Strict sequential mandate: Phase 1 (Structural Foundations), Phase
-  2 (Solver Brain), Phase 3 (Safety & Safety Nets), Phase 4 (User Facing). Do not
-  start mapping #2 until #1 is MAPPED.'
+description: '# PROCESSING_ORDER - Foundation-First Sequence
+
+
+  Foundation-first sequence for carving obsidian documentation into the SDLC backlog.
+  Strict sequential mandate.
+
+
+  ## Phase 1: Structural Foundations (The Infrastructure)
+
+  1. Home.md - Global context and terminology
+
+  2. Architecture.md - High-level system design
+
+  3. Database Schema.md - The physical data model
+
+  4. Go Type Definitions.md - The code-level domain models
+
+  5. Data Flow.md - How data moves between internal components
+
+
+  ## Phase 2: The Solver Brain (The Logic Oracle)
+
+  1. Mathematical Specification.md - The core formulas
+
+  2. Solver.md - The high-level execution model
+
+  3. Phase 0 through Phase 6 - Each phase spec
+
+  4. Reversal Mechanic, Shortfall Re-run, Global Swap - Mechanics
+
+  5. Interactions.md, Loop Detection.md - Safety and cycles
+
+
+  ## Phase 3: Safety & Safety Nets
+
+  1. Dynamic RDI Guidelines.md - Biometric safety gates
+
+  2. Error Handling & Resilience.md - Failure modes
+
+  3. Smoke Test Protocol.md, Testing Study.md - Quality gates
+
+
+  ## Phase 4: User Facing
+
+  1. Web UI.md - Interface
+
+  2. Design System.md - Visual language
+
+  3. Configuration Defaults.md - User settings
+
+
+  Do not start mapping #2 until #1 is MAPPED in the coverage ledger.'
 status: triage
 priority: high
 kind: task
@@ -17,4 +65,4 @@ valid_from: '2026-06-07T22:49:57.456185Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:57.456185Z'
-updated_at: '2026-06-07T22:49:57.456185Z'
+updated_at: '2026-06-07T23:02:13.884391Z'

@@ -1,7 +1,42 @@
 id: WI-29c1-058
 title: Systematic Review Plan
-description: Systematic review plan for Doser V3 documentation and codebase. Structured
-  plan for comprehensive review cycles.
+description: '# Systematic Review Plan
+
+
+  Structured plan for comprehensive review cycles of Doser V3 documentation and codebase.
+
+
+  ## Review Scope
+
+  1. Spec Accuracy: Do obsidian specs match implementation reality?
+
+  2. Code Quality: Is the code clean, well-tested, and idiomatic?
+
+  3. Test Coverage: Are all matrix cells covered with real passing tests?
+
+  4. Documentation: Are all docs current, consistent, and properly linked?
+
+  5. Architecture: Does the code follow Clean Architecture boundaries?
+
+
+  ## Review Cadence
+
+  - Per-Story Review: After every story completion
+
+  - Per-Epic Review: After every epic completion
+
+  - Pre-Release Review: Before every tagged release
+
+  - Ad-Hoc Review: When bugs or spec gaps are discovered
+
+
+  ## Review Artifacts
+
+  - Review findings logged in Issues or Follow-ups
+
+  - Metrics recorded in the Coverage Matrix
+
+  - Spec gaps tracked in SPEC-GAPS.md'
 status: triage
 priority: low
 kind: task
@@ -15,4 +50,4 @@ valid_from: '2026-06-07T22:49:59.883513Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:59.884513Z'
-updated_at: '2026-06-07T22:49:59.884513Z'
+updated_at: '2026-06-07T23:02:24.131380Z'

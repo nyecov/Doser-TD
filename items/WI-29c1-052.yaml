@@ -1,7 +1,30 @@
 id: WI-29c1-052
 title: Parser Execution Trace
-description: Step-by-step Arthro Forte Pack parse trace. Detailed execution trace
-  showing how the AI Parser processes a complex multi-component product.
+description: '# Parser Execution Trace
+
+
+  Step-by-step Arthro Forte Pack parse trace showing how the AI Parser processes a
+  complex multi-component product.
+
+
+  Trace: Scraper fetches arthro-forte-pack-30-csomag -> Shopify JSON returns single
+  product with variants -> HTML page reveals 2 nutrition tables (Softgel + Tablet)
+  -> AI Parser identifies 2 physical components -> Each component''s ingredients extracted
+  separately -> Structured output with component boundaries -> Database import creates
+  variants + component relationships
+
+
+  Key Demonstrations:
+
+  - Multi-section HTML harvesting with sibling traversal
+
+  - Component boundary detection from table classification
+
+  - Extract structured rows with validation
+
+  - Handle deduplication for overlapping nutrients
+
+  - Capture extended flag for aggressive deduplication'
 status: triage
 priority: low
 kind: task
@@ -14,4 +37,4 @@ valid_from: '2026-06-07T22:49:44.622336Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:44.622336Z'
-updated_at: '2026-06-07T22:49:44.622336Z'
+updated_at: '2026-06-07T23:02:07.695176Z'
