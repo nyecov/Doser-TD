@@ -1,8 +1,63 @@
 id: WI-29c1-009
 title: Buckets & Plans - Time Slots and Day Configurations
-description: Buckets are named time slots in a day (e.g. Breakfast, Lunch, Pre-Workout).
-  Plans are configurations (e.g. Training Day, Rest Day) that share a weekly calendar.
-  Circular modulo-24 time comparison for antagonist separation.
+description: '# Buckets & Plans
+
+
+  #concept
+
+
+  Buckets are named time slots in a day (e.g. Breakfast, Lunch, Pre-Workout). Plans
+  are configurations (e.g. Training Day, Rest Day) that share a weekly calendar.
+
+
+  ## Buckets (time_buckets)
+
+  - bucket_id: Unique per plan
+
+  - name: e.g. Breakfast, Pre-Workout
+
+  - time: Hour of day (used for Gate 1 separation checks)
+
+  - max_products: Max distinct products in this bucket (counts Medical Pins, Regular
+  Pins, and solver recommendations)
+
+
+  Bucket time comparisons use circular modulo-24 logic: diff = min(|t1-t2|, 24-|t1-t2|).
+  This handles midnight-crossing antagonist separation correctly.
+
+
+  ## Capacity Validation (Application Layer)
+
+  When a user attempts to edit a bucket to reduce its max_products, the application
+  layer MUST validate the requested capacity against existing schedules.
+
+
+  ## Plans (plans table)
+
+  - plan_id, user_id, name, description, is_training, is_active, sort_order, created_at,
+  updated_at
+
+  - plans weekly schedule - defines which plan runs on which day of the week (weekly_schedule
+  table)
+
+  - A plan with is_training = 1 uses that plan''s independent medical_pin_schedule
+  and regular_pins rows
+
+
+  ## Weekly Schedule
+
+  - schedule_id, user_id, day_of_week (0=Monday ... 6=Sunday), plan_id
+
+  - Exactly one plan per day_of_week (enforced by unique constraint)
+
+  - Schema-level CHECK ensures day_of_week is 0-6
+
+
+  ## Bucket Precedence (Categorical Tier Rule)
+
+  Preferred Bucket > Biological Goal > No Preference. An IngredientBucketPreference
+  at priority >= 1 gives the user full authority over bucket assignment. If no preference
+  exists, the biological goal alignment drives bucket selection.'
 status: triage
 priority: high
 kind: task
@@ -16,4 +71,4 @@ valid_from: '2026-06-07T22:47:26.406256Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:26.406256Z'
-updated_at: '2026-06-07T22:47:26.406256Z'
+updated_at: '2026-06-07T22:56:57.803198Z'

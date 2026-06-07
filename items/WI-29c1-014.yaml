@@ -1,7 +1,54 @@
 id: WI-29c1-014
 title: Phase 3 - Utility Scoring
-description: Score and sort candidate products. Calculate utility scores for each
-  candidate product to determine optimal allocation order.
+description: '# Phase 3 - Utility Scoring
+
+
+  Assigns a utility score to every non-excluded, non-medical-pinned product and sorts
+  them descending.
+
+
+  ## Formula
+
+  Utility = BaseScore + Sum(Amount_ing x GoalMultiplier_ing x GoalPriority_ing)
+
+
+  BaseScore = Sum min(1.0, Amount_i / MaxDailyLimit_i) - unit-agnostic coverage fraction
+
+  The min(1.0) constraint prevents the Toxic Utility Paradox.
+
+
+  ## Hierarchical Ingredient Scoring (Double-Counting Prevention)
+
+  Leaves Win: If a product contains an ingredient (Parent) and its subcomponents (Leaves),
+  and those Leaves have their own active RDI_target or MaxDailyLimit, score the Leaves
+  only.
+
+  Parent Fallback: If Leaves exist but have no RDI targets or goals, score the Parent
+  node only.
+
+
+  ## Regular Pin Score Floor
+
+  pin_score = max(computed_score, max_non_pin_score + 1.0)
+
+  All Regular Pin products sort above all non-pinned products while preserving their
+  relative order.
+
+
+  ## Tie-Breaking Cascade
+
+  1. Secondary Utility Score: Sum min(Amount_i, Remaining_i) / MaxDailyLimit_i
+
+  2. Value (Cost): cost_per_serving ASC
+
+  3. Internal Reference: ProductID ASC
+
+
+  ## Substitute Earmarking
+
+  Products within 5% utility of a winner are eligible substitutes. Top 2 stored in
+  ctx.Substitutes. Promotion triggered if winner is dropped by Loop Detection or Reversal
+  Mechanic.'
 status: triage
 priority: high
 kind: task
@@ -16,4 +63,4 @@ valid_from: '2026-06-07T22:47:38.250780Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:38.251781Z'
-updated_at: '2026-06-07T22:47:38.251781Z'
+updated_at: '2026-06-07T22:57:23.257699Z'

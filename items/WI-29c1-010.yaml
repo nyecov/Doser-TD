@@ -1,8 +1,31 @@
 id: WI-29c1-010
 title: Interactions - Synergy and Antagonism
-description: 'Ingredient-to-ingredient biological relationships. Two types: Synergy
-  (enhanced absorption) and Antagonism (impaired absorption or competition). Drive
-  both RDI target adjustments and Transactional Allocation gate logic.'
+description: "# Interactions\n\n#concept #safety\n\nIngredient-to-ingredient biological\
+  \ relationships. Two types: Synergy (enhanced absorption) and Antagonism (impaired\
+  \ absorption or competition). Drive both RDI target adjustments and Phase 4-5 Transactional\
+  \ Allocation gate logic.\n\n## Interaction Record\ntype Interaction struct {\n \
+  \   IngredientA_ID       int64\n    IngredientB_ID       int64\n    ImpactMultiplier\
+  \     float64   // M\n    Curve                string    // linear | exponential\
+  \ | threshold\n    SeparationHours      int       // 0 = no separation needed, >0\
+  \ = Gate 1\n    Notes                string\n}\n\n## Synergy (M > 1.0)\nWhen two\
+  \ ingredients are taken together, the absorbed amount of ingredient B is multiplied\
+  \ by M.\n- Applied in Phase 2 as RDI_target = min(Anchor / M, MaxDailyLimit)\n-\
+  \ Effectively reduces how much B needs to be dosed since absorption is enhanced\n\
+  - Curve types determine how M scales with dose\n\n## Antagonism (M < 1.0)\nWhen\
+  \ two ingredients are taken together, the absorbed amount of ingredient B is reduced.\n\
+  - Applied in Phase 2 as RDI_target = min(Anchor / M, MaxDailyLimit)\n- Effectively\
+  \ increases how much B needs to be dosed to compensate for reduced absorption\n\n\
+  ## Separation (SeparationHours > 0)\n- Gate 1 in Phase 4-5: if SeparationHours >\
+  \ 0, ingredients A and B must be placed in buckets separated by at least SeparationHours\n\
+  - Uses circular modulo-24 comparison for midnight-crossing schedules\n- Informational\
+  \ only - the solver places a timed synergy memo in the reasoning log\n\n## Separation\
+  \ Gate (Gate 1)\nWhen evaluating product P for bucket B:\n1. For each ingredient\
+  \ in P, check if any already-placed product contains an antagonist ingredient requiring\
+  \ separation\n2. If an antagonist exists in B+SeparationHours window, block placement\n\
+  3. If an antagonist is placed in a later bucket, that bucket is locked against this\
+  \ ingredient\n\n## Implementation Status\nThe codebase currently measures Gate 1\
+  \ separation strictly at bucket.time granularity (not minute-level). This is by\
+  \ design for V3 scope."
 status: triage
 priority: high
 kind: task
@@ -17,4 +40,4 @@ valid_from: '2026-06-07T22:47:27.181705Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:27.181705Z'
-updated_at: '2026-06-07T22:47:27.181705Z'
+updated_at: '2026-06-07T22:56:57.808194Z'

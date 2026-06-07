@@ -1,7 +1,19 @@
 id: WI-29c1-012
 title: Phase 1 - Tag Pre-Pass
-description: Build zero/exclude/multiplier/ceiling maps. Resolve all tag-based rules
-  into exclusion and ceiling maps for constraint enforcement.
+description: "# Phase 1 - Tag Pre-Pass\n\nResolves all active user tag rules into\
+  \ four constraint maps before any product scoring or allocation.\n\n## Steps\n1.\
+  \ Load all active user Tags and their rules.\n2. Biometric Safety Gate: Evaluate\
+  \ latest metrics from Garmin Sync. If safety triggers fire (e.g. High BP), inject\
+  \ Virtual Tags (Priority: 99, IsMedical: true).\n3. Group rules by (TargetType,\
+  \ TargetID).\n4. Resolve conflicts: effective_priority = priority + is_medical x\
+  \ 10. Highest wins. On tie: most restrictive wins (lowest absolute numerical value\
+  \ wins).\n5. Build four maps:\n   - ZeroedIngredients: Ingredients to exclude entirely\n\
+  \   - ExcludedProducts: Products to exclude from candidate pool\n   - MultiplierOverrides:\
+  \ Tag-driven RDI multipliers\n   - AbsoluteCeilings: Hard per-ingredient amount\
+  \ ceilings\n\n## Medical Pin Sovereignty\nAny product in ctx.MedicalPins is unconditionally\
+  \ immune to ExcludedProducts and ZeroedIngredients filters.\n\n## Regular Pin Exception\n\
+  Products in ExcludedProducts with an active Regular Pin are normally re-added with\
+  \ a clash warning. Medical Tag zero ban overrides this unconditionally."
 status: triage
 priority: high
 kind: task
@@ -16,4 +28,4 @@ valid_from: '2026-06-07T22:47:38.062545Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:38.062545Z'
-updated_at: '2026-06-07T22:47:38.062545Z'
+updated_at: '2026-06-07T22:57:17.588421Z'

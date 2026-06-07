@@ -1,8 +1,59 @@
 id: WI-29c1-013
 title: Phase 2 - RDI Computation
-description: Compute dynamic RDI targets per ingredient. Initialize ctx.Remaining
-  = max(0, RDI_target - PinnedIngredientTotals). This ensures medical pins are subtracted
-  from the budget exactly once.
+description: '# Phase 2 - RDI Computation
+
+
+  #phase #solver
+
+
+  Calculates the final RDI target per ingredient for the current solver run.
+
+
+  ## 1. Baseline Target
+
+  - For each ingredient with a non-zero `base_rdi_per_kg`, compute:
+
+  - `TargetRDI_kg[i] = ScalingWeight x base_rdi_per_kg[i]`
+
+  - Where `ScalingWeight = min(UserWeight, EffectiveLeanMass x 1.25, MaxScalingWeight)`
+
+
+  ## 2. GoalBoost Application
+
+  - Apply GoalBoost to each baseline target: `Anchor[i] = TargetRDI_kg[i] x ctx.GoalBoost[i]`
+
+  - If GoalBoost floor/cap inversion detected, force-reset both to defaults and emit
+  ConfigurationError.
+
+
+  ## 3. Interaction Boost (Batch Phase)
+
+  - For each ingredient i, compute InteractionBoost[i] by looking at all ingredients
+  with M != 1.0 and SeparationHours = 0.
+
+  - InteractionBoost[i] = product of all M where the partner is present in plan-level
+  ctx.PinnedIngredientTotals.
+
+  - Then: `AdjustedAnchor[i] = Anchor[i] / InteractionBoost[i]`
+
+
+  ## 4. Speculative Interaction Activation Flagging
+
+  - Record deferred interactions where partner ingredients exist in ctx.AllProducts
+  but have not yet been pinned by Phase 0.
+
+  - Post-commit hook in Phase 4/5 fires when the first partner is placed, retroactively
+  adjusting target if needed.
+
+
+  ## 5. Tag Override + Ceiling
+
+  - Apply tag ceilings and multiplier overrides from Phase 1 maps.
+
+
+  ## 6. Hard Limit Cap
+
+  - `RDI_target[i] = min(AdjustedAnchor[i], MaxDailyLimit[i])`'
 status: triage
 priority: high
 kind: task
@@ -17,4 +68,4 @@ valid_from: '2026-06-07T22:47:38.151147Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:38.151147Z'
-updated_at: '2026-06-07T22:47:38.151147Z'
+updated_at: '2026-06-07T22:57:21.303293Z'

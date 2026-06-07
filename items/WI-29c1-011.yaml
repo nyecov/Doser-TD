@@ -1,8 +1,47 @@
 id: WI-29c1-011
 title: Phase 0 - Medical Pin Preload
-description: Fix medical pins, consume headroom. Aggregate all medical pin ingredient
-  contributions into ctx.PinnedIngredientTotals. Medical pins consume RDI headroom
-  before any dynamic logic runs.
+description: '# Phase 0 - Medical Pin Preload
+
+
+  Runs before any dynamic logic. Establishes the immovable facts of the plan.
+
+
+  ## What it does
+
+  1. Global Ban Check: Verify no pinned product contains is_banned = true. If found,
+  halt with CriticalSafetyViolation.
+
+  2. Load all MedicalPinEntry records for the current plan_id from medical_pin_schedule.
+
+  3. Bucket Existence Validation: Verify each pin''s BucketID exists in ctx.Buckets.
+  If missing, halt with MedicalConstraintViolation.
+
+  4. Resolve ingredient amounts for each pinned product from allProducts map.
+
+  5. Mark each pin''s BucketID as occupied - each Medical Pin consumes one slot in
+  bucket''s max_products.
+
+  6. Quantity Aggregation: Aggregate raw ingredient mass into ctx.PinnedIngredientTotals.
+
+  7. Commit raw amounts to ctx.BucketRawTotals and invoke RecalculateBucketAdjustments(bucket).
+
+  8. Raw Safety Check (Gate 0): If PinAmount[ing] > ingredient.MaxDailyLimit -> halt
+  with MedicalConstraintViolation.
+
+  9. Log each contribution as ExplanationFactor.
+
+
+  ## Medical Pin Sovereignty
+
+  - Recurring daily templates - apply identically every day
+
+  - If two Medical Pins have an interacting ingredient: surface a prominent warning
+  only
+
+  - System will NOT move or separate them
+
+  - Hazard Exception: D4/Hazardous/Banned state -> persistent non-dismissable dashboard
+  alert'
 status: triage
 priority: high
 kind: task
@@ -17,4 +56,4 @@ valid_from: '2026-06-07T22:47:35.221470Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:35.221470Z'
-updated_at: '2026-06-07T22:47:35.221470Z'
+updated_at: '2026-06-07T22:57:15.743170Z'

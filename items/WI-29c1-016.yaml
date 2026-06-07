@@ -1,9 +1,58 @@
 id: WI-29c1-016
 title: Phase 4-5 - Transactional Allocation
-description: 'Greedy allocation with gate checks. Performs transactional allocation:
-  Gate 1 (Separation), Gate 2 (Frequency cap), Gate 3 (Interaction/antagonist), Gate
-  4 (Bucket capacity), Gate 5 (Displacement). Includes loop detection and global swap
-  mechanics.'
+description: '# Phase 4 & 5 - Transactional Allocation
+
+
+  Greedy allocation of remaining candidate products into time buckets. Transactional:
+  RDI budget is only consumed if the product is successfully placed.
+
+
+  ## Per-Product Steps (sorted descending by utility)
+
+  1. Skip if in ExcludedProducts or zeroed by tags.
+
+  2. Schedule Reconciliation Check: resolves redundant dosing for Phase 3.5 products.
+
+  3. Calculate maxServing from ctx.Remaining and safety caps.
+
+  4. Round down: roundedServing = floor(maxServing / step) x step.
+
+  5. Precision Check: non-pin and roundedServing == 0 -> PrecisionConflict. Regular
+  Pin -> force 1.0 unit.
+
+  6. Efficiency Floor: if roundedServing < ctx.EfficiencyFloor and not a pin -> skip.
+
+  7. Bucket Search (The Transaction): Preferred Bucket Derivation (4-step).
+
+  8. Global Swap if preferred bucket blocked.
+
+  9. On successful commit: increment placement tally.
+
+
+  ## The 5 Gates (evaluated atomically for entire product)
+
+  Gate 1 - Separation: Antagonistic pairs - circular modulo-24 separation >= SeparationHours
+
+  Gate 2 - Co-placement: Bidirectional Antagonism Check
+
+  Gate 3 - Frequency: ScheduledPlacements + placements_in_pass < max_servings_per_day
+
+  Gate 4 - Cap: current_products_in_bucket < bucket.max_products
+
+  Gate 5 - Bucket Ceiling: AdjustedTotals + adjustedNewAmount <= BucketCeiling
+
+
+  ## Commit vs Rollback
+
+  Commit: Decrement ctx.Remaining, increment ctx.BucketRawTotals, RecalculateBucketAdjustments(bucket)
+
+  Rollback: Increment ctx.Remaining, decrement ctx.BucketRawTotals, RecalculateBucketAdjustments(bucket)
+
+
+  ## Product Atomicity
+
+  Every product is treated as an Atomic Unit. Splitting a product''s contents across
+  multiple buckets is forbidden.'
 status: triage
 priority: high
 kind: task
@@ -18,4 +67,4 @@ valid_from: '2026-06-07T22:47:39.188798Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:39.188798Z'
-updated_at: '2026-06-07T22:47:39.188798Z'
+updated_at: '2026-06-07T22:57:28.091883Z'

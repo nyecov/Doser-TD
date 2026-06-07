@@ -1,8 +1,65 @@
 id: WI-29c1-018
 title: Reversal Mechanic - Dose Reduction
-description: Synergy-driven dose reduction. When a product containing ingredient A
-  is placed and ingredient B (also in the product) meets 100% RDI from other sources,
-  the solver may reduce the dose of B to avoid overshooting.
+description: '# Reversal Mechanic
+
+
+  Fires during Phase 4-5 - Transactional Allocation when placing a product causes
+  a co-placed ingredient''s effective absorbed dose to exceed MaxDailyLimit.
+
+
+  ## Trigger
+
+  BucketAdjustedTotals[bucket][ing] > ingredient.MaxDailyLimit
+
+  - Synergy-Driven: Interaction amplifies effective absorption beyond the limit.
+
+  - Raw-Amount Driven: Regular Pin or greedy placements contain base amount exceeding
+  limit.
+
+
+  ## The Guardrail Hierarchy
+
+  1. Medical Pins (Phase 0): If Medical Pin''s raw amount exceeds MaxDailyLimit ->
+  halt with MedicalConstraintViolation.
+
+  2. Lethal Safety Override: If any product (including Regular Pin) exceeds 200% of
+  MaxDailyLimit -> drop/scale regardless of pin status.
+
+  3. Regular Pins & Greedy Placements: Attempt to resolve by reducing non-pinned products
+  first.
+
+
+  ## Reduction Selection Order
+
+  - Tier 1 (First): Negative Goal/Tag products - drop lowest utility first
+
+  - Tier 2: Neutral products
+
+  - Tier 3: Positive Goal/Tag products
+
+  - Tier 0 (Last): Regular Pins
+
+
+  Pin Sovereignty: All unpinned products must be reduced before Regular Pins. Medical
+  Pins are strictly exempt.
+
+
+  ## After Reduction
+
+  - If MaxDailyLimit breach caused the reduction, ctx.Remaining for breached ingredient
+  is forcefully zeroed.
+
+  - Re-credit ctx.Remaining for other ingredients.
+
+  - RecalculateBucketAdjustments(bucket).
+
+  - Trigger Shortfall Re-run.
+
+
+  ## Pass Limit
+
+  reversal_max_passes (default 3). When exhausted, remove lowest-utility product in
+  chain.'
 status: triage
 priority: high
 kind: task
@@ -17,4 +74,4 @@ valid_from: '2026-06-07T22:47:44.221014Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:44.221014Z'
-updated_at: '2026-06-07T22:47:44.221014Z'
+updated_at: '2026-06-07T22:57:40.352938Z'

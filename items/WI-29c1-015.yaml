@@ -1,8 +1,49 @@
 id: WI-29c1-015
 title: Phase 3.5 - Serving Schedule Pre-Placement
-description: Pre-place user-scheduled products. Tentatively place products and decrement
-  ctx.Remaining only upon successful placement. Handles serving schedule pre-positioning
-  before transactional allocation.
+description: '# Phase 3.5 - Serving Schedule Pre-Placement
+
+
+  Pre-places products that have user-defined entries in product_serving_schedule before
+  the greedy allocation pass.
+
+
+  ## Medical Pin Guard
+
+  Filter ctx.ServingSchedules to exclude any entry whose ProductID appears in ctx.MedicalPins.
+
+
+  ## Deterministic Processing Order
+
+  Sort product_serving_schedule entries by: UtilityScore DESC, ProductID ASC (tiebreaker).
+
+
+  ## Conflict Resolution Cascade (per scheduled slot)
+
+  0. Serving Alignment: align serving_size to measurement_step. If aligned == 0 ->
+  ScheduleAlignmentError.
+
+  1. Try the scheduled bucket at full serving_size. If all gates pass -> commit.
+
+  2. Reduce serving_size by measurement_step increments. If safe -> commit at reduced
+  serving (ServingReduced warning).
+
+  3. If even 1x measurement_step fails -> fall through to Phase 4/5 pool (ScheduleDeviation
+  warning).
+
+
+  ## Commit Contract
+
+  Successful commit mutates: ctx.Remaining decremented, ctx.BucketRawTotals incremented,
+  RecalculateBucketAdjustments(bucket) invoked, ctx.ScheduledPlacements[product_id]
+  incremented.
+
+
+  ## Error Handling
+
+  Warnings: ServingReduced (soft), ScheduleDeviation (soft)
+
+  Conflicts: MissingBucket (Hard Fail), ScheduleAlignmentError (Hard Fail), ScheduleLimitBreach
+  (Phase 4/5), InventoryExhausted (Soft Fail)'
 status: triage
 priority: high
 kind: task
@@ -17,4 +58,4 @@ valid_from: '2026-06-07T22:47:38.347935Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:38.347935Z'
-updated_at: '2026-06-07T22:47:38.347935Z'
+updated_at: '2026-06-07T22:57:25.294916Z'

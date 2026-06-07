@@ -1,7 +1,67 @@
 id: WI-29c1-017
 title: Phase 6 - Explanation Compilation
-description: "Build reasoning chains. Compile explanation for every solver decision\
-  \ \u2014 why a product was selected, rejected, displaced, or reversed."
+description: '# Phase 6 - Explanation & Serialization
+
+
+  The final stage of the solver. Aggregates internal mathematical factors into human-readable
+  reasoning and persists the plan to the database.
+
+
+  ## 1. Ingredient Factor Mapping
+
+  TargetCalculation Chain (Biological Need):
+
+  - base: Base RDI target: {Value}{Unit}
+
+  - goal_boost: {GoalName} goal: x{Value} boost
+
+  - interaction_boost: {PartnerName} synergy: x{Value} absorption
+
+  - tag_override: Tag {TagName}: {Value}{Unit} ceiling
+
+  - cap: Capped at {Value}{Unit} (Safety Ceiling)
+
+
+  AllocationState Chain (Inventory Fulfillment):
+
+  - pin_deduction: Deducted {Value}{Unit} (Medical Pin: {ProductName})
+
+  - headroom_consumed: Deducted {Value}{Unit} (Scheduled: {ProductName})
+
+
+  Dynamic Product Factors:
+
+  - swap: Relocated from preferred bucket to resolve {Reason}
+
+  - substitution: Included as a functional substitute for {OriginalProductName}
+
+  - reduction: Reduced to {Value}{Unit} due to {Reason}
+
+
+  ## 2. UI Rendering Guidance
+
+  Section 1: Biological Target - TargetCalculation chain, culminating in the Biological
+  Target
+
+  Section 2: Fulfillment State - AllocationState chain, showing how the target was
+  satisfied
+
+
+  ## 3. Product Aggregation
+
+  - Placed: Optimal serving for your goals and schedule
+
+  - Placed_Reduced: Serving size reduced to fit bucket safety limits
+
+  - Dropped_Loop: Dropped to resolve a scheduling conflict
+
+  - Filtered: Excluded due to {TagName} tag
+
+
+  ## 4. Atomic Serialization
+
+  BEGIN TRANSACTION -> DELETE existing doses -> INSERT all DosingRecommendation ->
+  COMMIT'
 status: triage
 priority: high
 kind: task
@@ -16,4 +76,4 @@ valid_from: '2026-06-07T22:47:39.888995Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:39.888995Z'
-updated_at: '2026-06-07T22:47:39.888995Z'
+updated_at: '2026-06-07T22:57:30.484765Z'
