@@ -1,0 +1,18 @@
+id: WI-29c1-034
+title: Scraper - Product Card Builder
+description: BioTechUSA product card builder. Scrapes product information from BioTechUSA
+  shop URLs and produces structured nutrition data for the AI Parser.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- component
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:05.639243Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:05.639243Z'
+updated_at: '2026-06-07T22:49:05.639243Z'

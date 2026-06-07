@@ -1,0 +1,19 @@
+id: WI-29c1-035
+title: AI Parser - Nutrition Data Parser
+description: Converts raw nutrition_html from Scraper product cards into structured
+  ingredient rows for Database Schema import. Handles physical component identification,
+  variant mapping, and handle-linked variant flagging.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- component
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:06.477413Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:06.477413Z'
+updated_at: '2026-06-07T22:49:06.477413Z'

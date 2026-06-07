@@ -1,0 +1,17 @@
+id: WI-29c1-039
+title: Design System - Brand and Foundation
+description: Cross-reference to Figma design artifacts and the doser-v3-design skill.
+  Brand guidelines, design tokens, and UI component specifications.
+status: triage
+priority: medium
+kind: task
+labels:
+- doc
+- spec
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:21.001929Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:21.001929Z'
+updated_at: '2026-06-07T22:49:21.001929Z'

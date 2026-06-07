@@ -184,5 +184,65 @@
     "kind": "task",
     "status": "triage",
     "title": "Loop Detection - RDI and Scheduling Loop Resolution"
+  },
+  {
+    "id": "WI-29c1-032",
+    "kind": "task",
+    "status": "triage",
+    "title": "Plan Architecture - Training and Rest Day Plans"
+  },
+  {
+    "id": "WI-29c1-033",
+    "kind": "task",
+    "status": "triage",
+    "title": "Explainability Engine - Reasoning Log"
+  },
+  {
+    "id": "WI-29c1-034",
+    "kind": "task",
+    "status": "triage",
+    "title": "Scraper - Product Card Builder"
+  },
+  {
+    "id": "WI-29c1-035",
+    "kind": "task",
+    "status": "triage",
+    "title": "AI Parser - Nutrition Data Parser"
+  },
+  {
+    "id": "WI-29c1-036",
+    "kind": "task",
+    "status": "triage",
+    "title": "Error Handling & Resilience"
+  },
+  {
+    "id": "WI-29c1-037",
+    "kind": "task",
+    "status": "triage",
+    "title": "Configuration Defaults - User Settings"
+  },
+  {
+    "id": "WI-29c1-038",
+    "kind": "task",
+    "status": "triage",
+    "title": "Go Type Definitions - Core Structs"
+  },
+  {
+    "id": "WI-29c1-039",
+    "kind": "task",
+    "status": "triage",
+    "title": "Design System - Brand and Foundation"
+  },
+  {
+    "id": "WI-29c1-040",
+    "kind": "task",
+    "status": "triage",
+    "title": "Documentation Repository - Repo Structure"
+  },
+  {
+    "id": "WI-29c1-041",
+    "kind": "task",
+    "status": "triage",
+    "title": "Decisions Log - Architectural Decisions"
   }
 ]

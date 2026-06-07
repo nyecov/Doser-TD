@@ -1,0 +1,18 @@
+id: WI-29c1-033
+title: Explainability Engine - Reasoning Log
+description: "Explainability Engine produces an Open Box reasoning log for every solver\
+  \ execution. Compiles decision traces for user transparency \u2014 why a product\
+  \ was selected, rejected, displaced, or reversed."
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:04.917615Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:04.917615Z'
+updated_at: '2026-06-07T22:49:04.917615Z'

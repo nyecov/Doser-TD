@@ -1,0 +1,18 @@
+id: WI-29c1-036
+title: Error Handling & Resilience
+description: HTMX recovery, Garmin sidecar failures, solver blocked states. Circuit
+  breaker for sidecar (trip after 5 failures in 60s, open for 30s). Dashboard initialization
+  safety. Request-specific timeouts.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:07.414981Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:07.414981Z'
+updated_at: '2026-06-07T22:49:07.414981Z'

@@ -1,0 +1,18 @@
+id: WI-29c1-032
+title: Plan Architecture - Training and Rest Day Plans
+description: Training/Rest day plans, weekly_schedule, medical tag global scope. Plan
+  architecture defines how training and rest days share a weekly calendar with independent
+  bucket configurations.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:04.151835Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:04.151835Z'
+updated_at: '2026-06-07T22:49:04.151835Z'
