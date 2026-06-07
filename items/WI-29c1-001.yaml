@@ -23,10 +23,30 @@ labels:
 - doc
 - index
 - knowledge-map
-relates: []
+relates:
+- id: WI-29c1-002
+  relation: relates_to
+- id: WI-29c1-003
+  relation: relates_to
+- id: WI-29c1-004
+  relation: relates_to
+- id: WI-29c1-034
+  relation: relates_to
+- id: WI-29c1-035
+  relation: relates_to
+- id: WI-29c1-023
+  relation: relates_to
+- id: WI-29c1-021
+  relation: relates_to
+- id: WI-29c1-024
+  relation: relates_to
+- id: WI-29c1-022
+  relation: relates_to
+- id: WI-29c1-033
+  relation: relates_to
 collaborators: []
 valid_from: '2026-06-07T22:47:15.932205Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:15.932205Z'
-updated_at: '2026-06-07T22:47:15.932205Z'
+updated_at: '2026-06-07T22:50:20.262575Z'

@@ -1,0 +1,18 @@
+id: WI-29c1-054
+title: Phantom Components
+description: Phantom components handling (deferred). Design for detecting and managing
+  phantom/physical multi-component products where one package contains multiple distinct
+  supplement forms.
+status: triage
+priority: low
+kind: task
+labels:
+- doc
+- spec
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:44.878492Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:44.878492Z'
+updated_at: '2026-06-07T22:49:44.878492Z'

@@ -1,0 +1,17 @@
+id: WI-29c1-052
+title: Parser Execution Trace
+description: Step-by-step Arthro Forte Pack parse trace. Detailed execution trace
+  showing how the AI Parser processes a complex multi-component product.
+status: triage
+priority: low
+kind: task
+labels:
+- doc
+- spec
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:44.622336Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:44.622336Z'
+updated_at: '2026-06-07T22:49:44.622336Z'

@@ -1,0 +1,20 @@
+id: WI-29c1-055
+title: PROCESSING_ORDER - Foundation-First Sequence
+description: 'Foundation-first sequence for carving obsidian documentation into the
+  SDLC backlog. Strict sequential mandate: Phase 1 (Structural Foundations), Phase
+  2 (Solver Brain), Phase 3 (Safety & Safety Nets), Phase 4 (User Facing). Do not
+  start mapping #2 until #1 is MAPPED.'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- process
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:49:57.456185Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:49:57.456185Z'
+updated_at: '2026-06-07T22:49:57.456185Z'

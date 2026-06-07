@@ -304,5 +304,53 @@
     "kind": "task",
     "status": "triage",
     "title": "Timed Synergy Memo"
+  },
+  {
+    "id": "WI-29c1-052",
+    "kind": "task",
+    "status": "triage",
+    "title": "Parser Execution Trace"
+  },
+  {
+    "id": "WI-29c1-053",
+    "kind": "task",
+    "status": "triage",
+    "title": "Implementation Risks"
+  },
+  {
+    "id": "WI-29c1-054",
+    "kind": "task",
+    "status": "triage",
+    "title": "Phantom Components"
+  },
+  {
+    "id": "WI-29c1-055",
+    "kind": "task",
+    "status": "triage",
+    "title": "PROCESSING_ORDER - Foundation-First Sequence"
+  },
+  {
+    "id": "WI-29c1-056",
+    "kind": "task",
+    "status": "triage",
+    "title": "Smoke Test Protocol"
+  },
+  {
+    "id": "WI-29c1-057",
+    "kind": "task",
+    "status": "triage",
+    "title": "Testing Study - Testing Taxonomy"
+  },
+  {
+    "id": "WI-29c1-058",
+    "kind": "task",
+    "status": "triage",
+    "title": "Systematic Review Plan"
+  },
+  {
+    "id": "WI-29c1-059",
+    "kind": "task",
+    "status": "triage",
+    "title": "Doc Review Tasks"
   }
 ]
