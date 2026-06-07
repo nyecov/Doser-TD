@@ -1,0 +1,32 @@
+id: WI-29c1-001
+title: Home - Doser V3 Knowledge Map
+description: 'Single-user supplement optimization system. Connects Garmin body metrics
+  to a multi-product RDI solver with full explainability and plan scheduling.
+
+
+  System Components: Architecture, Data Flow, Scraper, AI Parser, Solver, Web UI,
+  Garmin Sidecar, Database Schema, Garmin Sync, Explainability Engine.
+
+
+  Solver Phases: Phase 0 (Medical Pin Preload) through Phase 6 (Explanation Compilation).
+
+
+  Solver Mechanics: Reversal Mechanic, Shortfall Re-run, Global Swap.
+
+
+  Core Concepts: RDI, GoalBoost, Goals & Restrictions, Tags, Medical Pin, Regular
+  Pin, Buckets & Plans, BucketWeight, Interactions.'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- index
+- knowledge-map
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:15.932205Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:15.932205Z'
+updated_at: '2026-06-07T22:47:15.932205Z'
