@@ -1,7 +1,29 @@
 id: WI-29c1-046
 title: Loop Detection Flowchart
-description: Scheduling displacement loop flowchart for Phase 4/5. Visual representation
-  of loop detection and resolution in transactional allocation.
+description: '# Loop Detection Flowchart
+
+
+  Scheduling displacement loop flowchart for Phase 4/5. Visual representation of loop
+  detection and resolution in transactional allocation.
+
+
+  Flow: Phase 4/5 allocation pass starts -> Products placed in order -> Displacement
+  chain detected -> Global counter incremented -> If counter >= 3: loop confirmed
+  -> Select lowest-utility non-pin victim -> Drop victim -> Re-run placement -> If
+  all products in cycle are pins: raise SchedulingLoopConflict -> If resolution succeeds:
+  continue normal allocation
+
+
+  Key decision points:
+
+  - Pin Sovereignty: Regular Pin never selected as victim
+
+  - Pass Counter Isolation: Shortfall sub-passes don''t increment
+
+  - Hard Conflict: All-pin cycle -> unresolvable halt
+
+
+  Design reference: See Loop Detection Flowchart in obsidian for the complete diagram.'
 status: triage
 priority: low
 kind: task
@@ -14,4 +36,4 @@ valid_from: '2026-06-07T22:49:32.862631Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:32.862631Z'
-updated_at: '2026-06-07T22:49:32.862631Z'
+updated_at: '2026-06-07T23:00:46.165900Z'

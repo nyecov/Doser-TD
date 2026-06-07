@@ -1,7 +1,48 @@
 id: WI-29c1-041
 title: Decisions Log - Architectural Decisions
-description: Architectural decisions log for Doser V3. Tracks all major design decisions,
-  rationale, and their resolution status.
+description: '# Decisions Log
+
+
+  All LOGIC_BACKLOG design decisions resolved on 2026-04-13.
+
+
+  ## Resolved Decisions
+
+  1. Scraper Redirect: Option A (Transparent) - follow redirect, use new handle, no
+  warning
+
+  2. Reversal Mechanic Dual-Pin: Option B (Safety First) - drop lower-priority pin,
+  SEVERE_ABSORPTION_CLASH warning
+
+  3. AI Parser Flavor Matching: Option A (Fuzzy Semantic) - LLM semantic reasoning
+
+  4. Regular Pin Reversal Priority: Solver product reduced/dropped first; Regular
+  Pin only if persisted
+
+  5. Doc Corpus: test_links2.txt is canonical (28 products)
+
+  6. Database Mode Exclusion Risk: Option A (Hybrid Score) - BaseNutritionalFit added
+  to CandidateScore
+
+  7. GoalBoost Floor: 0.05x floor (solver_goal_boost_floor) - SENSITIVE may need rework
+
+  8. Medical Pin Hazard UI: Persistent dashboard-level alert; must be explicitly acknowledged
+
+  9. Phase 3.5 Paradox: Displacement operates only against Medical Pin footprint
+
+  10. BucketWeight Sign: Option B (Scaled) - restriction goals contribute scaled positive
+  weight
+
+  11. Hard Limit (Ingested vs Absorbed): Unified MaxDailyLimit
+
+  12. Regular Pin Safety: Absolute Safety - Hazard Exception blocks any pin breaching
+  MaxDailyLimit
+
+  13. Agent Stall Recovery: Proactive Context Guard at ~100k tokens / 70% context
+
+  14. Context and Tooling Discipline: Mandatory Batch Discovery, Tool Sovereignty
+
+  15. Audit Test Fixtures: Env-gated query fixture'
 status: triage
 priority: medium
 kind: task
@@ -14,4 +55,4 @@ valid_from: '2026-06-07T22:49:22.358389Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:22.358389Z'
-updated_at: '2026-06-07T22:49:22.358389Z'
+updated_at: '2026-06-07T23:00:28.594015Z'

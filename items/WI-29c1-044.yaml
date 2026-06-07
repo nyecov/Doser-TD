@@ -1,7 +1,33 @@
 id: WI-29c1-044
 title: Complex Path Flowchart
-description: Full solver flowchart with reversals, substitutions, goals, tags, and
-  synergies. Complex path showing all solver mechanics in action.
+description: '# Complex Path Flowchart
+
+
+  Full solver flowchart with reversals, substitutions, goals, tags, and synergies.
+  Complex path showing all solver mechanics in action.
+
+
+  Flow: User clicks Generate Plan -> Go Backend loads plan config -> Solver runs Phases
+  0-2 -> Tag conflicts resolved -> Utility scoring with goal/tag adjustments -> Phase
+  3.5 pre-placement -> Phase 4-5 with gate checks -> Reversal Mechanic fires -> Shortfall
+  Re-run triggered -> Global Swap attempted if capacity blocked -> Loop Detection
+  if cycles found -> Phase 6 explanation compilation
+
+
+  Key Elements:
+
+  - Multiple reversal passes
+
+  - Substitution promotion from earmarked pool
+
+  - Global swap chain with DFS backtracking
+
+  - Loop detection with victim selection
+
+  - Full explanation chain compiled
+
+
+  Design reference: See Complex Path Flowchart in obsidian for the complete diagram.'
 status: triage
 priority: low
 kind: task
@@ -14,4 +40,4 @@ valid_from: '2026-06-07T22:49:31.452936Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:31.452936Z'
-updated_at: '2026-06-07T22:49:31.452936Z'
+updated_at: '2026-06-07T23:00:42.546205Z'

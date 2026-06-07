@@ -1,7 +1,47 @@
 id: WI-29c1-050
 title: Mathematical Specification
-description: Mathematical specification of the Doser V3 solver. Formal mathematical
-  definitions for all formulas used in RDI computation, utility scoring, and allocation.
+description: '# Mathematical Specification
+
+
+  Formal definition of the Doser V3 mathematical engine, specifically the Hierarchical
+  Multiplier Model (HMM) and safety boundaries.
+
+
+  ## Mathematical Hierarchy
+
+  The final target for any ingredient x is computed in a strictly ordered sequence:
+
+  1. Categorical Base (B): B_x = CategoryFormula(x, Biometrics)
+
+  2. Goal-Adjusted Anchor (A): A_x = B_x * product(M_g) for g in Goals
+
+  3. Interaction Adjustment: I_x = A_x / product(M_int) for int in Interactions
+
+  4. Tag Override: T_x = min(I_x, TagCeiling_x) if tag exists
+
+  5. Hard Limit Cap: Final_x = min(T_x, MaxDailyLimit_x)
+
+
+  ## Safety Boundaries
+
+  - Hard Limit (MaxDailyLimit): Biological safety ceiling - never exceeded
+
+  - Lethal Breach Threshold: 200% of MaxDailyLimit - triggers mandatory override
+
+  - Efficiency Floor: Minimum roundedServing for non-pinned products
+
+  - DangerRating tiers govern behavioral rules (not ratio ceilings)
+
+
+  ## Key Formulas
+
+  - BaseTarget = ScalingWeight x base_rdi_per_kg
+
+  - GoalBoost = min(PosBoost x NegBoost, cap)
+
+  - Utility = BaseScore + Sum(Amount x GoalMultiplier x GoalPriority)
+
+  - BucketWeight = Sum(PreferenceWeight x GoalBoost) + Additive term'
 status: triage
 priority: medium
 kind: task
@@ -14,4 +54,4 @@ valid_from: '2026-06-07T22:49:38.634250Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:38.634250Z'
-updated_at: '2026-06-07T22:49:38.634250Z'
+updated_at: '2026-06-07T23:00:34.817286Z'

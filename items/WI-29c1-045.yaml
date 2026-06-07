@@ -1,7 +1,31 @@
 id: WI-29c1-045
 title: Global Swap Flowchart
-description: 'Displacement chain flowchart for Global Swap: commit / rollback / cycle
-  resolution. Visual representation of the Global Swap mechanic''s state transitions.'
+description: '# Global Swap Flowchart
+
+
+  Displacement chain flowchart for Global Swap: commit / rollback / cycle resolution.
+  Visual representation of the Global Swap mechanic''s state transitions.
+
+
+  Flow: Product B blocked from Bucket K -> Select victim A (lowest utility, non-pin)
+  -> Try to relocate A to alternative bucket -> DFS recursion up to solver_swap_depth
+  -> If valid chain found: commit all changes -> If partial chain: rollback all tentative
+  moves -> If cycle detected: full rollback, continue to next alternative bucket
+
+
+  States: Initial -> Victim Selected -> Relocation Attempt -> Recursive Swap -> Chain
+  Success (Commit) / Chain Failure (Rollback)
+
+
+  Key Elements:
+
+  - Medical Pin immovability filter
+
+  - Regular Pin exclusion from displacement
+
+  - Primary ingredient headroom calculation
+
+  - DFS backtracking through fallback buckets'
 status: triage
 priority: low
 kind: task
@@ -14,4 +38,4 @@ valid_from: '2026-06-07T22:49:32.203621Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:32.203621Z'
-updated_at: '2026-06-07T22:49:32.203621Z'
+updated_at: '2026-06-07T23:00:44.473297Z'

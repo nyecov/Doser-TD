@@ -1,7 +1,28 @@
 id: WI-29c1-043
 title: Happy Path Flowchart
-description: End-to-end simple plan flowchart showing the happy path scenario with
-  no conflicts. Visual representation of the ideal solver execution flow.
+description: '# Happy Path Flowchart
+
+
+  End-to-end simple plan flowchart showing the happy path scenario with no conflicts.
+  Visual representation of the ideal solver execution flow.
+
+
+  Flow: User clicks Generate Plan -> Go Backend loads plan config -> Solver runs Phases
+  0-6 -> No conflicts detected -> Plan saved to planned_doses -> UI renders schedule
+
+
+  Key Elements:
+
+  - Straight pipeline through all 7 phases
+
+  - No reversals, swaps, or shortfall re-runs needed
+
+  - All gates pass on first attempt
+
+  - Clean commit of all recommendations
+
+
+  Design reference: See Happy Path Flowchart in obsidian for the complete diagram.'
 status: triage
 priority: low
 kind: task
@@ -14,4 +35,4 @@ valid_from: '2026-06-07T22:49:30.762589Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:30.762589Z'
-updated_at: '2026-06-07T22:49:30.762589Z'
+updated_at: '2026-06-07T23:00:40.680848Z'
