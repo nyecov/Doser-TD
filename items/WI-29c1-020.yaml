@@ -1,0 +1,20 @@
+id: WI-29c1-020
+title: Global Swap - Bucket Reassignment
+description: Look-ahead bucket reassignment. When product placement in one bucket
+  causes issues, the solver evaluates moving it to a different bucket using displacement
+  chain logic with commit/rollback/cycle resolution.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- solver
+- mechanics
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:45.891756Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:45.891756Z'
+updated_at: '2026-06-07T22:47:45.891756Z'

@@ -1,0 +1,20 @@
+id: WI-29c1-013
+title: Phase 2 - RDI Computation
+description: Compute dynamic RDI targets per ingredient. Initialize ctx.Remaining
+  = max(0, RDI_target - PinnedIngredientTotals). This ensures medical pins are subtracted
+  from the budget exactly once.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- solver
+- phase
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:38.151147Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:38.151147Z'
+updated_at: '2026-06-07T22:47:38.151147Z'

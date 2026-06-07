@@ -1,0 +1,21 @@
+id: WI-29c1-016
+title: Phase 4-5 - Transactional Allocation
+description: 'Greedy allocation with gate checks. Performs transactional allocation:
+  Gate 1 (Separation), Gate 2 (Frequency cap), Gate 3 (Interaction/antagonist), Gate
+  4 (Bucket capacity), Gate 5 (Displacement). Includes loop detection and global swap
+  mechanics.'
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- solver
+- phase
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:39.188798Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:39.188798Z'
+updated_at: '2026-06-07T22:47:39.188798Z'

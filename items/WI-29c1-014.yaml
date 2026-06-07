@@ -1,0 +1,19 @@
+id: WI-29c1-014
+title: Phase 3 - Utility Scoring
+description: Score and sort candidate products. Calculate utility scores for each
+  candidate product to determine optimal allocation order.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- solver
+- phase
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:38.250780Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:38.251781Z'
+updated_at: '2026-06-07T22:47:38.251781Z'

@@ -1,0 +1,19 @@
+id: WI-29c1-017
+title: Phase 6 - Explanation Compilation
+description: "Build reasoning chains. Compile explanation for every solver decision\
+  \ \u2014 why a product was selected, rejected, displaced, or reversed."
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- solver
+- phase
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:39.888995Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:39.888995Z'
+updated_at: '2026-06-07T22:47:39.888995Z'

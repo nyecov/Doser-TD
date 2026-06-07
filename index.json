@@ -64,5 +64,65 @@
     "kind": "task",
     "status": "triage",
     "title": "Phase 0 - Medical Pin Preload"
+  },
+  {
+    "id": "WI-29c1-012",
+    "kind": "task",
+    "status": "triage",
+    "title": "Phase 1 - Tag Pre-Pass"
+  },
+  {
+    "id": "WI-29c1-013",
+    "kind": "task",
+    "status": "triage",
+    "title": "Phase 2 - RDI Computation"
+  },
+  {
+    "id": "WI-29c1-014",
+    "kind": "task",
+    "status": "triage",
+    "title": "Phase 3 - Utility Scoring"
+  },
+  {
+    "id": "WI-29c1-015",
+    "kind": "task",
+    "status": "triage",
+    "title": "Phase 3.5 - Serving Schedule Pre-Placement"
+  },
+  {
+    "id": "WI-29c1-016",
+    "kind": "task",
+    "status": "triage",
+    "title": "Phase 4-5 - Transactional Allocation"
+  },
+  {
+    "id": "WI-29c1-017",
+    "kind": "task",
+    "status": "triage",
+    "title": "Phase 6 - Explanation Compilation"
+  },
+  {
+    "id": "WI-29c1-018",
+    "kind": "task",
+    "status": "triage",
+    "title": "Reversal Mechanic - Dose Reduction"
+  },
+  {
+    "id": "WI-29c1-019",
+    "kind": "task",
+    "status": "triage",
+    "title": "Shortfall Re-run - Gap Filling"
+  },
+  {
+    "id": "WI-29c1-020",
+    "kind": "task",
+    "status": "triage",
+    "title": "Global Swap - Bucket Reassignment"
+  },
+  {
+    "id": "WI-29c1-021",
+    "kind": "task",
+    "status": "triage",
+    "title": "Garmin Sidecar - Python API Service"
   }
 ]

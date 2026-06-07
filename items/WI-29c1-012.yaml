@@ -1,0 +1,19 @@
+id: WI-29c1-012
+title: Phase 1 - Tag Pre-Pass
+description: Build zero/exclude/multiplier/ceiling maps. Resolve all tag-based rules
+  into exclusion and ceiling maps for constraint enforcement.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- solver
+- phase
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:38.062545Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:38.062545Z'
+updated_at: '2026-06-07T22:47:38.062545Z'

@@ -1,0 +1,20 @@
+id: WI-29c1-019
+title: Shortfall Re-run - Gap Filling
+description: Gap-filling after a reversal. After a reversal reduces RDI for certain
+  ingredients, the solver re-runs to fill the newly freed headroom with alternative
+  products.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- solver
+- mechanics
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:45.050402Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:45.050402Z'
+updated_at: '2026-06-07T22:47:45.050402Z'

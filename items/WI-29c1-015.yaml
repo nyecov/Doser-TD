@@ -1,0 +1,20 @@
+id: WI-29c1-015
+title: Phase 3.5 - Serving Schedule Pre-Placement
+description: Pre-place user-scheduled products. Tentatively place products and decrement
+  ctx.Remaining only upon successful placement. Handles serving schedule pre-positioning
+  before transactional allocation.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- solver
+- phase
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:38.347935Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:38.347935Z'
+updated_at: '2026-06-07T22:47:38.347935Z'

@@ -1,0 +1,19 @@
+id: WI-29c1-021
+title: Garmin Sidecar - Python API Service
+description: FastAPI Python sidecar that runs alongside the Go backend. Handles Garmin
+  authentication, metric fetching, and credential management via Windows Credential
+  Manager.
+status: triage
+priority: high
+kind: task
+labels:
+- doc
+- spec
+- component
+relates: []
+collaborators: []
+valid_from: '2026-06-07T22:47:46.783920Z'
+comments: []
+metadata: {}
+created_at: '2026-06-07T22:47:46.783920Z'
+updated_at: '2026-06-07T22:47:46.783920Z'
