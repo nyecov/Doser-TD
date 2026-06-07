@@ -1,7 +1,45 @@
 id: WI-29c1-031
 title: Loop Detection - RDI and Scheduling Loop Resolution
-description: RDI loop and Scheduling loop resolution. Loop detection for Phase 4/5
-  Transactional Allocation to prevent infinite displacement chains.
+description: '# Loop Detection
+
+
+  In V3, RDI Calculation loops have been eliminated by using a deterministic CandidateDose
+  in Phase 2. Loop detection now exclusively handles displacement cycles during bucket
+  assignment.
+
+
+  ## Scheduling Loop (Phase 4/5)
+
+  A circular displacement chain in the bucket assignment pass. Example: placing Product
+  A forces Product B to move -> B''s move forces Product C to move -> C''s required
+  placement invalidates A''s slot.
+
+
+  ## Detection
+
+  Count full placement re-runs of the top-level Phase 4/5 allocation pass. If a stable
+  assignment is not reached after 3 re-runs -> loop confirmed.
+
+
+  Pass Counter Isolation: Sub-passes triggered by Shortfall Re-run do NOT increment
+  this global counter.
+
+
+  ## Resolution
+
+  1. Drop the lowest-utility product involved in the displacement chain.
+
+  2. Pin Sovereignty: Regular Pin can NEVER be selected as victim. Only non-pinned
+  solver products are eligible.
+
+  3. Hard Conflict: If every product in the displacement cycle is a Pin, raise unresolvable
+  SchedulingLoopConflict and halt.
+
+  4. Re-run placement without the selected victim.
+
+  5. Flag SchedulingLoopConflict - surface dropped product with explanation.
+
+  6. Dropped product appears in UI with Manual Placement Required warning.'
 status: triage
 priority: high
 kind: task
@@ -14,4 +52,4 @@ valid_from: '2026-06-07T22:48:00.186655Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:48:00.186655Z'
-updated_at: '2026-06-07T22:48:00.186655Z'
+updated_at: '2026-06-07T22:58:32.570261Z'

@@ -1,7 +1,43 @@
 id: WI-29c1-034
 title: Scraper - Product Card Builder
-description: BioTechUSA product card builder. Scrapes product information from BioTechUSA
-  shop URLs and produces structured nutrition data for the AI Parser.
+description: '# Scraper
+
+
+  BioTechUSA product card builder. Fetches product data from shop.biotechusa.hu and
+  produces structured JSON cards for the AI Parser.
+
+
+  Status: tools/biotechusa_scraper.py currently deleted from working tree - needs
+  restoration.
+
+
+  ## Two-Fetch Strategy
+
+  Fetch 1 - Shopify JSON API: api_url = f"https://shop.biotechusa.hu/products/{handle}.json"
+  - extracts brand, title, variants, top-level sku.
+
+  Fetch 2 - Live HTML Page: Uses querySelectorAll for NUTRITION_KEYWORDS sections.
+  Concatenates matching tables into nutrition_html. Limit top 5 blocks. Removes style/script/id
+  attributes.
+
+
+  ## Data Enrichment
+
+  - Category & Form mapping from title (e.g., capsule, tablet, powder)
+
+  - Brand override from SKU prefix keywords
+
+  - Measurements from Variant table (size, unit, parent-child structure)
+
+  - Product Key Extraction: EAN from barcode field, SKU from SKU field
+
+  - Brand & Category Assignment: Priority order for brand detection and category inference
+
+
+  ## Output Format
+
+  Writes to product_cards/{handle}.json with structured fields: handle, brand, title,
+  category, form, variants[], nutrition_html, nutrition_tables[], _meta'
 status: triage
 priority: high
 kind: task
@@ -15,4 +51,4 @@ valid_from: '2026-06-07T22:49:05.639243Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:05.639243Z'
-updated_at: '2026-06-07T22:49:05.639243Z'
+updated_at: '2026-06-07T22:59:02.287123Z'

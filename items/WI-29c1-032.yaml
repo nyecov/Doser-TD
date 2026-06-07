@@ -1,8 +1,37 @@
 id: WI-29c1-032
 title: Plan Architecture - Training and Rest Day Plans
-description: Training/Rest day plans, weekly_schedule, medical tag global scope. Plan
-  architecture defines how training and rest days share a weekly calendar with independent
-  bucket configurations.
+description: '# Plan Architecture
+
+
+  Doser V3 supports exactly two named plans: Training Day and Rest Day. Everything
+  configuration-related is plan-scoped.
+
+
+  ## Plan-Scoped Tables
+
+  user_goals, user_tags, time_buckets, ingredient_bucket_preferences, user_inventory,
+  medical_pin_schedule, regular_pins, planned_doses, product_serving_schedule, goal_adjustments
+
+
+  ## Plan Selection & Resolution
+
+  1. plan_overrides (date-specific user intent)
+
+  2. weekly_schedules (default routine for day of week)
+
+  3. plans (fallback - first available plan)
+
+
+  ## Plan Resolution Sources
+
+  - Training vs Rest Day: Each plan_id has its own independent medical_pin_schedule
+  and regular_pins rows.
+
+  - Medical tag global scope: Medical tags mirror across all plans automatically via
+  trigger.
+
+  - Plan versioning: plans.version INTEGER NOT NULL DEFAULT 1 for schema evolution
+  tracking.'
 status: triage
 priority: high
 kind: task
@@ -15,4 +44,4 @@ valid_from: '2026-06-07T22:49:04.151835Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:04.151835Z'
-updated_at: '2026-06-07T22:49:04.151835Z'
+updated_at: '2026-06-07T22:58:45.424898Z'

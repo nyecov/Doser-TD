@@ -1,8 +1,50 @@
 id: WI-29c1-033
 title: Explainability Engine - Reasoning Log
-description: "Explainability Engine produces an Open Box reasoning log for every solver\
-  \ execution. Compiles decision traces for user transparency \u2014 why a product\
-  \ was selected, rejected, displaced, or reversed."
+description: '# Explainability Engine
+
+
+  The Open Box design principle. Every solver recommendation carries a full reasoning
+  chain at two levels: product and ingredient.
+
+
+  ## Philosophy
+
+  The solver is not a black box. Every decision is recorded and surfaced to the user.
+
+
+  ## Data Structures
+
+  DosingRecommendation includes: ProductID, ProductName, ServingSize, Unit, BucketID,
+  IsScheduled, ClashWarnings, ProductExplanation, IngredientExplanations, ServingScalingHistory
+
+
+  ServingScalingEvent tracks: OriginalSize, NewSize, Reason, IngredientID
+
+
+  IngredientExplanation includes: IngredientID, IngredientName, TargetRDI, AllocatedAmount,
+  Factors (list of ExplanationFactor)
+
+
+  ## Explanation Chains
+
+  Two distinct chains per ingredient:
+
+  1. TargetCalculation (Biological Need): Base RDI -> GoalBoost -> Interaction Boost
+  -> Tag Override -> Safety Ceiling
+
+  2. AllocationState (Inventory Fulfillment): Pin Deduction -> Schedule Consumption
+  -> Remaining Budget
+
+
+  ## Product-Level States
+
+  - Placed: Optimal serving for your goals and schedule
+
+  - Placed_Reduced: Serving size reduced to fit bucket safety limits
+
+  - Dropped_Loop: Dropped to resolve scheduling conflict
+
+  - Filtered: Excluded due to tag'
 status: triage
 priority: high
 kind: task
@@ -15,4 +57,4 @@ valid_from: '2026-06-07T22:49:04.917615Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:04.917615Z'
-updated_at: '2026-06-07T22:49:04.917615Z'
+updated_at: '2026-06-07T22:58:47.319170Z'

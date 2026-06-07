@@ -1,7 +1,49 @@
 id: WI-29c1-037
 title: Configuration Defaults - User Settings
-description: All user_settings keys and defaults. Configuration defaults for the Doser
-  V3 system including solver parameters, UI preferences, and integration settings.
+description: '# Configuration Defaults
+
+
+  All user_settings keys seeded on first launch. Stored in user_settings (user_id,
+  key, value TEXT).
+
+
+  ## Initial Startup Configuration
+
+  Loaded exclusively from OS Environment Variables:
+
+  - DOSER_DB_PATH: Path to SQLite database
+
+  - DOSER_SIDECAR_URL: URL/port of Python FastAPI sidecar
+
+  - DOSER_PORT: Port for Go HTMX web server
+
+
+  ## Solver Settings (with Min/Max bounds)
+
+  - solver_goal_boost_cap: 3.0 (1.0 - 10.0) - Absolute max multiplier for Anchor
+
+  - solver_goal_boost_floor: 0.05 (0.0 - 1.0) - Absolute min multiplier for final
+  RDI_target
+
+  - solver_additive_priority_scale: 0.5 (0.0 - 5.0) - BucketWeight additive coefficient
+
+  - solver_swap_depth: 3 (0 - 5) - Max recursion depth for Global Swap
+
+  - reversal_max_passes: 3 (1 - 10) - Max passes before chain-breaker fires
+
+  - efficiency_floor_default: 0.1 (0.0 - 0.9) - Min roundedServing for non-pinned
+
+  - inventory_mode_max_products: 10 (1 - 50) - New recommendations cap (Inventory)
+
+  - db_mode_product_limit: 6 (1 - 20) - New recommendations cap (Database)
+
+  - db_mode_candidate_pool: 30 (5 - 100) - Top-N candidates in DB Mode
+
+  - reg_pin_score_floor: 0.3 (0.0 - 1.0) - Min utility score for Regular Pins
+
+  - measurement_step_default: deduced from form
+
+  - significant_change_pct: 10 (1 - 100) - Body metric change threshold'
 status: triage
 priority: medium
 kind: task
@@ -14,4 +56,4 @@ valid_from: '2026-06-07T22:49:19.602179Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:19.602179Z'
-updated_at: '2026-06-07T22:49:19.602179Z'
+updated_at: '2026-06-07T22:58:51.944792Z'

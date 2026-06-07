@@ -1,8 +1,56 @@
 id: WI-29c1-036
 title: Error Handling & Resilience
-description: HTMX recovery, Garmin sidecar failures, solver blocked states. Circuit
-  breaker for sidecar (trip after 5 failures in 60s, open for 30s). Dashboard initialization
-  safety. Request-specific timeouts.
+description: '# Error Handling & Resilience
+
+
+  Failure modes and recovery strategies for the Go server, HTMX frontend, and Garmin
+  sidecar.
+
+
+  ## HTMX Error Defence
+
+  Backend: All HTMX endpoints wrapped in recovery middleware. Returns 200 OK with
+  error_fragment.html on failure (not 5xx). Fragment displays localized message with
+  Retry button.
+
+  Frontend: Global htmx:responseError listener catches network-level failures. Triggers
+  global Toast notification.
+
+
+  ## Dashboard Initialisation - First Launch
+
+  - health_profiles empty: Dashboard cards render in Initial State (blurred placeholders)
+
+  - user_inventory empty: Setup Required banner with CTAs
+
+  - weight_kg = 0: Solver access blocked - redirected to data sync / manual entry
+
+
+  ## Garmin Sidecar Failure Modes
+
+  - Sidecar crash: Auto-restart with exponential backoff, max 3 attempts
+
+  - All 3 restarts fail: Garmin sync unavailable warning in Web UI
+
+  - Sidecar request timeout: Go returns cached data or graceful degradation
+
+
+  ## Circuit Breaker (Sidecar)
+
+  Trip after 5 failures in 60s window. Open for 30s. Auto-terminate and restart sidecar
+  process upon trip.
+
+  Requests: Auth (30s/0 retry), Sync GET (5s/3 retry with backoff), Sync POST (5s/1
+  retry).
+
+
+  ## Go Backend Resilience
+
+  - Panic recovery middleware on all routes
+
+  - SQLite WAL mode + busy_timeout for concurrent access
+
+  - Graceful shutdown on SIGTERM/SIGINT'
 status: triage
 priority: high
 kind: task
@@ -15,4 +63,4 @@ valid_from: '2026-06-07T22:49:07.414981Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:49:07.414981Z'
-updated_at: '2026-06-07T22:49:07.414981Z'
+updated_at: '2026-06-07T22:58:49.536783Z'
