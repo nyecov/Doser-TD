@@ -1,8 +1,59 @@
 id: WI-29c1-019
 title: Shortfall Re-run - Gap Filling
-description: Gap-filling after a reversal. After a reversal reduces RDI for certain
-  ingredients, the solver re-runs to fill the newly freed headroom with alternative
-  products.
+description: '# Shortfall Re-run
+
+
+  Triggered after Reversal Mechanic reduces a serving, leaving an unfilled RDI gap.
+  The solver re-runs Phase 4&5 to close the gap from a specialised candidate pool.
+
+
+  ## Candidate Pool
+
+  - Unallocated products: Not yet placed; MUST NOT be a Regular Pin
+
+  - Already-placed with headroom: placement_count < max_servings_per_day; MUST NOT
+  be a Regular Pin
+
+  - Medical Pins: Never - fixed facts
+
+  - Regular Pins: Never - excluded to prevent overshoot
+
+
+  ## Sort Order (fresh re-sort)
+
+  1. Primary - gap-specific: min(amount_per_serving, gap_size) / gap_size, capped
+  at 1.0
+
+  2. Secondary - Phase 3 utility score (accepted as stale)
+
+  3. Tertiary - lower ProductID (deterministic)
+
+
+  ## Pre-Screening
+
+  1. Antagonism Check: Simulate whether candidate would introduce unresolvable antagonisms.
+  If so, add to ShortfallExclusions.
+
+  2. Loop-Breaker: Exclude any product reduced/dropped by Reversal in current bucket
+  during current pass.
+
+
+  ## Precision Calculation
+
+  When a multi-ingredient product fills a shortfall for Ingredient A:
+
+  - Target Ingredient: Must stay within ctx.Remaining (no overshoot)
+
+  - Non-Target Ingredients: Restriction goal -> Hard Ceiling. Unrestricted -> Soft
+  Ceiling (min(120% RDI, 80% MaxDailyLimit))
+
+  - Absolute Hard Cap: MaxDailyLimit never exceeded
+
+
+  ## Saturated Budget Safety
+
+  Shortfall Re-run only triggers for ingredients where ctx.Remaining[ing] > precision_threshold.
+  If Reversal zeroed the budget, shortfall is Closed (Saturated).'
 status: triage
 priority: high
 kind: task
@@ -17,4 +68,4 @@ valid_from: '2026-06-07T22:47:45.050402Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:45.050402Z'
-updated_at: '2026-06-07T22:47:45.050402Z'
+updated_at: '2026-06-07T22:57:49.698552Z'

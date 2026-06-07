@@ -1,8 +1,71 @@
 id: WI-29c1-020
 title: Global Swap - Bucket Reassignment
-description: Look-ahead bucket reassignment. When product placement in one bucket
-  causes issues, the solver evaluates moving it to a different bucket using displacement
-  chain logic with commit/rollback/cycle resolution.
+description: '# Global Swap
+
+
+  Look-ahead optimization in Phase 4-5 - Transactional Allocation. When Product B
+  is blocked from its preferred bucket by a higher-utility Product A, the solver attempts
+  to move Product A elsewhere to free the slot.
+
+
+  ## Trigger
+
+  Product B (Utility Score U_B) desires Bucket K.
+
+  - Capacity Failure (Gate 4): Bucket K is full -> find displacement victim (lowest
+  utility).
+
+  - Constraint Failure (Gate 1 or 2): Product B blocked by Antagonism -> target specific
+  antagonist.
+
+  - Resolution Priority: Capacity (Gate 4) -> Antagonism (Gate 2) -> Separation (Gate
+  1).
+
+  - Priority Guard: Only attempted if UtilityScore(Product B) > UtilityScore(Victim).
+
+
+  ## Displacement Victim Selection
+
+  1. Immovability Filter: Medical Pins and Regular Pins are strictly ineligible.
+
+  2. Victim Heuristic: Lowest UtilityScore -> Lowest BucketWeight -> Lowest ProductID.
+
+  3. Utility Guard: Only swap if U_B > U_Victim.
+
+
+  ## Relocation (DFS Backtracking)
+
+  1. Try to move Victim A to an alternative valid bucket.
+
+  2. Medical Pin Guard: If blocking product is a Medical Pin, swap fails instantly.
+
+  3. Internal Reversal: Tentative move may trigger Reversal Mechanic in alternative
+  bucket.
+
+  4. DFS Backtracking: Try all fallback buckets recursively up to solver_swap_depth.
+
+  5. If valid swap chain found -> place Product B in freed slot.
+
+
+  ## Primary Ingredient Definition
+
+  Static Override (products.primary_ingredient_id) -> Dynamic Contribution (highest
+  Amount/RDI_Target) -> Safety Tie-Breaker (highest MaxDailyLimit).
+
+
+  ## Commit / Rollback
+
+  - Successful chain: Commit all ctx.Remaining, BucketRawTotals changes; log relocation.
+
+  - Partial chain: Rollback all tentative moves; restore pre-swap state.
+
+  - No valid chain: SchedulingConflict raised.
+
+
+  ## Loop Detection
+
+  If swap creates a cycle (A displaces B displaces A), treat as Partial Chain and
+  rollback.'
 status: triage
 priority: high
 kind: task
@@ -17,4 +80,4 @@ valid_from: '2026-06-07T22:47:45.891756Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:45.891756Z'
-updated_at: '2026-06-07T22:47:45.891756Z'
+updated_at: '2026-06-07T22:57:49.702552Z'

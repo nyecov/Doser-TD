@@ -1,8 +1,53 @@
 id: WI-29c1-029
 title: Inventory Mode - User's Owned Products
-description: Inventory Mode uses user's owned products only. Trimming to inventory_mode_max_products
-  (default 10) using deterministic cascade. Ghost Dose Prevention, Empty Inventory
-  Guard, Pin Sovereignty.
+description: '# Inventory Mode
+
+
+  The solver runs against products the user actually owns (user_inventory table).
+  Standard Phase 0-6 execution.
+
+
+  ## Candidate Pool
+
+  Only products in user_inventory. Full product catalogue (allProducts) passed separately
+  for Medical Pin ingredient resolution.
+
+
+  ## Output Cap
+
+  After Phase 5, trimmed to inventory_mode_max_products new recommendations (default:
+  10). Medical Pins and Regular Pins are pre-loaded and do not count against this
+  limit.
+
+
+  ## When to Use
+
+  Default mode for daily use. User knows exactly which products they have. Solver
+  optimizes over a constrained, real-world set.
+
+
+  ## Empty Inventory Guard
+
+  If Inventory Mode is active and user_inventory is empty: halt immediately, emit
+  EmptyInventoryConflict. UI shows "No products found" alert.
+
+
+  ## Pin Sovereignty
+
+  Medical Pins and Regular Pins bypass the Inventory Mode constraint. If a user pins
+  a product not in inventory, the solver MUST still attempt to place it with inventory_status
+  = ''pin_forced''.
+
+
+  ## Trimming Strategy
+
+  Sort candidates by UtilityScore DESC, CostPerServing ASC, ProductID ASC. Take top
+  inventory_mode_max_products.
+
+
+  ## Ghost Dose Prevention
+
+  Products with on_hand < measurement_step must be excluded (cannot physically dose).'
 status: triage
 priority: high
 kind: task
@@ -16,4 +61,4 @@ valid_from: '2026-06-07T22:47:58.523085Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:58.523085Z'
-updated_at: '2026-06-07T22:47:58.523085Z'
+updated_at: '2026-06-07T22:58:21.677735Z'

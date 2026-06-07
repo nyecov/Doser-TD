@@ -1,8 +1,57 @@
 id: WI-29c1-023
 title: Web UI - HTMX Dashboard
-description: HTMX-based web dashboard for Doser V3. Real-time UI using Server-Sent
-  Events (SSE) and Go Templates. Responsive, mobile-friendly design with plan generation,
-  inventory management, and system monitoring.
+description: '# Web UI
+
+
+  HTMX-based web dashboard for Doser V3. Real-time UI using Server-Sent Events (SSE)
+  and Go Templates. Responsive, mobile-friendly design.
+
+
+  ## Dashboard Features
+
+  - Plan generation with real-time progress via SSE
+
+  - Product inventory management
+
+  - Garmin credentials & sync status
+
+  - Bucket & plan configuration
+
+  - Solver explanation viewer (Open Box reasoning log)
+
+  - Medical pin management
+
+  - Goal & tag configuration
+
+  - System health monitoring
+
+
+  ## Architecture
+
+  Go html/template rendering + HTMX hx-* attributes for dynamic updates. No JavaScript
+  framework - HTMX handles all AJAX/interactivity. SSE for long-running operations
+  (plan generation).
+
+
+  ## Key HTMX Endpoints
+
+  - POST /generate-plan - Trigger plan generation (SSE progress stream)
+
+  - GET /dashboard - Main dashboard view
+
+  - GET /inventory - Inventory management
+
+  - GET /garmin - Garmin sync status & credentials
+
+  - GET /settings - User settings & goals
+
+  - GET /plans - Plan management
+
+
+  ## UI Design
+
+  Components use data-testid attributes for Playwright testing. Form validation on
+  client and server side. Error handling via HTMX error fragments with toast notifications.'
 status: triage
 priority: high
 kind: task
@@ -16,4 +65,4 @@ valid_from: '2026-06-07T22:47:50.423283Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:50.423283Z'
-updated_at: '2026-06-07T22:47:50.423283Z'
+updated_at: '2026-06-07T22:58:03.934465Z'

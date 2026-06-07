@@ -1,7 +1,47 @@
 id: WI-29c1-027
 title: BucketWeight - Bucket Priority Weighting
-description: BucketWeight defines relative importance weighting for time buckets.
-  Used in utility scoring to prioritize allocation to higher-weight buckets.
+description: '# BucketWeight
+
+
+  A score used in Step 2 of the preferred bucket derivation (Phase 4-5 - Transactional
+  Allocation). Attracts a product to the bucket where its goal-relevant ingredients
+  will be most effective.
+
+
+  ## Formula
+
+  BucketWeight[bucket] = Sum(PreferenceWeight_ing x GoalBoost_ing) + Sum_additive(PreferenceWeight_ing
+  x AdditivePriority_ing / MaxPriority x AdditiveScale)
+
+
+  - PreferenceWeight_ing: Base attraction weight from ingredient_bucket_preferences
+
+  - GoalBoost_ing: User''s net aggregated GoalBoost for the ingredient (default 1.0)
+
+  - AdditivePriority_ing: Highest priority among additive-intent goals (multiplier
+  == 1.0, priority >= 1)
+
+  - MaxPriority: 5 (ceiling of priority scale)
+
+  - AdditiveScale: user_settings.solver_additive_priority_scale (default 0.5)
+
+
+  The bucket with the highest BucketWeight wins. On tie -> proceed to synergy score
+  step.
+
+
+  ## Hierarchy vs. User Preference
+
+  User''s explicit preferred_bucket_id acts as a strictly higher priority tier than
+  any goal-derived BucketWeight. User preference ALWAYS wins spatial ties against
+  biological goals.
+
+
+  ## Why Scale Instead of Repel?
+
+  Restriction goals previously contributed negative weight (repulsion). Now they scale
+  the positive weight down, so the product still gravitates to its optimal bucket
+  but with appropriately reduced urgency.'
 status: triage
 priority: high
 kind: task
@@ -15,4 +55,4 @@ valid_from: '2026-06-07T22:47:56.689247Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:56.689247Z'
-updated_at: '2026-06-07T22:47:56.689247Z'
+updated_at: '2026-06-07T22:58:17.425318Z'

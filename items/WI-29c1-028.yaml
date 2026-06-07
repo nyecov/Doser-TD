@@ -1,9 +1,50 @@
 id: WI-29c1-028
 title: Database Mode - Full Catalogue Solver Mode
-description: 'Database Mode uses the full product catalogue via a two-step process:
-  (1) candidate filtering with CandidateScore = BaseNutritionalFit + GoalFitTerm +
-  TagBonus, (2) standard solver. Deterministic Top-N selection, monopoly exemption,
-  mandatory pin injection.'
+description: '# Database Mode
+
+
+  The solver runs against the full product catalogue. A two-step process: candidate
+  filtering -> standard solver.
+
+
+  ## Step 1 - Candidate Filtering
+
+  Score every product in the full catalogue, take the Top N (default: 30).
+
+
+  ## CandidateScore Formula
+
+  CandidateScore = BaseNutritionalFit + GoalFitTerm + TagBonus
+
+
+  1. BaseNutritionalFit = Sum min(1.0, Amount_i / MaxDailyLimit_i) across all ingredients.
+  Each ingredient capped at 1.0 to prevent Toxic Utility Paradox.
+
+  2. GoalFitTerm = Sum(Amount_i / Anchor_i) x EffectivePriority_i. Positive goal ->
+  EffectivePriority = Priority. Restriction goal -> EffectivePriority = -Priority.
+
+  3. TagBonus = Sum(tag_overlap_count x 0.1). Semantic tags act as secondary nudge.
+
+
+  Efficiency Penalty: if product provides > 400% of Anchor RDI and Viable Alternative
+  exists -> CandidateScore x db_mode_efficiency_penalty (default 0.4).
+
+
+  ## Step 2 - Standard Solver Execution
+
+  Top N candidates + mandatory pins -> Phase 0 through Phase 6 standard execution.
+
+
+  ## Exclusions
+
+  Banned ingredients or ZeroedIngredients -> CandidateScore = -1.0 (unconditional
+  exclusion).
+
+
+  ## Viable Alternative Definition
+
+  A product is viable for Ingredient X if it provides 80-200% of Anchor RDI for X,
+  has no banned/zeroed ingredients, and DangerRating < 3.'
 status: triage
 priority: high
 kind: task
@@ -17,4 +58,4 @@ valid_from: '2026-06-07T22:47:57.711329Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:57.711329Z'
-updated_at: '2026-06-07T22:47:57.711329Z'
+updated_at: '2026-06-07T22:58:19.740430Z'

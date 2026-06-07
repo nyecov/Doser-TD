@@ -1,8 +1,52 @@
 id: WI-29c1-022
 title: Garmin Sync - Metric Synchronization
-description: Dynamic plan synchronization with Garmin Cloud. Fetches user health metrics
-  and synchronizes them with the local database. Handles scale metric override and
-  stale decay enforcement.
+description: '# Garmin Sync
+
+
+  The mechanism by which body metrics flow from Garmin devices into the solver. Drives
+  dynamic RDI recalculation.
+
+
+  ## Sync Sources & Staleness Rules
+
+  - Scale (garmin_scale): Stale >= 7 days, Blocked >= 31 days
+
+  - Manual entry (manual): Stale >= 7 days, Blocked >= 31 days
+
+  - Watch (garmin_watch): Stale >= 3 days, Blocked >= 7 days
+
+
+  Watch-derived estimates have tighter block window due to lower reliability.
+
+
+  ## Source Reliability & Tie-Breaking
+
+  Highest Rank Wins for daily body metrics:
+
+  - Rank 1: Manual (user correction) - Always authoritative
+
+  - Rank 2: Index Scale (verified hardware measurement)
+
+  - Rank 3: Watch (sensor estimates - lower confidence)
+
+  - Rank 4: Other (unverified 3rd-party)
+
+
+  Conflict Resolution: New sync only overwrites if incoming source has lower numerical
+  rank (higher priority). If ranks equal, most recent within that rank wins.
+
+
+  ## What Triggers a Recalculation
+
+  - New Garmin data synced (Scale, Watch, or Manual)
+
+  - Body metric change > significant_change_pct (default 10%)
+
+
+  ## Scale Metrics Override Watch Metrics
+
+  Scale data always overrides Watch data for the same metric. Stale decay: 31d for
+  scale/manual, 7d for watch.'
 status: triage
 priority: high
 kind: task
@@ -16,4 +60,4 @@ valid_from: '2026-06-07T22:47:50.324295Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:50.324295Z'
-updated_at: '2026-06-07T22:47:50.324295Z'
+updated_at: '2026-06-07T22:58:01.346949Z'

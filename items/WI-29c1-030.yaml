@@ -1,8 +1,49 @@
 id: WI-29c1-030
 title: Resolution Hierarchy - Sovereignty Ordering
-description: 'Full sovereignty ordering for solver decisions: Medical Pin (immovable)
-  > Regular Pin (sovereign with limits) > Solver Recommendation (flexible). Resolution
-  hierarchy defines conflict resolution precedence.'
+description: '# Resolution Hierarchy
+
+
+  The full sovereignty ordering from highest to lowest priority. Determines which
+  layer wins when rules conflict.
+
+
+  ## Hierarchy Table
+
+  | Priority | Layer | Behaviour |
+
+  |---|---|---|
+
+  | 1 (absolute) | Medical Pin | Immovable. Drug-drug interaction -> warning only.
+  Cannot be displaced, reduced, or blocked. |
+
+  | 2 | Regular Pin | Included with mandatory clash warnings on Tag/Constraint violations.
+  Score floor applied. |
+
+  | 3 | Medical Tags (eff. priority 11-15) | is_medical = TRUE - constraint rules
+  applied to solver. Mirrored across all plans. |
+
+  | 4 | Non-medical Tags (eff. priority 1-5) | Constraint rules applied to solver.
+  |
+
+  | 5 | Goals (priority 1-5) | RDI multipliers applied. |
+
+  | 6 | Solver optimisation | Greedy utility scoring and scheduling. |
+
+
+  ## Tag Priority Calculation
+
+  effective_priority = priority + (is_medical ? 10 : 0) -> range 1-15.
+
+
+  ## Tag Conflict Tie-Breaking Cascade
+
+  1. Higher effective_priority wins
+
+  2. Medical class wins (if tied)
+
+  3. Most restrictive rule wins (lowest absolute numerical target)
+
+  4. Deterministic fallback: lower tag_id ASC'
 status: triage
 priority: high
 kind: task
@@ -15,4 +56,4 @@ valid_from: '2026-06-07T22:47:59.416735Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:59.416735Z'
-updated_at: '2026-06-07T22:47:59.416735Z'
+updated_at: '2026-06-07T22:58:23.272827Z'

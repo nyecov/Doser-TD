@@ -1,8 +1,68 @@
 id: WI-29c1-024
 title: Database Schema - SQLite V3
-description: 'SQLite V3 database schema. Tables: products, product_ingredients, ingredients,
-  user_inventory, user_settings, medical_pin_schedule, product_serving_schedule, time_buckets,
-  weekly_schedule, plans, plan_dosing_recommendations, garmin_metrics, interaction.'
+description: '# Database Schema
+
+
+  SQLite V3 schema. Relational, normalized - replaces V2''s JSON-in-TEXT fields.
+
+
+  ## Core Tables
+
+  - users: id, name (single default row in V3)
+
+  - health_profiles: user_id, weight, lean_mass, body_fat_pct, muscle_mass, bone_mass,
+  water_pct, bmi, source, reliability_rank, updated_at
+
+  - health_summaries: user_id, date, sleep_score, stress_avg, body_battery_max, rhr,
+  hrv_avg, spo2_avg, respiration_avg, fitness_age, systolic, diastolic, updated_at
+
+  - user_settings: user_id, key, value (key-value solver config)
+
+  - plans: id, user_id, name, version INTEGER DEFAULT 1
+
+  - weekly_schedules: user_id, day_of_week, plan_id (0-6 Sunday-Saturday)
+
+  - plan_overrides: user_id, date, plan_id (UNIQUE per date)
+
+
+  ## Product & Ingredient Tables
+
+  - products: id, brand_name, product_name, category, form, measurement_step, is_archived,
+  primary_ingredient_id, serving_size, serving_unit, servings_per_package, cost_per_serving
+
+  - ingredients: id, name, base_rdi_per_kg, max_daily_limit, unit, danger_rating,
+  is_banned
+
+  - product_ingredients: product_id, ingredient_id, amount_per_serving, unit
+
+
+  ## Plan-Scoped Tables
+
+  - user_goals: plan_id, ingredient_id, multiplier, priority
+
+  - user_tags: plan_id, tag_id, is_medical, priority
+
+  - user_inventory: plan_id, product_id, on_hand, measurement_step, preferred_bucket_id
+
+  - medical_pin_schedule: plan_id, product_id, bucket_id, serving_amount, serving_unit,
+  is_active
+
+  - time_buckets: plan_id, bucket_id, name, time, max_products
+
+  - planned_doses: plan_id, date, product_id, bucket_id, serving_amount, unit
+
+  - product_serving_schedule: plan_id, product_id, bucket_id, serving_size
+
+  - goal_adjustments: plan_id, ingredient_id, adjustment_type, value
+
+
+  ## Plan Resolution Hierarchy
+
+  1. plan_overrides (date-specific user intent)
+
+  2. weekly_schedules (default routine)
+
+  3. plans (fallback - first available plan)'
 status: triage
 priority: high
 kind: task
@@ -16,4 +76,4 @@ valid_from: '2026-06-07T22:47:50.522292Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:50.522292Z'
-updated_at: '2026-06-07T22:47:50.522292Z'
+updated_at: '2026-06-07T22:58:07.405726Z'

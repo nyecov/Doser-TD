@@ -1,8 +1,50 @@
 id: WI-29c1-021
 title: Garmin Sidecar - Python API Service
-description: FastAPI Python sidecar that runs alongside the Go backend. Handles Garmin
-  authentication, metric fetching, and credential management via Windows Credential
-  Manager.
+description: '# Garmin Sidecar
+
+
+  A persistent FastAPI Python process that handles Garmin authentication and data
+  sync. Uses the garminconnect library (mobile SSO) for reliable authentication.
+
+
+  ## Why a Sidecar?
+
+  V2 spawned a Python process per sync (expensive, environment-sensitive, session
+  lost on restart). V3 runs Python as a long-lived supervised service communicating
+  over localhost.
+
+
+  ## Authentication Library
+
+  Uses garminconnect v0.3.4 (python-garminconnect) with mobile SSO login. Has built-in
+  MFA/2FA support via prompt_mfa callback. Auto-refreshes DI OAuth tokens indefinitely.
+
+
+  ## Architecture
+
+  Go binary --Simple REST JSON--> FastAPI sidecar (localhost:8081) -> garminconnect
+  API (mobile SSO) -> .garmin_tokens/
+
+
+  ## Authentication Flow
+
+  - First-time auth: POST /auth/refresh/{user_id} -> if MFA required, POST /auth/mfa
+  -> POST /auth/refresh/{user_id} again
+
+  - Subsequent runs: Load stored session tokens from .garmin_tokens/ directory
+
+
+  ## Endpoints
+
+  - GET /sync/{user_id} - Main sync endpoint
+
+  - GET /health - Health check
+
+  - POST /auth/refresh/{user_id} - Refresh/login
+
+  - POST /auth/mfa - Submit MFA code
+
+  - GET /activities/{user_id} - Fetch activity data'
 status: triage
 priority: high
 kind: task
@@ -16,4 +58,4 @@ valid_from: '2026-06-07T22:47:46.783920Z'
 comments: []
 metadata: {}
 created_at: '2026-06-07T22:47:46.783920Z'
-updated_at: '2026-06-07T22:47:46.783920Z'
+updated_at: '2026-06-07T22:57:59.255042Z'
