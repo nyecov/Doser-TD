@@ -3,7 +3,7 @@ title: Resolve FastAPI and Starlette dependency conflict
 description: Select compatible FastAPI and Starlette versions in the isolated project
   environment, make pip check pass, and verify Trapdoor MCP startup and semantic integrations
   remain operational.
-status: in_review
+status: done
 priority: medium
 kind: bug
 labels:
@@ -25,9 +25,14 @@ comments:
     Starlette through MCP only, omit FastAPI, and pip check passes, eliminating the
     global FastAPI/Starlette conflict.
   timestamp: '2026-06-08T17:20:02.469498Z'
+- author: agent
+  text: Isolated Trapdoor environments omit unrelated FastAPI and resolve MCP/Starlette
+    cleanly; pip check passes.
+  timestamp: '2026-06-08T17:31:48.618840Z'
 metadata:
   observed_fastapi: 0.110.0
   observed_starlette: 1.2.1
   pip_check_target: clean
 created_at: '2026-06-08T16:46:38.743032Z'
-updated_at: '2026-06-08T17:20:02.469498Z'
+updated_at: '2026-06-08T17:31:48.618840Z'
+resolved_at: '2026-06-08T17:31:48.618840Z'

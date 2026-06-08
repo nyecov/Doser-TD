@@ -488,7 +488,7 @@
   {
     "id": "WI-29c1-082",
     "kind": "bug",
-    "status": "in_review",
+    "status": "done",
     "title": "Resolve FastAPI and Starlette dependency conflict"
   }
 ]
