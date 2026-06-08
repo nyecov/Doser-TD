@@ -1,0 +1,30 @@
+id: TCE-29c1-002
+test_design_id: TCD-29c1-001
+phase: red
+executed_by: codex
+framework: pytest
+environment: Windows, Python 3.12
+result: fail
+started_at: '2026-06-08T15:46:38.191369Z'
+completed_at: '2026-06-08T15:46:38.191369Z'
+duration_ms: 1500
+step_results:
+- order: 1
+  result: fail
+  duration_ms: 0
+  error: trapdoor report command is not registered
+- order: 2
+  result: fail
+  duration_ms: 0
+  error: redaction/report generation is not implemented
+- order: 3
+  result: fail
+  duration_ms: 0
+  error: reporter and maintainer skill workflows are absent
+- order: 4
+  result: pass
+  duration_ms: 0
+artifacts:
+- type: command
+  path: python -m pytest tests\test_issue_report.py -q
+bug_ids: []

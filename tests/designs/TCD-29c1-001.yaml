@@ -1,0 +1,93 @@
+id: TCD-29c1-001
+title: Third-party user generates and submits a sanitized issue report
+level: feature
+format: gherkin
+gherkin: "Feature: Third-party issue reporting\n  Scenario: Generate a safe report\
+  \ without an initialized project\n    Given trapdoor-mcp is installed outside a\
+  \ Trapdoor project\n    When the user runs trapdoor report with problem details\n\
+  \    Then Markdown and JSON report files are generated\n    And the JSON uses schema\
+  \ trapdoor.issue_report.v1\n    And a public support issue URL is printed\n\n  Scenario:\
+  \ Redact sensitive diagnostic content\n    Given optional diagnostic text contains\
+  \ credentials and a private Git remote\n    When the user generates an issue report\
+  \ including that text\n    Then credential values and private remote details are\
+  \ replaced with redaction markers\n    And the generated public report does not\
+  \ contain the original sensitive values\n\n  Scenario: Guide an AI agent through\
+  \ report submission\n    Given a third-party AI agent has the packaged Trapdoor\
+  \ skill\n    When the user asks it to report a Trapdoor problem\n    Then the skill\
+  \ identifies the public support destination\n    And it gathers reproduction, expected,\
+  \ actual, and error details\n    And it requires the user to review the report before\
+  \ submission\n\n  Scenario: Import remains a maintainer responsibility\n    Given\
+  \ a report exists in the public support repository\n    When a maintainer agent\
+  \ processes the issue\n    Then it uses GitHub tooling to read the issue\n    And\
+  \ it uses existing Trapdoor MCP item tools to create or update the private ticket\n\
+  \    And Trapdoor MCP exposes no GitHub issue polling tool"
+steps:
+- order: 1
+  keyword: Given
+  text: trapdoor-mcp is installed outside a Trapdoor project
+- order: 2
+  keyword: When
+  text: the user runs trapdoor report with problem details
+- order: 3
+  keyword: Then
+  text: Markdown and JSON report files are generated
+- order: 4
+  keyword: And
+  text: the JSON uses schema trapdoor.issue_report.v1
+- order: 5
+  keyword: And
+  text: a public support issue URL is printed
+- order: 6
+  keyword: Given
+  text: optional diagnostic text contains credentials and a private Git remote
+- order: 7
+  keyword: When
+  text: the user generates an issue report including that text
+- order: 8
+  keyword: Then
+  text: credential values and private remote details are replaced with redaction markers
+- order: 9
+  keyword: And
+  text: the generated public report does not contain the original sensitive values
+- order: 10
+  keyword: Given
+  text: a third-party AI agent has the packaged Trapdoor skill
+- order: 11
+  keyword: When
+  text: the user asks it to report a Trapdoor problem
+- order: 12
+  keyword: Then
+  text: the skill identifies the public support destination
+- order: 13
+  keyword: And
+  text: it gathers reproduction, expected, actual, and error details
+- order: 14
+  keyword: And
+  text: it requires the user to review the report before submission
+- order: 15
+  keyword: Given
+  text: a report exists in the public support repository
+- order: 16
+  keyword: When
+  text: a maintainer agent processes the issue
+- order: 17
+  keyword: Then
+  text: it uses GitHub tooling to read the issue
+- order: 18
+  keyword: And
+  text: it uses existing Trapdoor MCP item tools to create or update the private ticket
+- order: 19
+  keyword: And
+  text: Trapdoor MCP exposes no GitHub issue polling tool
+preconditions: trapdoor-mcp is installed from PyPI; the user may or may not be inside
+  a project containing .trapdoor
+item_id: WI-29c1-076
+priority: high
+tags:
+- cli
+- external-support
+- privacy
+status: passing
+flaky: false
+created_at: '2026-06-08T15:45:14.216937Z'
+updated_at: '2026-06-08T15:59:50.799786Z'

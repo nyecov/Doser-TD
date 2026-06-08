@@ -14,12 +14,24 @@ labels:
 - documentation
 - agent-skill
 - external-support
+assignee: codex
 relates: []
 collaborators: []
 valid_from: '2026-06-08T15:41:17.566263Z'
-comments: []
+comments:
+- author: agent
+  text: '[Red checkpoint] Added tests/test_issue_report.py and observed 8 expected
+    failures with `python -m pytest tests\test_issue_report.py -q`. No production
+    files changed.'
+  timestamp: '2026-06-08T15:46:28.243107Z'
 metadata:
   source: user_request
   report_schema_target: trapdoor.issue_report.v1
+  phase: red
+  ac_coverage: 0/4
+  done_ready: false
+  last_updated: '2026-06-08'
+  checkpoint_notes: 'Red suite added and observed: 8 expected failures across CLI,
+    privacy, metadata, skill, docs, and support assets.'
 created_at: '2026-06-08T15:41:17.566263Z'
-updated_at: '2026-06-08T15:41:17.566263Z'
+updated_at: '2026-06-08T15:46:28.244107Z'

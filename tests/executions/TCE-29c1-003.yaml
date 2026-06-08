@@ -1,0 +1,33 @@
+id: TCE-29c1-003
+test_design_id: TCD-29c1-001
+phase: green
+executed_by: codex
+framework: pytest
+environment: Windows, Python 3.12, PYTHONPATH=src
+result: pass
+started_at: '2026-06-08T15:59:50.791727Z'
+completed_at: '2026-06-08T15:59:50.791727Z'
+duration_ms: 980
+step_results:
+- order: 1
+  result: pass
+  duration_ms: 0
+- order: 2
+  result: pass
+  duration_ms: 0
+- order: 3
+  result: pass
+  duration_ms: 0
+- order: 4
+  result: pass
+  duration_ms: 0
+artifacts:
+- type: command
+  path: python -m pytest tests\test_issue_report.py -q
+- type: command
+  path: python -m ruff check src tests
+- type: command
+  path: trapdoor report smoke from temp directory
+- type: url
+  path: https://github.com/nyecov/trapdoor-support
+bug_ids: []
