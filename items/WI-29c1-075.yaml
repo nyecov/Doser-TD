@@ -1,0 +1,60 @@
+id: WI-29c1-075
+title: Migrate Backlog Subtasks to TrapDoor
+description: '# Goal
+
+
+  Migrate all records under `sdlc_backlog/backlog/subtasks/` into TrapDoor as typed
+  subtask records while preserving story decomposition and completion history.
+
+
+  # Source Inventory
+
+
+  - 325 Markdown subtask records
+
+
+  # Acceptance Criteria
+
+
+  - Every source subtask maps to exactly one TrapDoor subtask record without duplicates.
+
+  - Subtask lifecycle, priority, scope, implementation notes, dependencies, comments,
+  timestamps, and checkpoint data are preserved.
+
+  - Parent story and related specification, code, test, BUG, and ISSUE relationships
+  are reconstructed using TrapDoor IDs.
+
+  - Source checksum and legacy-ID provenance are retained for every subtask.
+
+  - No orphaned subtask remains after relationship reconstruction.
+
+  - Source and destination counts and parent-child hierarchy pass parity validation
+  before cutover.
+
+  - The legacy folder is retained until the migration epic''s atomic cutover gate
+  passes.'
+status: triage
+priority: high
+kind: story
+labels:
+- trapdoor
+- migration
+- sdlc-backlog
+- subtasks
+- canonical-data
+parent_id: WI-29c1-060
+relates:
+- id: WI-29c1-061
+  relation: relates_to
+- id: WI-29c1-062
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-08T09:29:17.276612Z'
+comments: []
+metadata:
+  source_folder: sdlc_backlog/backlog/subtasks
+  source_markdown_count: 325
+  migration_epic: WI-29c1-060
+  migration_unit: subtasks
+created_at: '2026-06-08T09:29:17.276612Z'
+updated_at: '2026-06-08T09:29:17.276612Z'
