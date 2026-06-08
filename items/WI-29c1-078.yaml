@@ -4,7 +4,7 @@ description: Coordinate the move to Python 3.10+, a reproducible project virtual
   compatible Requests/Chardet/Datasets versions, ChromaDB 1.x with Pydantic 2.11+
   compatibility, and compatible FastAPI/Starlette versions. Done means clean installation,
   pip check success, and pytest passing with warnings treated as errors.
-status: executing
+status: complete
 priority: high
 kind: plan
 labels:
@@ -39,9 +39,14 @@ comments:
     on Python 3.10 and 3.12 with pip check clean, pytest -W error reporting 169 passed,
     and Ruff clean. Pre-commit all-files passed.'
   timestamp: '2026-06-08T17:16:22.718795Z'
+- author: agent
+  text: Implemented and pushed in Red commit 9a6a659c and Green commit 91917228. TCE-29c1-008
+    passed; all four planned child tickets are done.
+  timestamp: '2026-06-08T17:34:25.581537Z'
 metadata:
   target_python: '>=3.10'
   warning_target: 0
   pip_check_target: clean
 created_at: '2026-06-08T16:43:51.469667Z'
-updated_at: '2026-06-08T17:16:22.718795Z'
+updated_at: '2026-06-08T17:34:25.581537Z'
+resolved_at: '2026-06-08T17:34:25.581537Z'

@@ -464,7 +464,7 @@
   {
     "id": "WI-29c1-078",
     "kind": "plan",
-    "status": "executing",
+    "status": "complete",
     "title": "Eliminate dependency warnings and standardize Python environment"
   },
   {
