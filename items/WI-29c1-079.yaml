@@ -3,7 +3,7 @@ title: Standardize Python 3.10+ virtual environment
 description: Raise the supported Python floor to 3.10, provide a reproducible PowerShell
   virtual-environment workflow, and add CI coverage for supported Python versions.
   Validate clean installation, test, build, and release commands.
-status: in_review
+status: done
 priority: high
 kind: story
 labels:
@@ -24,7 +24,12 @@ comments:
   text: Implemented Python >=3.10 metadata, Ruff py310 target, .venv gitignore, Setup-DevEnvironment.ps1,
     development docs, and GitHub Actions matrix for 3.10-3.13.
   timestamp: '2026-06-08T17:19:45.353188Z'
+- author: agent
+  text: 'Validated by TCE-29c1-008: Python 3.10 and 3.12 clean environments each passed
+    169 warning-as-error tests, pip check, and Ruff.'
+  timestamp: '2026-06-08T17:25:33.478694Z'
 metadata:
   python_floor: '3.10'
 created_at: '2026-06-08T16:46:24.458043Z'
-updated_at: '2026-06-08T17:19:45.353188Z'
+updated_at: '2026-06-08T17:25:33.478694Z'
+resolved_at: '2026-06-08T17:25:33.478694Z'
