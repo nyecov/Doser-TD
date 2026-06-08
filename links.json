@@ -19277,9 +19277,32 @@
     "children": [],
     "relates": [
       {
+        "id": "WI-29c1-077",
+        "relation": "causes",
+        "confidence": "extracted"
+      },
+      {
         "id": "WI-29c1-060",
         "relation": "relates_to",
         "confidence": "inferred"
+      }
+    ],
+    "tests": [],
+    "referenced_by": [
+      {
+        "id": "WI-29c1-077",
+        "relation": "caused_by",
+        "confidence": "extracted"
+      }
+    ]
+  },
+  "WI-29c1-077": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-076",
+        "relation": "caused_by",
+        "confidence": "extracted"
       }
     ],
     "tests": [],

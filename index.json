@@ -454,5 +454,11 @@
     "kind": "story",
     "status": "done",
     "title": "Add automatic third-party issue report workflow"
+  },
+  {
+    "id": "WI-29c1-077",
+    "kind": "bug",
+    "status": "triage",
+    "title": "Restore clean worktree and deterministic full test suite"
   }
 ]

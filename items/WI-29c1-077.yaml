@@ -1,0 +1,40 @@
+id: WI-29c1-077
+title: Restore clean worktree and deterministic full test suite
+description: 'Resolve four existing full-suite failures: CLI import unmatched-design
+  exit handling, opencode skill installation path expectation, stale package-data
+  assertion, and stale MCP tool count. Replace the environment-dependent ChromaDB
+  skip with deterministic absence simulation. Clean generated Git dirt without reverting
+  user-authored changes.'
+status: triage
+priority: high
+kind: bug
+labels:
+- test-suite
+- cli
+- packaging
+- mcp
+- git-hygiene
+assignee: codex
+relates:
+- id: WI-29c1-076
+  relation: caused_by
+collaborators: []
+valid_from: '2026-06-08T16:15:53.859359Z'
+comments:
+- author: agent
+  text: '[Red checkpoint] Updated stale assertions for opencode skill path, package-data
+    wildcard, MCP tool count, and deterministic ChromaDB absence. Focused Red run:
+    1 failed, 4 passed; remaining failure is CLI import error handling.'
+  timestamp: '2026-06-08T16:17:43.920917Z'
+metadata:
+  source: user_request
+  initial_failures: 4
+  initial_skips: 1
+  phase: red
+  ac_coverage: 4/5
+  done_ready: false
+  last_updated: '2026-06-08'
+  checkpoint_notes: 'Red contract pass leaves one real production failure: trapdoor
+    import unmatched design raises TrapdoorError instead of returning code 2.'
+created_at: '2026-06-08T16:15:53.859359Z'
+updated_at: '2026-06-08T16:17:43.920917Z'
