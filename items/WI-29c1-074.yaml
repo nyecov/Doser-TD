@@ -1,0 +1,64 @@
+id: WI-29c1-074
+title: Migrate Backlog Stories to TrapDoor
+description: '# Goal
+
+
+  Migrate all records under `sdlc_backlog/backlog/stories/` into TrapDoor as typed
+  story records while preserving acceptance criteria, lifecycle, TDD checkpoints,
+  and test traceability.
+
+
+  # Source Inventory
+
+
+  - 171 Markdown story records
+
+
+  # Acceptance Criteria
+
+
+  - Every source story maps to exactly one TrapDoor story record without duplicates.
+
+  - Story lifecycle status, TDD phase, blocker identity, priority, acceptance criteria,
+  citations, comments, timestamps, and checkpoint data are preserved as separate structured
+  fields where supported.
+
+  - Parent epic, child subtask, dependency, specification, test-plan, test-design,
+  execution, BUG, ISSUE, and follow-up links are reconstructed using TrapDoor IDs.
+
+  - Coverage Matrix positions and Passing/Integrated state remain traceable to migrated
+  test records.
+
+  - Source checksum and legacy-ID provenance are retained for every story.
+
+  - Source and destination counts, hierarchy, and testing-state calculations pass
+  parity validation before cutover.
+
+  - The legacy folder is retained until the migration epic''s atomic cutover gate
+  passes.'
+status: triage
+priority: high
+kind: story
+labels:
+- trapdoor
+- migration
+- sdlc-backlog
+- stories
+- canonical-data
+- testing
+parent_id: WI-29c1-060
+relates:
+- id: WI-29c1-061
+  relation: relates_to
+- id: WI-29c1-062
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-08T09:27:10.656814Z'
+comments: []
+metadata:
+  source_folder: sdlc_backlog/backlog/stories
+  source_markdown_count: 171
+  migration_epic: WI-29c1-060
+  migration_unit: stories
+created_at: '2026-06-08T09:27:10.656814Z'
+updated_at: '2026-06-08T09:27:10.656814Z'

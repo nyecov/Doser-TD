@@ -1,0 +1,63 @@
+id: WI-29c1-068
+title: Migrate Backlog Bugs to TrapDoor
+description: '# Goal
+
+
+  Migrate all records under `sdlc_backlog/backlog/bugs/` into TrapDoor as typed bug
+  records while preserving historical resolution data and links.
+
+
+  # Source Inventory
+
+
+  - 10 Markdown records
+
+  - 0 active root records
+
+  - 10 records under the resolved archive
+
+
+  # Acceptance Criteria
+
+
+  - Every source bug maps to exactly one TrapDoor bug record without duplicates.
+
+  - Legacy bug status, priority, problem, root cause, resolution, verification evidence,
+  comments, timestamps, and source path are preserved.
+
+  - Links to affected stories, issues, incidents, tests, and executions are reconstructed
+  using TrapDoor IDs.
+
+  - All migrated records retain source checksum and legacy-ID provenance.
+
+  - Source and destination counts and statuses pass parity validation before cutover.
+
+  - The legacy folder is retained until the migration epic''s atomic cutover gate
+  passes.'
+status: triage
+priority: high
+kind: story
+labels:
+- trapdoor
+- migration
+- sdlc-backlog
+- bugs
+- canonical-data
+parent_id: WI-29c1-060
+relates:
+- id: WI-29c1-061
+  relation: relates_to
+- id: WI-29c1-062
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-08T09:26:43.431585Z'
+comments: []
+metadata:
+  source_folder: sdlc_backlog/backlog/bugs
+  source_markdown_count: 10
+  active_root_count: 0
+  resolved_archive_count: 10
+  migration_epic: WI-29c1-060
+  migration_unit: bugs
+created_at: '2026-06-08T09:26:43.431585Z'
+updated_at: '2026-06-08T09:26:43.431585Z'

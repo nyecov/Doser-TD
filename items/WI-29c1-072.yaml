@@ -1,0 +1,66 @@
+id: WI-29c1-072
+title: Migrate Backlog Issues to TrapDoor
+description: '# Goal
+
+
+  Migrate all records under `sdlc_backlog/backlog/issues/` into TrapDoor as typed
+  issue records while preserving active gating and resolved history.
+
+
+  # Source Inventory
+
+
+  - 30 Markdown records
+
+  - 19 active root records
+
+  - 11 records under the resolved archive
+
+
+  # Acceptance Criteria
+
+
+  - Every source issue maps to exactly one TrapDoor issue record without duplicates.
+
+  - Issue lifecycle, routing, priority, root cause, resolution, blocker identity,
+  comments, timestamps, and source path are preserved.
+
+  - Active and resolved records remain distinguishable through valid TrapDoor lifecycle
+  states.
+
+  - Links to blocked stories, tests, executions, specifications, bugs, and follow-ups
+  are reconstructed using TrapDoor IDs.
+
+  - Source checksum and legacy-ID provenance are retained for every record.
+
+  - BUG/ISSUE gating results match the pre-migration baseline.
+
+  - The legacy folder is retained until the migration epic''s atomic cutover gate
+  passes.'
+status: triage
+priority: high
+kind: story
+labels:
+- trapdoor
+- migration
+- sdlc-backlog
+- issues
+- canonical-data
+parent_id: WI-29c1-060
+relates:
+- id: WI-29c1-061
+  relation: relates_to
+- id: WI-29c1-062
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-08T09:27:01.376365Z'
+comments: []
+metadata:
+  source_folder: sdlc_backlog/backlog/issues
+  source_markdown_count: 30
+  active_root_count: 19
+  resolved_archive_count: 11
+  migration_epic: WI-29c1-060
+  migration_unit: issues
+created_at: '2026-06-08T09:27:01.376365Z'
+updated_at: '2026-06-08T09:27:01.376365Z'

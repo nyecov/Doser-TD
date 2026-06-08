@@ -400,5 +400,47 @@
     "kind": "incident",
     "status": "closed",
     "title": "Stall: Context Saturation and Tooling Misalignment"
+  },
+  {
+    "id": "WI-29c1-068",
+    "kind": "story",
+    "status": "triage",
+    "title": "Migrate Backlog Bugs to TrapDoor"
+  },
+  {
+    "id": "WI-29c1-069",
+    "kind": "story",
+    "status": "triage",
+    "title": "Migrate Backlog Epics to TrapDoor"
+  },
+  {
+    "id": "WI-29c1-070",
+    "kind": "story",
+    "status": "triage",
+    "title": "Migrate Backlog Follow-Ups to TrapDoor"
+  },
+  {
+    "id": "WI-29c1-071",
+    "kind": "story",
+    "status": "triage",
+    "title": "Migrate Backlog Initiatives to TrapDoor"
+  },
+  {
+    "id": "WI-29c1-072",
+    "kind": "story",
+    "status": "triage",
+    "title": "Migrate Backlog Issues to TrapDoor"
+  },
+  {
+    "id": "WI-29c1-073",
+    "kind": "story",
+    "status": "triage",
+    "title": "Migrate Backlog Milestones to TrapDoor"
+  },
+  {
+    "id": "WI-29c1-074",
+    "kind": "story",
+    "status": "triage",
+    "title": "Migrate Backlog Stories to TrapDoor"
   }
 ]
