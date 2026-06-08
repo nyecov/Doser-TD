@@ -4,7 +4,7 @@ description: Remove the GitHub Actions workflow because hosted CI is not require
   Update dependency policy tests and documentation so tools/Setup-DevEnvironment.ps1
   remains the supported validation entry point. Verify local warning-as-error tests,
   pip check, Ruff, and pre-commit remain clean.
-status: backlog
+status: ready
 priority: medium
 kind: task
 labels:
@@ -12,7 +12,6 @@ labels:
 - ci
 - dependencies
 - tooling
-assignee: codex
 relates:
 - id: WI-29c1-078
   relation: relates_to
@@ -25,4 +24,4 @@ comments:
   timestamp: '2026-06-08T17:45:27.870702Z'
 metadata: {}
 created_at: '2026-06-08T17:40:41.557736Z'
-updated_at: '2026-06-08T17:45:27.870702Z'
+updated_at: '2026-06-08T23:57:04.113263Z'

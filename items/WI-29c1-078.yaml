@@ -12,7 +12,6 @@ labels:
 - python
 - environment
 - warnings
-assignee: codex
 relates:
 - id: WI-29c1-077
   relation: relates_to
@@ -48,5 +47,5 @@ metadata:
   warning_target: 0
   pip_check_target: clean
 created_at: '2026-06-08T16:43:51.469667Z'
-updated_at: '2026-06-08T17:34:25.581537Z'
+updated_at: '2026-06-08T23:57:04.119267Z'
 resolved_at: '2026-06-08T17:34:25.581537Z'
