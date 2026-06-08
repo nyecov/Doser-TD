@@ -14,7 +14,6 @@ labels:
 - packaging
 - mcp
 - git-hygiene
-assignee: codex
 relates:
 - id: WI-29c1-076
   relation: caused_by
@@ -61,5 +60,5 @@ metadata:
   checkpoint_notes: Full suite passes 164/164 with zero skips; Ruff passes; generated
     dirt removed; tracked Trapdoor indexes preserved in f19a140.
 created_at: '2026-06-08T16:15:53.859359Z'
-updated_at: '2026-06-08T16:27:49.070494Z'
+updated_at: '2026-06-08T17:17:01.938619Z'
 resolved_at: '2026-06-08T16:27:49.070494Z'

@@ -464,31 +464,31 @@
   {
     "id": "WI-29c1-078",
     "kind": "plan",
-    "status": "planned",
+    "status": "executing",
     "title": "Eliminate dependency warnings and standardize Python environment"
   },
   {
     "id": "WI-29c1-079",
     "kind": "story",
-    "status": "triage",
+    "status": "in_progress",
     "title": "Standardize Python 3.10+ virtual environment"
   },
   {
     "id": "WI-29c1-080",
     "kind": "bug",
-    "status": "triage",
+    "status": "ready",
     "title": "Resolve Requests, Chardet, and Datasets dependency conflict"
   },
   {
     "id": "WI-29c1-081",
     "kind": "bug",
-    "status": "triage",
+    "status": "ready",
     "title": "Upgrade ChromaDB for Pydantic 2.11+ compatibility"
   },
   {
     "id": "WI-29c1-082",
     "kind": "bug",
-    "status": "triage",
+    "status": "ready",
     "title": "Resolve FastAPI and Starlette dependency conflict"
   }
 ]
