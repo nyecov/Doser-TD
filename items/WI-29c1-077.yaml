@@ -5,7 +5,7 @@ description: 'Resolve four existing full-suite failures: CLI import unmatched-de
   assertion, and stale MCP tool count. Replace the environment-dependent ChromaDB
   skip with deterministic absence simulation. Clean generated Git dirt without reverting
   user-authored changes.'
-status: backlog
+status: done
 priority: high
 kind: bug
 labels:
@@ -36,6 +36,20 @@ comments:
   text: Implementation, full validation, and Git cleanup completed; advancing through
     configured workflow for closure.
   timestamp: '2026-06-08T16:24:53.514644Z'
+- author: agent
+  text: Ready for closure; all validation and Git cleanup completed.
+  timestamp: '2026-06-08T16:27:15.085337Z'
+- author: agent
+  text: Moving to active state for final closure.
+  timestamp: '2026-06-08T16:27:24.568977Z'
+- author: agent
+  text: Validation reviewed; linked regression is passing.
+  timestamp: '2026-06-08T16:27:35.971939Z'
+- author: agent
+  text: 'Resolved and pushed: Red 5c56a2a1, Green 1f522330, Trapdoor index commit
+    f19a140. Final validation: 164 passed, 0 failed, 0 skipped; Ruff clean; parent
+    and both submodules clean and aligned with remotes.'
+  timestamp: '2026-06-08T16:27:49.070494Z'
 metadata:
   source: user_request
   initial_failures: 4
@@ -47,4 +61,5 @@ metadata:
   checkpoint_notes: Full suite passes 164/164 with zero skips; Ruff passes; generated
     dirt removed; tracked Trapdoor indexes preserved in f19a140.
 created_at: '2026-06-08T16:15:53.859359Z'
-updated_at: '2026-06-08T16:24:53.514644Z'
+updated_at: '2026-06-08T16:27:49.070494Z'
+resolved_at: '2026-06-08T16:27:49.070494Z'
