@@ -482,7 +482,7 @@
   {
     "id": "WI-29c1-081",
     "kind": "bug",
-    "status": "in_review",
+    "status": "done",
     "title": "Upgrade ChromaDB for Pydantic 2.11+ compatibility"
   },
   {

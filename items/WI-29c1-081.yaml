@@ -4,7 +4,7 @@ description: Move the semantic extra from legacy ChromaDB compatibility to a tes
   ChromaDB 1.x range. Validate index creation, persistence, rebuild, search, duplicate
   detection, model metadata, and migration from existing index state without PydanticDeprecatedSince211
   warnings.
-status: in_review
+status: done
 priority: high
 kind: bug
 labels:
@@ -26,9 +26,14 @@ comments:
     and the warning-free OpenTelemetry 1.40 family. Strict warning-as-error tests
     pass without PydanticDeprecatedSince211 warnings.
   timestamp: '2026-06-08T17:19:56.523194Z'
+- author: agent
+  text: ChromaDB 1.5.9 with Pydantic 2.13.4 and OpenTelemetry 1.40 passes the full
+    warning-as-error suite.
+  timestamp: '2026-06-08T17:29:42.818988Z'
 metadata:
   observed_chromadb: 0.6.3
   target_chromadb: 1.x
   target_warning_count: 0
 created_at: '2026-06-08T16:46:34.132024Z'
-updated_at: '2026-06-08T17:19:56.523194Z'
+updated_at: '2026-06-08T17:29:42.818988Z'
+resolved_at: '2026-06-08T17:29:42.818988Z'
