@@ -14,7 +14,6 @@ labels:
 - documentation
 - agent-skill
 - external-support
-assignee: codex
 relates: []
 collaborators: []
 valid_from: '2026-06-08T15:41:17.566263Z'
@@ -64,5 +63,5 @@ metadata:
     reporter/maintainer skill guidance, and manual docs. Focused suite and Ruff passed;
     full source suite still has 4 unrelated pre-existing failures.
 created_at: '2026-06-08T15:41:17.566263Z'
-updated_at: '2026-06-08T16:03:49.723544Z'
+updated_at: '2026-06-08T17:13:39.990570Z'
 resolved_at: '2026-06-08T16:03:49.723544Z'

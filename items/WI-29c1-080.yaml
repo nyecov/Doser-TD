@@ -1,0 +1,26 @@
+id: WI-29c1-080
+title: Resolve Requests, Chardet, and Datasets dependency conflict
+description: Remove RequestsDependencyWarning and satisfy datasets' Requests requirement
+  using tested dependency constraints appropriate to Trapdoor's development/semantic
+  environment without unnecessarily expanding base runtime dependencies.
+status: triage
+priority: high
+kind: bug
+labels:
+- dependencies
+- requests
+- warnings
+relates:
+- id: WI-29c1-078
+  relation: planned_by
+- id: WI-29c1-077
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-08T16:46:29.116418Z'
+comments: []
+metadata:
+  observed_requests: 2.31.0
+  observed_chardet: 7.4.3
+  target_warning_count: 0
+created_at: '2026-06-08T16:46:29.116418Z'
+updated_at: '2026-06-08T16:46:29.116418Z'

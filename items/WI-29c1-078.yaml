@@ -4,7 +4,7 @@ description: Coordinate the move to Python 3.10+, a reproducible project virtual
   compatible Requests/Chardet/Datasets versions, ChromaDB 1.x with Pydantic 2.11+
   compatibility, and compatible FastAPI/Starlette versions. Done means clean installation,
   pip check success, and pytest passing with warnings treated as errors.
-status: drafting
+status: planned
 priority: high
 kind: plan
 labels:
@@ -12,15 +12,31 @@ labels:
 - python
 - environment
 - warnings
+assignee: codex
 relates:
 - id: WI-29c1-077
   relation: relates_to
+- id: WI-29c1-079
+  relation: plans_for
+- id: WI-29c1-080
+  relation: plans_for
+- id: WI-29c1-081
+  relation: plans_for
+- id: WI-29c1-082
+  relation: plans_for
 collaborators: []
 valid_from: '2026-06-08T16:43:51.469667Z'
-comments: []
+comments:
+- author: agent
+  text: Implementation started with linked environment story and three dependency
+    compatibility bugs.
+  timestamp: '2026-06-08T16:46:51.222802Z'
+- author: agent
+  text: Plan finalized with implementation evidence pending completion.
+  timestamp: '2026-06-08T17:13:39.824084Z'
 metadata:
   target_python: '>=3.10'
   warning_target: 0
   pip_check_target: clean
 created_at: '2026-06-08T16:43:51.469667Z'
-updated_at: '2026-06-08T16:43:51.469667Z'
+updated_at: '2026-06-08T17:13:39.824084Z'
