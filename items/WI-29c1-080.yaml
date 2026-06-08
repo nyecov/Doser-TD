@@ -3,7 +3,7 @@ title: Resolve Requests, Chardet, and Datasets dependency conflict
 description: Remove RequestsDependencyWarning and satisfy datasets' Requests requirement
   using tested dependency constraints appropriate to Trapdoor's development/semantic
   environment without unnecessarily expanding base runtime dependencies.
-status: ready
+status: in_review
 priority: high
 kind: bug
 labels:
@@ -19,9 +19,14 @@ comments:
 - author: agent
   text: Implementation completed; moving through lifecycle for closure.
   timestamp: '2026-06-08T17:15:51.073503Z'
+- author: agent
+  text: Semantic extra now requires requests>=2.34,<3.0. Clean validation environments
+    install Requests 2.34.2 and pip check passes without the Datasets/Requests conflict
+    observed in the global environment.
+  timestamp: '2026-06-08T17:19:51.712478Z'
 metadata:
   observed_requests: 2.31.0
   observed_chardet: 7.4.3
   target_warning_count: 0
 created_at: '2026-06-08T16:46:29.116418Z'
-updated_at: '2026-06-08T17:16:38.318224Z'
+updated_at: '2026-06-08T17:19:51.712478Z'

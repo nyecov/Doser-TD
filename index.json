@@ -470,25 +470,25 @@
   {
     "id": "WI-29c1-079",
     "kind": "story",
-    "status": "in_progress",
+    "status": "in_review",
     "title": "Standardize Python 3.10+ virtual environment"
   },
   {
     "id": "WI-29c1-080",
     "kind": "bug",
-    "status": "ready",
+    "status": "in_review",
     "title": "Resolve Requests, Chardet, and Datasets dependency conflict"
   },
   {
     "id": "WI-29c1-081",
     "kind": "bug",
-    "status": "ready",
+    "status": "in_review",
     "title": "Upgrade ChromaDB for Pydantic 2.11+ compatibility"
   },
   {
     "id": "WI-29c1-082",
     "kind": "bug",
-    "status": "ready",
+    "status": "in_review",
     "title": "Resolve FastAPI and Starlette dependency conflict"
   }
 ]

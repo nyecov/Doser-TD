@@ -1,0 +1,14 @@
+id: TCE-29c1-008
+test_design_id: TCD-29c1-003
+run_id: run-2026-06-08T17-22-40.398332Z
+phase: green
+executed_by: codex
+framework: pytest
+environment: Windows Python 3.10 and 3.12 clean venv
+result: pass
+started_at: '2026-06-08T17:23:01.758196Z'
+completed_at: '2026-06-08T17:23:01.758196Z'
+duration_ms: 292000
+step_results: []
+artifacts: []
+bug_ids: []
