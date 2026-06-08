@@ -173,6 +173,15 @@ comments:
     relation because the plans_for JSON argument is currently rejected by the MCP
     schema adapter.
   timestamp: '2026-06-08T07:12:53.247307Z'
+- author: agent
+  text: 'Obsidian remainder migration completed on 2026-06-08: imported 3 resolved
+    incident reports and 2 resolved stall reports as closed incidents WI-29c1-063
+    through WI-29c1-067. Each record preserves source path, source date, SHA-256 provenance,
+    legacy references, and migration batch metadata. Excluded obsidian/stalls/TEMPLATE.md
+    and six editor/local configuration JSON files as non-record artifacts. The obsidian
+    directory remains in Git until the migration epic''s atomic cutover and full cross-system
+    parity gates pass.'
+  timestamp: '2026-06-08T09:17:04.221167Z'
 metadata: {}
 created_at: '2026-06-08T07:10:23.146156Z'
-updated_at: '2026-06-08T07:12:53.247307Z'
+updated_at: '2026-06-08T09:17:04.221167Z'

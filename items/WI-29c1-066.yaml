@@ -66,5 +66,6 @@ metadata:
   - STORY-ARC-07-53
   migration_epic: WI-29c1-060
   migration_batch: obsidian-remaining-20260608
+  source_sha256: 6267D5913ECDF4FEE6779D1DCA9D6AE55CE17539635A0A1239FC84A0968C52FD
 created_at: '2026-06-08T09:12:14.713310Z'
-updated_at: '2026-06-08T09:13:42.420320Z'
+updated_at: '2026-06-08T09:16:56.492423Z'

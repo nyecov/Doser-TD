@@ -61,5 +61,6 @@ metadata:
   source_session_id: 47da21e0-eaac-451b-9cf1-8a01b7e9db75
   migration_epic: WI-29c1-060
   migration_batch: obsidian-remaining-20260608
+  source_sha256: 236A0C17889E34094EA9C4219B3EA42A7D68905C3F84131338A42650C32F2965
 created_at: '2026-06-08T09:12:09.208305Z'
-updated_at: '2026-06-08T09:13:42.413320Z'
+updated_at: '2026-06-08T09:16:50.440225Z'

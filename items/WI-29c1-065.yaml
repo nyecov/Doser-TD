@@ -71,5 +71,6 @@ metadata:
   legacy_commit: 15dcf0d5
   migration_epic: WI-29c1-060
   migration_batch: obsidian-remaining-20260608
+  source_sha256: E7FD682DAFA3CA5D493A5056ABCEDFF0D480200DC5F1A1881749F0678609210A
 created_at: '2026-06-08T09:12:12.090198Z'
-updated_at: '2026-06-08T09:13:42.416320Z'
+updated_at: '2026-06-08T09:16:53.706573Z'
