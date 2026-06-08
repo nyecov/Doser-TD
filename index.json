@@ -364,5 +364,17 @@
     "kind": "plan",
     "status": "triage",
     "title": "Plan: TrapDoor-Only Project Record Migration"
+  },
+  {
+    "id": "WI-29c1-062",
+    "kind": "story",
+    "status": "triage",
+    "title": "Customize TrapDoor Schema for Doser SDLC Records"
+  },
+  {
+    "id": "WI-29c1-063",
+    "kind": "incident",
+    "status": "detecting",
+    "title": "Agent Hallucinated Internal Tool into PowerShell"
   }
 ]

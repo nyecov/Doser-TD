@@ -1,0 +1,63 @@
+id: WI-29c1-062
+title: Customize TrapDoor Schema for Doser SDLC Records
+description: '# Goal
+
+
+  Define and apply Doser-specific TrapDoor schema customization needed for the TrapDoor-only
+  project record migration.
+
+
+  # Scope
+
+
+  - Model Doser lifecycle vocabularies for stories, bugs, issues, follow-ups, incidents,
+  plans, test designs, and executions.
+
+  - Preserve required governance fields including status, result, phase, blocked-by
+  references, danger ratings, coverage matrix metadata, automation bindings, and evidence
+  links.
+
+  - Define required relationships for parentage, planning, blockers, duplicates, causality,
+  test coverage, execution evidence, and migration parity.
+
+  - Validate that migrated records can be represented without lossy Markdown-only
+  fields.
+
+
+  # Acceptance Criteria
+
+
+  - Doser-specific item kinds and state machines are documented and loadable by TrapDoor.
+
+  - Required fields and validation rules cover the current AGENTS.md status model
+  and testing gates.
+
+  - Relationship schema supports migration epic, plans, backlog hierarchy, tests,
+  executions, incidents, bugs, issues, and follow-ups.
+
+  - A schema validation pass identifies incompatible legacy records before cutover.
+
+  - The migration epic can proceed without relying on legacy Markdown as the canonical
+  schema source.'
+status: triage
+priority: high
+kind: story
+labels:
+- trapdoor
+- migration
+- schema
+- sdlc
+- canonical-data
+parent_id: WI-29c1-060
+relates:
+- id: WI-29c1-061
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-08T08:44:34.676969Z'
+comments: []
+metadata:
+  migration_epic: WI-29c1-060
+  area: schema-customization
+  created_by: codex
+created_at: '2026-06-08T08:44:34.676969Z'
+updated_at: '2026-06-08T08:44:34.676969Z'

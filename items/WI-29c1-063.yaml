@@ -1,0 +1,67 @@
+id: WI-29c1-063
+title: Agent Hallucinated Internal Tool into PowerShell
+description: '# Problem
+
+
+  The AI agent attempted to execute the internal agent tool `grep_search` inside a
+  shell command, causing a PowerShell `CommandNotFoundException` and halting automated
+  search work.
+
+
+  # Symptoms
+
+
+  - `grep_search` was treated as a cmdlet even though it is API-only.
+
+  - Automated search workflow halted.
+
+  - The user reported tool-boundary hallucination.
+
+
+  # Root Cause
+
+
+  The agent conflated API-driven agent tools with host PowerShell commands. The instruction
+  translation table presented `grep_search` as preferred without making the shell/API
+  boundary sufficiently explicit.
+
+
+  # Resolution
+
+
+  1. Created legacy `BUG-02` to track the instruction failure.
+
+  2. Updated CLI instructions to distinguish agent tools from PowerShell commands.
+
+  3. Added a mandatory pre-command tool-boundary check.
+
+
+  # Outcome
+
+
+  The instructions now map internal search to agent API calls and shell fallback to
+  native PowerShell commands.'
+status: detecting
+priority: high
+kind: incident
+labels:
+- migration
+- obsidian
+- incident
+- resolved
+- tooling
+- powershell
+parent_id: WI-29c1-060
+relates: []
+collaborators: []
+valid_from: '2026-05-07T00:00:00Z'
+comments: []
+metadata:
+  source_path: obsidian/incidents/resolved/2026-05-07-agent-tool-shell-hallucination.md
+  source_date: '2026-05-07'
+  legacy_refs:
+  - BUG-02
+  migration_epic: WI-29c1-060
+  migration_batch: obsidian-remaining-20260608
+created_at: '2026-06-08T09:10:04.370684Z'
+updated_at: '2026-06-08T09:10:04.370684Z'
