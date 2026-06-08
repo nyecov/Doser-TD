@@ -1,0 +1,71 @@
+id: TCD-29c1-002
+title: Full suite is deterministic and CLI import errors are handled
+level: feature
+format: gherkin
+gherkin: "Feature: Full suite cleanup\n  Scenario: CLI import reports unmatched test\
+  \ designs without a traceback\n    Given a Playwright report references a missing\
+  \ Trapdoor test design\n    When the user runs trapdoor import for that report\n\
+  \    Then the command exits with code 2\n    And stdout contains test_design_not_found\n\
+  \    And stderr does not contain a Python traceback\n\n  Scenario: Test contracts\
+  \ match current public behavior\n    Given the opencode skill platform is selected\n\
+  \    When the skill is installed\n    Then it is installed under .opencode/skills/trapdoor\n\
+  \n  Scenario: Optional dependency absence coverage is deterministic\n    Given chromadb\
+  \ imports are simulated as unavailable\n    When the ChromaDB collection helper\
+  \ is called\n    Then it returns None without skipping the test\n\n  Scenario: The\
+  \ repository has no generated Git dirt\n    Given tests and reporter smoke checks\
+  \ have run\n    When git status is inspected\n    Then only intentional tracked\
+  \ source changes remain before commit"
+steps:
+- order: 1
+  keyword: Given
+  text: a Playwright report references a missing Trapdoor test design
+- order: 2
+  keyword: When
+  text: the user runs trapdoor import for that report
+- order: 3
+  keyword: Then
+  text: the command exits with code 2
+- order: 4
+  keyword: And
+  text: stdout contains test_design_not_found
+- order: 5
+  keyword: And
+  text: stderr does not contain a Python traceback
+- order: 6
+  keyword: Given
+  text: the opencode skill platform is selected
+- order: 7
+  keyword: When
+  text: the skill is installed
+- order: 8
+  keyword: Then
+  text: it is installed under .opencode/skills/trapdoor
+- order: 9
+  keyword: Given
+  text: chromadb imports are simulated as unavailable
+- order: 10
+  keyword: When
+  text: the ChromaDB collection helper is called
+- order: 11
+  keyword: Then
+  text: it returns None without skipping the test
+- order: 12
+  keyword: Given
+  text: tests and reporter smoke checks have run
+- order: 13
+  keyword: When
+  text: git status is inspected
+- order: 14
+  keyword: Then
+  text: only intentional tracked source changes remain before commit
+preconditions: ''
+item_id: WI-29c1-077
+priority: high
+tags:
+- regression
+- cli
+- test-suite
+status: passing
+flaky: false
+created_at: '2026-06-08T16:20:14.802409Z'
+updated_at: '2026-06-08T16:23:32.198478Z'

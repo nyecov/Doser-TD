@@ -458,7 +458,7 @@
   {
     "id": "WI-29c1-077",
     "kind": "bug",
-    "status": "triage",
+    "status": "backlog",
     "title": "Restore clean worktree and deterministic full test suite"
   }
 ]

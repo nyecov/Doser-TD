@@ -5,7 +5,7 @@ description: 'Resolve four existing full-suite failures: CLI import unmatched-de
   assertion, and stale MCP tool count. Replace the environment-dependent ChromaDB
   skip with deterministic absence simulation. Clean generated Git dirt without reverting
   user-authored changes.'
-status: triage
+status: backlog
 priority: high
 kind: bug
 labels:
@@ -26,15 +26,25 @@ comments:
     wildcard, MCP tool count, and deterministic ChromaDB absence. Focused Red run:
     1 failed, 4 passed; remaining failure is CLI import error handling.'
   timestamp: '2026-06-08T16:17:43.920917Z'
+- author: agent
+  text: '[Green checkpoint] `python -m pytest -q -rs`: 164 passed, 0 failed, 0 skipped.
+    Ruff passes. Added graceful CLI import error handling, deterministic optional-dependency
+    coverage, corrected stale contracts, ignored/removed generated build and semantic
+    artifacts, and preserved tracked index updates in .trapdoor commit f19a140.'
+  timestamp: '2026-06-08T16:23:37.889289Z'
+- author: agent
+  text: Implementation, full validation, and Git cleanup completed; advancing through
+    configured workflow for closure.
+  timestamp: '2026-06-08T16:24:53.514644Z'
 metadata:
   source: user_request
   initial_failures: 4
   initial_skips: 1
-  phase: red
-  ac_coverage: 4/5
-  done_ready: false
+  phase: green
+  ac_coverage: 5/5
+  done_ready: true
   last_updated: '2026-06-08'
-  checkpoint_notes: 'Red contract pass leaves one real production failure: trapdoor
-    import unmatched design raises TrapdoorError instead of returning code 2.'
+  checkpoint_notes: Full suite passes 164/164 with zero skips; Ruff passes; generated
+    dirt removed; tracked Trapdoor indexes preserved in f19a140.
 created_at: '2026-06-08T16:15:53.859359Z'
-updated_at: '2026-06-08T16:17:43.920917Z'
+updated_at: '2026-06-08T16:24:53.514644Z'

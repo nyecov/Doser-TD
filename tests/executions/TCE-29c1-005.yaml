@@ -1,0 +1,31 @@
+id: TCE-29c1-005
+test_design_id: TCD-29c1-002
+phase: green
+executed_by: codex
+framework: pytest
+environment: Windows, Python 3.12, PYTHONPATH=src
+result: pass
+started_at: '2026-06-08T16:23:32.192475Z'
+completed_at: '2026-06-08T16:23:32.192475Z'
+duration_ms: 38750
+step_results:
+- order: 1
+  result: pass
+  duration_ms: 0
+- order: 2
+  result: pass
+  duration_ms: 0
+- order: 3
+  result: pass
+  duration_ms: 0
+- order: 4
+  result: pass
+  duration_ms: 0
+artifacts:
+- type: command
+  path: python -m pytest -q -rs
+- type: command
+  path: python -m ruff check src tests
+- type: git
+  path: .trapdoor commit f19a140
+bug_ids: []
