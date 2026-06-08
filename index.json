@@ -374,7 +374,31 @@
   {
     "id": "WI-29c1-063",
     "kind": "incident",
-    "status": "detecting",
+    "status": "closed",
     "title": "Agent Hallucinated Internal Tool into PowerShell"
+  },
+  {
+    "id": "WI-29c1-064",
+    "kind": "incident",
+    "status": "closed",
+    "title": "Unix Binary Usage on Windows"
+  },
+  {
+    "id": "WI-29c1-065",
+    "kind": "incident",
+    "status": "closed",
+    "title": "Gherkin Audit Pre-Commit Hang"
+  },
+  {
+    "id": "WI-29c1-066",
+    "kind": "incident",
+    "status": "closed",
+    "title": "Stall: ATXR Reporting Gap for ARC-07-52"
+  },
+  {
+    "id": "WI-29c1-067",
+    "kind": "incident",
+    "status": "closed",
+    "title": "Stall: Context Saturation and Tooling Misalignment"
   }
 ]

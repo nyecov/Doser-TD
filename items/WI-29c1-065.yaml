@@ -1,0 +1,75 @@
+id: WI-29c1-065
+title: Gherkin Audit Pre-Commit Hang
+description: '# Problem
+
+
+  `Complete-AgileTurn.ps1` appeared to hang during commits touching Test Designs,
+  feature files, or Gherkin step files.
+
+
+  # Symptoms
+
+
+  - Project validation completed, but the `git commit` hook path timed out.
+
+  - Stale child processes showed `tools/audit_gherkin_steps.py` running under pre-commit.
+
+  - Direct global audits exceeded 180 seconds.
+
+  - Temporary `--no-verify` commits were required to preserve validated Red-phase
+  work.
+
+
+  # Root Cause
+
+
+  The default hook ran a repository-wide advisory scan for narrow changes because
+  `pass_filenames` was disabled. Matching roughly 20,778 usages against 544 definitions
+  caused repeated relaxed-regex work and synchronous commit delays.
+
+
+  # Resolution
+
+
+  1. Added `tools/check_changed_td_gherkin_bindings.py` to scope checks to changed
+  active TD files.
+
+  2. Added exact-path checking through `check_td_paths()`.
+
+  3. Moved the global audit to the manual hook stage.
+
+  4. Added a default changed-TD binding hook.
+
+  5. Added unit tests for the wrapper.
+
+
+  # Outcome
+
+
+  Changed-TD pre-commit validation completes quickly without invoking the global audit.
+  The fix was committed locally as `15dcf0d5`; its remote push was pending in the
+  source report.'
+status: closed
+priority: high
+kind: incident
+labels:
+- migration
+- obsidian
+- incident
+- resolved
+- gherkin
+- pre-commit
+- performance
+parent_id: WI-29c1-060
+relates: []
+collaborators: []
+valid_from: '2026-06-02T00:00:00Z'
+comments: []
+metadata:
+  source_path: obsidian/incidents/resolved/2026-06-02-gherkin-audit-precommit-hang.md
+  source_date: '2026-06-02'
+  legacy_commit: 15dcf0d5
+  migration_epic: WI-29c1-060
+  migration_batch: obsidian-remaining-20260608
+created_at: '2026-06-08T09:12:12.090198Z'
+updated_at: '2026-06-08T09:13:42.416320Z'

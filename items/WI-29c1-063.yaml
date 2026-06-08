@@ -41,7 +41,7 @@ description: '# Problem
 
   The instructions now map internal search to agent API calls and shell fallback to
   native PowerShell commands.'
-status: detecting
+status: closed
 priority: high
 kind: incident
 labels:
@@ -63,5 +63,6 @@ metadata:
   - BUG-02
   migration_epic: WI-29c1-060
   migration_batch: obsidian-remaining-20260608
+  source_sha256: 58DF6B81259153A35CA0CA28B607110E6899B1E0F9CEDE7186565601F77A8877
 created_at: '2026-06-08T09:10:04.370684Z'
-updated_at: '2026-06-08T09:10:04.370684Z'
+updated_at: '2026-06-08T09:14:43.892161Z'

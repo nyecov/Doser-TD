@@ -1,0 +1,65 @@
+id: WI-29c1-064
+title: Unix Binary Usage on Windows
+description: '# Problem
+
+
+  An AI agent used Unix-only binaries in a Windows PowerShell project, violating explicit
+  environment and tooling rules.
+
+
+  # Symptoms
+
+
+  - Attempted `grep`, `rg`, and `tail` commands failed as unavailable binaries.
+
+  - Root project rules requiring PowerShell-native commands were violated.
+
+  - The user escalated the behavior as highest priority.
+
+
+  # Root Cause
+
+
+  Instruction drift caused the agent to fall back to Unix defaults because critical
+  shell mandates were not sufficiently prominent in root-level context.
+
+
+  # Resolution
+
+
+  1. Hoisted hard environment rules and the PowerShell translation table into root
+  instruction files.
+
+  2. Added a mandatory command self-check.
+
+  3. Added `tools/audit_environment_rules.ps1` as a regression audit.
+
+
+  # Outcome
+
+
+  Root instructions now proactively prohibit Unix binaries and the environment audit
+  passes across instruction files.'
+status: closed
+priority: high
+kind: incident
+labels:
+- migration
+- obsidian
+- incident
+- resolved
+- tooling
+- powershell
+parent_id: WI-29c1-060
+relates: []
+collaborators: []
+valid_from: '2026-05-07T00:00:00Z'
+comments: []
+metadata:
+  source_path: obsidian/incidents/resolved/2026-05-07-unix-binary-usage-complaint.md
+  source_date: '2026-05-07'
+  source_session_id: 47da21e0-eaac-451b-9cf1-8a01b7e9db75
+  migration_epic: WI-29c1-060
+  migration_batch: obsidian-remaining-20260608
+created_at: '2026-06-08T09:12:09.208305Z'
+updated_at: '2026-06-08T09:13:42.413320Z'

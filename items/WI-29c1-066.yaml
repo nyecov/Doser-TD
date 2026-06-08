@@ -1,0 +1,70 @@
+id: WI-29c1-066
+title: 'Stall: ATXR Reporting Gap for ARC-07-52'
+description: '# Symptoms
+
+
+  - The agent repeatedly edited `phase45_test.go` to add AC tags that ATXR v4 did
+  not discover.
+
+  - A 22-minute gap occurred during processing at approximately 158k context tokens.
+
+  - The session ended after repeated failed coverage checks.
+
+
+  # Files Involved
+
+
+  - `internal/domain/solver/phase45.go`
+
+  - `internal/domain/solver/phase45_test.go`
+
+  - `tools/atxr/run.py`
+
+
+  # Root Cause
+
+
+  ATXR expected specific test naming or comment conventions, while the edits did not
+  satisfy discovery. Context saturation near 150k tokens added latency and contributed
+  to timeout.
+
+
+  # Resolution
+
+
+  The test was renamed to `Test_STORY_ARC_07_52_AC_01_02_03_Precision_And_Pin_Forcing`;
+  ATXR was run with `--allow-gaps`, then verified at 5/5 coverage. Legacy story `STORY-ARC-07-52`
+  was closed and committed.
+
+
+  # Handoff
+
+
+  The source report identified `STORY-ARC-07-53` as the next solver story.'
+status: closed
+priority: medium
+kind: incident
+labels:
+- migration
+- obsidian
+- incident
+- stall
+- resolved
+- atxr
+- context-saturation
+parent_id: WI-29c1-060
+relates: []
+collaborators: []
+valid_from: '2026-05-07T00:00:00Z'
+comments: []
+metadata:
+  source_path: obsidian/stalls/2026-05-07-atxr-reporting-stall.md
+  source_date: '2026-05-07'
+  source_session_id: 2b9a4e91-14d1-47ac-b50c-2356c8cf2c90
+  legacy_refs:
+  - STORY-ARC-07-52
+  - STORY-ARC-07-53
+  migration_epic: WI-29c1-060
+  migration_batch: obsidian-remaining-20260608
+created_at: '2026-06-08T09:12:14.713310Z'
+updated_at: '2026-06-08T09:13:42.420320Z'
