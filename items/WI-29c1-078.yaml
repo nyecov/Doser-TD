@@ -1,0 +1,26 @@
+id: WI-29c1-078
+title: Eliminate dependency warnings and standardize Python environment
+description: Coordinate the move to Python 3.10+, a reproducible project virtual environment,
+  compatible Requests/Chardet/Datasets versions, ChromaDB 1.x with Pydantic 2.11+
+  compatibility, and compatible FastAPI/Starlette versions. Done means clean installation,
+  pip check success, and pytest passing with warnings treated as errors.
+status: drafting
+priority: high
+kind: plan
+labels:
+- dependencies
+- python
+- environment
+- warnings
+relates:
+- id: WI-29c1-077
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-08T16:43:51.469667Z'
+comments: []
+metadata:
+  target_python: '>=3.10'
+  warning_target: 0
+  pip_check_target: clean
+created_at: '2026-06-08T16:43:51.469667Z'
+updated_at: '2026-06-08T16:43:51.469667Z'

@@ -460,5 +460,11 @@
     "kind": "bug",
     "status": "done",
     "title": "Restore clean worktree and deterministic full test suite"
+  },
+  {
+    "id": "WI-29c1-078",
+    "kind": "plan",
+    "status": "drafting",
+    "title": "Eliminate dependency warnings and standardize Python environment"
   }
 ]
