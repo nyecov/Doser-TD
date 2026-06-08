@@ -1,0 +1,178 @@
+id: WI-29c1-061
+title: 'Plan: TrapDoor-Only Project Record Migration'
+description: '# Objective
+
+
+  Migrate all Doser product and SDLC records into TrapDoor and complete a validated
+  atomic cutover from the legacy Obsidian, `sdlc_backlog`, and `.map-spec` systems.
+
+
+  # Existing Baseline
+
+
+  The main Obsidian product/specification corpus was already migrated into 59 TrapDoor
+  records (`WI-29c1-001` through `WI-29c1-059`) and removed from Obsidian. Reclassify
+  and relate these records in place; do not import them again.
+
+
+  Remaining Obsidian content consists of three resolved incidents, two stall reports,
+  one template, and editor configuration. Import the incidents and stalls only.
+
+
+  # Locked Decisions
+
+
+  - TrapDoor owns product documentation and SDLC records.
+
+  - Migrate all active and historical records.
+
+  - Replace remaining legacy IDs with generated TrapDoor IDs and produce a one-time
+  mapping artifact.
+
+  - Use a validated atomic cutover.
+
+  - Retain skills, agent instructions, source documentation, design assets, and tool
+  usage documentation in Git.
+
+  - Reclassify the 59 existing specification records in place.
+
+
+  # Model Configuration
+
+
+  1. Add Doser kinds: `spec`, `decision`, `risk`, `initiative`, `epic`, `story`, `subtask`,
+  `issue`, `followup`, `bug`, `milestone`, `test_plan`, and `incident`.
+
+  2. Configure exact Doser lifecycle state machines with separate lifecycle status,
+  execution result, TDD phase, and blocker identity.
+
+  3. Add hierarchy, specification coverage, acceptance criteria, blocking, affected-work,
+  test ownership, execution evidence, decision, supersession, and migration-provenance
+  relations.
+
+  4. Extend test records with Coverage Matrix position, automation binding, acceptance-criterion
+  links, evidence requirements, synthetic/real classification, UI-depth classification,
+  result, phase, environment, artifacts, and controlling BUG/ISSUE.
+
+  5. Store Test Plans as `test_plan` records and Test Sets as native suites.
+
+  6. Preserve synthetic executions but exclude them from Passing and Integrated gates.
+
+
+  # Migration Inventory
+
+
+  - Reclassify the existing 59 imported specification records without duplication.
+
+  - Split compound decision and risk ledgers into linked typed records while retaining
+  aggregate indexes.
+
+  - Import three resolved incidents and two stall reports, linking overlapping ISSUE
+  records.
+
+  - Import 1 initiative, 12 epics, 171 stories, 325 subtasks, all milestones, issues,
+  follow-ups, and active/resolved bugs.
+
+  - Import 12 test plans, 170 test sets, 1,463 test designs, and 1,352 test executions.
+
+  - Convert `.map-spec` coverage ledgers and gaps into specification-coverage relations
+  and issue records.
+
+  - Import durable global SPEC-GAPS, coverage reports, UI audit state, and stall records.
+
+  - Move actionable design inventory into TrapDoor while retaining Figma assets and
+  implementation guidance in Git.
+
+
+  # Implementation Sequence
+
+
+  1. Build an idempotent structured importer that parses fields and links rather than
+  opaque Markdown bodies.
+
+  2. Generate destination WI, test-design, suite, and execution IDs with a temporary
+  old-to-new mapping.
+
+  3. Detect the 59 existing records by WI ID and source title and update them instead
+  of creating duplicates.
+
+  4. Create all remaining destination records before reconstructing hierarchy and
+  cross-links.
+
+  5. Preserve timestamps, authors, lifecycle state, resolution text, comments, Gherkin,
+  execution evidence, and artifact paths.
+
+  6. Rewrite legacy ticket and test references to generated TrapDoor IDs.
+
+  7. Store final counts, validation checksums, and mapping checksum in a closed migration
+  record.
+
+  8. Replace Markdown-reading tools with TrapDoor MCP queries or TrapDoor reporting
+  commands.
+
+  9. Update skills, root instructions, hooks, TDD selection, coverage audits, release
+  gates, and commit tooling.
+
+  10. Rewrite or validate legacy identifiers embedded outside the backlog; initial
+  inventory found story IDs in 439 non-backlog files.
+
+  11. Run complete parity validation and only then remove `obsidian/`, `sdlc_backlog/`,
+  `.map-spec/`, and obsolete Markdown-specific tooling.
+
+  12. Add a guard rejecting reintroduction of legacy record directories and identifiers.
+
+
+  # Validation Gates
+
+
+  - No duplicate records for the 59 existing imports.
+
+  - Every source artifact maps to one destination unless explicitly merged or excluded.
+
+  - No dangling hierarchy, blocker, citation, affected-work, test, execution, or decision
+  links.
+
+  - Destination counts match the source inventory.
+
+  - All 1,463 Test Designs retain valid Gherkin and one matrix position.
+
+  - All 1,352 executions retain result, phase, timestamp, evidence, and synthetic/real
+  classification.
+
+  - Passing and Integrated calculations match the pre-migration baseline.
+
+  - Semantic search covers specifications, decisions, work items, incidents, and tests.
+
+  - BUG/ISSUE gating, TDD selection, completion, coverage, and release validation
+  operate without legacy Markdown.
+
+  - A clean checkout operates entirely through TrapDoor MCP for project records.
+
+
+  # Completion Criteria
+
+
+  The migration is complete only when all parity gates pass, all workflows use TrapDoor,
+  the legacy record directories are removed, and repository guards prevent their reintroduction.'
+status: triage
+priority: high
+kind: plan
+labels:
+- migration
+- trapdoor
+- plan
+- sdlc
+- testing
+parent_id: WI-29c1-060
+relates: []
+collaborators: []
+valid_from: '2026-06-08T07:10:23.146156Z'
+comments:
+- author: agent
+  text: Linked this migration plan to epic WI-29c1-060 using TrapDoor's explicit parent-child
+    relation because the plans_for JSON argument is currently rejected by the MCP
+    schema adapter.
+  timestamp: '2026-06-08T07:12:53.247307Z'
+metadata: {}
+created_at: '2026-06-08T07:10:23.146156Z'
+updated_at: '2026-06-08T07:12:53.247307Z'
