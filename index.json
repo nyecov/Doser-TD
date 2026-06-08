@@ -448,5 +448,11 @@
     "kind": "story",
     "status": "triage",
     "title": "Migrate Backlog Subtasks to TrapDoor"
+  },
+  {
+    "id": "WI-29c1-076",
+    "kind": "story",
+    "status": "triage",
+    "title": "Add automatic third-party issue report workflow"
   }
 ]
