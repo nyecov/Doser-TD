@@ -452,7 +452,7 @@
   {
     "id": "WI-29c1-076",
     "kind": "story",
-    "status": "triage",
+    "status": "done",
     "title": "Add automatic third-party issue report workflow"
   }
 ]

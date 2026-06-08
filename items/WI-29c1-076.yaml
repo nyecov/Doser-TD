@@ -6,7 +6,7 @@ description: Implement a PyPI-safe `trapdoor report` CLI that generates sanitize
   support repository templates/assets, PyPI issue metadata, and a maintainer-agent
   ingestion workflow that uses GitHub tooling plus existing Trapdoor MCP tools rather
   than adding GitHub pulling to Trapdoor MCP.
-status: triage
+status: done
 priority: high
 kind: story
 labels:
@@ -24,14 +24,45 @@ comments:
     failures with `python -m pytest tests\test_issue_report.py -q`. No production
     files changed.'
   timestamp: '2026-06-08T15:46:28.243107Z'
+- author: agent
+  text: '[Green checkpoint] Pushed 77209912. Validation passed: `PYTHONPATH=src python
+    -m pytest tests\test_issue_report.py -q` (8 passed), `python -m ruff check src
+    tests`, no-root CLI smoke (`trapdoor_root_found=false`), and public support repo
+    API check. Full source suite reports 4 unrelated pre-existing failures in import
+    error code, opencode skill install path, package-data assertion, and stale MCP
+    tool count.'
+  timestamp: '2026-06-08T16:01:55.745376Z'
+- author: agent
+  text: Implementation and validation completed; moving through configured workflow
+    states for completion.
+  timestamp: '2026-06-08T16:02:45.995931Z'
+- author: agent
+  text: Validation is complete; moving through configured workflow states before done.
+  timestamp: '2026-06-08T16:03:03.304992Z'
+- author: agent
+  text: Moving to active state for final completion.
+  timestamp: '2026-06-08T16:03:11.207545Z'
+- author: agent
+  text: Implementation validated; moving to review before final done state.
+  timestamp: '2026-06-08T16:03:39.207664Z'
+- author: agent
+  text: Implemented and pushed Red commit 1659b0a8 and Green commit 77209912. Public
+    support repository created at https://github.com/nyecov/trapdoor-support and added
+    as support-repo submodule. Focused acceptance suite passes 8/8, Ruff passes, no-root
+    CLI smoke passes, and linked feature design TCD-29c1-001 is passing. Full source
+    suite has 159 passed, 1 skipped, and 4 unrelated pre-existing failures documented
+    in the checkpoint.
+  timestamp: '2026-06-08T16:03:49.723544Z'
 metadata:
   source: user_request
   report_schema_target: trapdoor.issue_report.v1
-  phase: red
-  ac_coverage: 0/4
-  done_ready: false
+  phase: green
+  ac_coverage: 4/4
+  done_ready: true
   last_updated: '2026-06-08'
-  checkpoint_notes: 'Red suite added and observed: 8 expected failures across CLI,
-    privacy, metadata, skill, docs, and support assets.'
+  checkpoint_notes: Implemented and pushed trapdoor report, public support submodule,
+    reporter/maintainer skill guidance, and manual docs. Focused suite and Ruff passed;
+    full source suite still has 4 unrelated pre-existing failures.
 created_at: '2026-06-08T15:41:17.566263Z'
-updated_at: '2026-06-08T15:46:28.244107Z'
+updated_at: '2026-06-08T16:03:49.723544Z'
+resolved_at: '2026-06-08T16:03:49.723544Z'
