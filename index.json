@@ -490,5 +490,11 @@
     "kind": "bug",
     "status": "done",
     "title": "Resolve FastAPI and Starlette dependency conflict"
+  },
+  {
+    "id": "WI-29c1-083",
+    "kind": "task",
+    "status": "backlog",
+    "title": "Disable GitHub Actions and retain local dependency validation"
   }
 ]

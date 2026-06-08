@@ -1,0 +1,28 @@
+id: WI-29c1-083
+title: Disable GitHub Actions and retain local dependency validation
+description: Remove the GitHub Actions workflow because hosted CI is not required.
+  Update dependency policy tests and documentation so tools/Setup-DevEnvironment.ps1
+  remains the supported validation entry point. Verify local warning-as-error tests,
+  pip check, Ruff, and pre-commit remain clean.
+status: backlog
+priority: medium
+kind: task
+labels:
+- github-actions
+- ci
+- dependencies
+- tooling
+assignee: codex
+relates:
+- id: WI-29c1-078
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-08T17:40:41.557736Z'
+comments:
+- author: agent
+  text: Red test committed as eb6e3261. GitHub Actions workflow removed; local validation
+    retained.
+  timestamp: '2026-06-08T17:45:27.870702Z'
+metadata: {}
+created_at: '2026-06-08T17:40:41.557736Z'
+updated_at: '2026-06-08T17:45:27.870702Z'
