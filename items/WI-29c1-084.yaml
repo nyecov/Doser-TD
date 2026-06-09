@@ -8,7 +8,6 @@ kind: task
 labels:
 - maintenance
 - trapdoor
-assignee: codex
 relates: []
 collaborators: []
 valid_from: '2026-06-09T06:02:20.580383Z'
@@ -49,5 +48,5 @@ metadata:
   retroactive_note: Initial health inspection occurred before loading the project
     Trapdoor skill gate protocol.
 created_at: '2026-06-09T06:02:20.581383Z'
-updated_at: '2026-06-09T06:09:39.586576Z'
+updated_at: '2026-06-09T07:09:26.893447Z'
 resolved_at: '2026-06-09T06:09:39.586576Z'
