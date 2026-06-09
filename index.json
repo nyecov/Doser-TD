@@ -518,7 +518,7 @@
   {
     "id": "WI-29c1-087",
     "kind": "task",
-    "status": "in_review",
+    "status": "done",
     "title": "Publish TrapDoor MCP v1.2.6 release"
   }
 ]

@@ -2,7 +2,7 @@ id: WI-29c1-087
 title: Publish TrapDoor MCP v1.2.6 release
 description: Build clean 1.2.6 artifacts, validate and publish them to PyPI, verify
   the public release, create the v1.2.6 git tag, and push commits and tag.
-status: in_review
+status: done
 priority: critical
 kind: task
 labels:
@@ -33,6 +33,12 @@ comments:
     with wheel and sdist; public JSON verified. Commits ec5dfb8e and e1bed1b3 pushed
     to origin/main; annotated tag v1.2.6 pushed.'
   timestamp: '2026-06-09T07:09:26.712920Z'
+- author: agent
+  text: TrapDoor MCP 1.2.6 published successfully to https://pypi.org/project/trapdoor-mcp/1.2.6/
+    with wheel and source archive verified via PyPI JSON. origin/main is synchronized
+    at e1bed1b3, and annotated tag v1.2.6 is present on origin.
+  timestamp: '2026-06-09T07:11:46.491448Z'
 metadata: {}
 created_at: '2026-06-09T07:06:30.561586Z'
-updated_at: '2026-06-09T07:09:26.712920Z'
+updated_at: '2026-06-09T07:11:46.491448Z'
+resolved_at: '2026-06-09T07:11:46.491448Z'
