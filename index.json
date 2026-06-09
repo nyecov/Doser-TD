@@ -496,5 +496,11 @@
     "kind": "task",
     "status": "ready",
     "title": "Disable GitHub Actions and retain local dependency validation"
+  },
+  {
+    "id": "WI-29c1-084",
+    "kind": "task",
+    "status": "in_progress",
+    "title": "Upgrade Trapdoor MCP to latest stable release"
   }
 ]

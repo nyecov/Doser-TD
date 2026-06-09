@@ -1,0 +1,37 @@
+id: WI-29c1-084
+title: Upgrade Trapdoor MCP to latest stable release
+description: Upgrade the local Trapdoor MCP installation from 1.2.3 to the latest
+  stable release and verify server health.
+status: in_progress
+priority: medium
+kind: task
+labels:
+- maintenance
+- trapdoor
+assignee: codex
+relates: []
+collaborators: []
+valid_from: '2026-06-09T06:02:20.580383Z'
+comments:
+- author: agent
+  text: Work started before ticket creation; retroactively logged after loading the
+    project Trapdoor skill. Health check showed installed 1.2.3 and latest 1.2.5.
+  timestamp: '2026-06-09T06:02:52.091436Z'
+- author: agent
+  text: Upgrade task is scoped and ready for execution.
+  timestamp: '2026-06-09T06:03:22.582916Z'
+- author: agent
+  text: Beginning supported package upgrade and post-upgrade health verification.
+  timestamp: '2026-06-09T06:03:37.086952Z'
+- author: agent
+  text: 'Upgrade completed: Python 3.12 editable installation and CLI both report
+    1.2.5. Removed stale 1.2.3/1.2.4 dist-info records that caused importlib.metadata
+    to select an old version. Current MCP process still reports 1.2.3 because it predates
+    the upgrade and requires client/server restart. No repository source files were
+    changed.'
+  timestamp: '2026-06-09T06:06:42.529591Z'
+metadata:
+  retroactive_note: Initial health inspection occurred before loading the project
+    Trapdoor skill gate protocol.
+created_at: '2026-06-09T06:02:20.581383Z'
+updated_at: '2026-06-09T06:06:42.529591Z'
