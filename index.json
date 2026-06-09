@@ -524,7 +524,7 @@
   {
     "id": "WI-29c1-088",
     "kind": "task",
-    "status": "backlog",
+    "status": "done",
     "title": "Upgrade local TrapDoor MCP to v1.2.6"
   }
 ]

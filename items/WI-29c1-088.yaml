@@ -3,7 +3,7 @@ title: Upgrade local TrapDoor MCP to v1.2.6
 description: Upgrade the editable local TrapDoor MCP installation from 1.2.5 to the
   latest published 1.2.6 release, refresh installed skills, and verify CLI and MCP
   health.
-status: backlog
+status: done
 priority: high
 kind: task
 labels:
@@ -28,6 +28,12 @@ comments:
     (1.2.7+semantic). Health: ChromaDB effective, all-mpnet-base-v2 cached/online
     at 768 dimensions, index size 88, benchmark successful. Repository is clean.'
   timestamp: '2026-06-09T13:14:35.490478Z'
+- author: agent
+  text: Repository update, explicit Codex base and semantic skill installation, semantic
+    backend health check, query benchmark, and clean-worktree verification all completed
+    successfully. No linked test designs were present.
+  timestamp: '2026-06-09T13:18:09.158946Z'
 metadata: {}
 created_at: '2026-06-09T07:40:31.612854Z'
-updated_at: '2026-06-09T13:14:35.490478Z'
+updated_at: '2026-06-09T13:18:09.158946Z'
+resolved_at: '2026-06-09T13:18:09.158946Z'
