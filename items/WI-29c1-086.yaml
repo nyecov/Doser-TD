@@ -1,0 +1,19 @@
+id: WI-29c1-086
+title: Bump TrapDoor MCP to v1.2.6
+description: Bump the package from 1.2.5 to the next patch release, document the Codex
+  startup update-warning fix, validate release metadata, commit, and push.
+status: triage
+priority: high
+kind: task
+labels:
+- release
+- version-bump
+relates:
+- id: WI-29c1-085
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-09T06:51:37.585938Z'
+comments: []
+metadata: {}
+created_at: '2026-06-09T06:51:37.585938Z'
+updated_at: '2026-06-09T06:51:37.585938Z'

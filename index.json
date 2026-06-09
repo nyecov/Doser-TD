@@ -508,5 +508,11 @@
     "kind": "bug",
     "status": "done",
     "title": "Codex startup does not warn when TrapDoor MCP is outdated"
+  },
+  {
+    "id": "WI-29c1-086",
+    "kind": "task",
+    "status": "triage",
+    "title": "Bump TrapDoor MCP to v1.2.6"
   }
 ]

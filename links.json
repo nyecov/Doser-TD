@@ -19755,7 +19755,31 @@
   },
   "WI-29c1-085": {
     "children": [],
-    "relates": [],
+    "relates": [
+      {
+        "id": "WI-29c1-086",
+        "relation": "relates_to",
+        "confidence": "extracted"
+      }
+    ],
+    "tests": [],
+    "referenced_by": [
+      {
+        "id": "WI-29c1-086",
+        "relation": "relates_to",
+        "confidence": "extracted"
+      }
+    ]
+  },
+  "WI-29c1-086": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-085",
+        "relation": "relates_to",
+        "confidence": "extracted"
+      }
+    ],
     "tests": [],
     "referenced_by": []
   }
