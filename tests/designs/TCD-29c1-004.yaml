@@ -1,0 +1,45 @@
+id: TCD-29c1-004
+title: Outdated TrapDoor warns MCP client during startup discovery
+level: integration
+format: gherkin
+gherkin: "Feature: TrapDoor update warning during MCP startup\n\n  Scenario: Outdated\
+  \ server warns the client once during tool discovery\n    Given TrapDoor version\
+  \ 1.2.3 is installed\n    And PyPI reports TrapDoor version 1.2.5\n    When the\
+  \ MCP client requests the tool list twice\n    Then one warning log notification\
+  \ is sent to the MCP client\n    And the warning identifies versions 1.2.3 and 1.2.5\n\
+  \    And the warning includes the pip upgrade command\n    And both tool list requests\
+  \ succeed"
+steps:
+- order: 1
+  keyword: Given
+  text: TrapDoor version 1.2.3 is installed
+- order: 2
+  keyword: And
+  text: PyPI reports TrapDoor version 1.2.5
+- order: 3
+  keyword: When
+  text: the MCP client requests the tool list twice
+- order: 4
+  keyword: Then
+  text: one warning log notification is sent to the MCP client
+- order: 5
+  keyword: And
+  text: the warning identifies versions 1.2.3 and 1.2.5
+- order: 6
+  keyword: And
+  text: the warning includes the pip upgrade command
+- order: 7
+  keyword: And
+  text: both tool list requests succeed
+preconditions: PyPI version metadata reports a newer TrapDoor release than the running
+  server version.
+item_id: WI-29c1-085
+priority: high
+tags:
+- codex
+- mcp
+- version-check
+status: passing
+flaky: false
+created_at: '2026-06-09T06:31:01.918024Z'
+updated_at: '2026-06-09T06:35:14.320137Z'

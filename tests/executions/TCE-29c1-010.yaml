@@ -1,0 +1,41 @@
+id: TCE-29c1-010
+test_design_id: TCD-29c1-004
+run_id: run-2026-06-09T06-31-23.779869Z
+phase: green
+executed_by: codex
+framework: pytest
+environment: Windows PowerShell 7, Python 3.12, PYTHONPATH=src
+result: pass
+started_at: '2026-06-09T06:32:16.729921Z'
+completed_at: '2026-06-09T06:32:16.729921Z'
+duration_ms: 68510
+step_results:
+- order: 1
+  result: pass
+  duration_ms: 0
+- order: 2
+  result: pass
+  duration_ms: 0
+- order: 3
+  result: pass
+  duration_ms: 0
+- order: 4
+  result: pass
+  duration_ms: 0
+- order: 5
+  result: pass
+  duration_ms: 0
+- order: 6
+  result: pass
+  duration_ms: 0
+- order: 7
+  result: pass
+  duration_ms: 0
+artifacts:
+- type: command
+  path: python -m pytest tests\test_server.py -q --no-cov
+- type: command
+  path: python -m pytest -q
+- type: command
+  path: python -m ruff check .
+bug_ids: []

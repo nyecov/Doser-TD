@@ -506,7 +506,7 @@
   {
     "id": "WI-29c1-085",
     "kind": "bug",
-    "status": "backlog",
+    "status": "in_progress",
     "title": "Codex startup does not warn when TrapDoor MCP is outdated"
   }
 ]

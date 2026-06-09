@@ -4,7 +4,7 @@ description: Session 019eaaf7-4bca-7a03-b3a9-fef900855550 started Codex CLI whil
   the installed TrapDoor MCP was behind the latest version, but no startup warning
   was shown. Reproduce the startup integration path, add regression coverage, and
   ensure an outdated installation produces a non-blocking warning.
-status: backlog
+status: in_progress
 priority: high
 kind: bug
 labels:
@@ -21,6 +21,15 @@ comments:
     was emitted only to MCP subprocess stderr before transport startup, which Codex
     did not surface. Regression coverage and implementation are in progress.
   timestamp: '2026-06-09T06:27:34.507273Z'
+- author: agent
+  text: Implementation and regression coverage are ready for verification.
+  timestamp: '2026-06-09T06:30:41.294162Z'
+- author: agent
+  text: 'Green phase complete. The server now sends a one-time MCP warning notification
+    during the client''s initial tools/list discovery when PyPI reports a newer version.
+    Existing stderr logging and server instructions remain intact. Verification: 275
+    pytest tests passed with 56.65% coverage; repository-wide Ruff passed.'
+  timestamp: '2026-06-09T06:30:58.475347Z'
 metadata: {}
 created_at: '2026-06-09T06:20:36.508071Z'
-updated_at: '2026-06-09T06:27:34.507273Z'
+updated_at: '2026-06-09T06:30:58.475347Z'
