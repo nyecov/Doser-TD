@@ -512,7 +512,7 @@
   {
     "id": "WI-29c1-086",
     "kind": "task",
-    "status": "triage",
+    "status": "in_review",
     "title": "Bump TrapDoor MCP to v1.2.6"
   }
 ]
