@@ -1,0 +1,26 @@
+id: WI-29c1-085
+title: Codex startup does not warn when TrapDoor MCP is outdated
+description: Session 019eaaf7-4bca-7a03-b3a9-fef900855550 started Codex CLI while
+  the installed TrapDoor MCP was behind the latest version, but no startup warning
+  was shown. Reproduce the startup integration path, add regression coverage, and
+  ensure an outdated installation produces a non-blocking warning.
+status: backlog
+priority: high
+kind: bug
+labels:
+- codex
+- startup
+- version-check
+assignee: codex
+relates: []
+collaborators: []
+valid_from: '2026-06-09T06:20:36.508071Z'
+comments:
+- author: agent
+  text: Reproduced from the reported Codex transcript. The existing version warning
+    was emitted only to MCP subprocess stderr before transport startup, which Codex
+    did not surface. Regression coverage and implementation are in progress.
+  timestamp: '2026-06-09T06:27:34.507273Z'
+metadata: {}
+created_at: '2026-06-09T06:20:36.508071Z'
+updated_at: '2026-06-09T06:27:34.507273Z'
