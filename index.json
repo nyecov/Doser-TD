@@ -500,7 +500,7 @@
   {
     "id": "WI-29c1-084",
     "kind": "task",
-    "status": "in_progress",
+    "status": "done",
     "title": "Upgrade Trapdoor MCP to latest stable release"
   }
 ]
