@@ -520,5 +520,11 @@
     "kind": "task",
     "status": "done",
     "title": "Publish TrapDoor MCP v1.2.6 release"
+  },
+  {
+    "id": "WI-29c1-088",
+    "kind": "task",
+    "status": "backlog",
+    "title": "Upgrade local TrapDoor MCP to v1.2.6"
   }
 ]

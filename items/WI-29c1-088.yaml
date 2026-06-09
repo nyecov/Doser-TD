@@ -1,0 +1,33 @@
+id: WI-29c1-088
+title: Upgrade local TrapDoor MCP to v1.2.6
+description: Upgrade the editable local TrapDoor MCP installation from 1.2.5 to the
+  latest published 1.2.6 release, refresh installed skills, and verify CLI and MCP
+  health.
+status: backlog
+priority: high
+kind: task
+labels:
+- maintenance
+- upgrade
+assignee: codex-cli
+relates:
+- id: WI-29c1-087
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-09T07:40:31.612854Z'
+comments:
+- author: agent
+  text: Work started with MCP health/config checks before the project Trapdoor skill
+    was readable; retroactively claimed per Gate Protocol. Scope extended from v1.2.6
+    to current v1.2.7 and Codex CLI skill plus semantic-search installation verification.
+  timestamp: '2026-06-09T13:10:22.507814Z'
+- author: agent
+  text: 'Completed maintenance verification on 2026-06-09. Repository main is synchronized
+    with origin/main. trapdoor-mcp installed/latest is 1.2.7. Explicit `trapdoor skill
+    install --codex` installed `.codex/skills/trapdoor` (1.2.7) and `.codex/skills/trapdoor-semantic`
+    (1.2.7+semantic). Health: ChromaDB effective, all-mpnet-base-v2 cached/online
+    at 768 dimensions, index size 88, benchmark successful. Repository is clean.'
+  timestamp: '2026-06-09T13:14:35.490478Z'
+metadata: {}
+created_at: '2026-06-09T07:40:31.612854Z'
+updated_at: '2026-06-09T13:14:35.490478Z'

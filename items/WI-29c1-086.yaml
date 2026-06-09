@@ -8,7 +8,6 @@ kind: task
 labels:
 - release
 - version-bump
-assignee: codex
 relates:
 - id: WI-29c1-085
   relation: relates_to
@@ -43,5 +42,5 @@ comments:
   timestamp: '2026-06-09T07:01:21.610584Z'
 metadata: {}
 created_at: '2026-06-09T06:51:37.585938Z'
-updated_at: '2026-06-09T07:01:21.610584Z'
+updated_at: '2026-06-09T13:14:35.675730Z'
 resolved_at: '2026-06-09T07:01:21.610584Z'

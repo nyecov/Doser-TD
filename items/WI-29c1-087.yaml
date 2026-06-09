@@ -9,7 +9,6 @@ labels:
 - release
 - pypi
 - publication
-assignee: codex
 relates:
 - id: WI-29c1-086
   relation: relates_to
@@ -40,5 +39,5 @@ comments:
   timestamp: '2026-06-09T07:11:46.491448Z'
 metadata: {}
 created_at: '2026-06-09T07:06:30.561586Z'
-updated_at: '2026-06-09T07:11:46.491448Z'
+updated_at: '2026-06-09T13:14:35.686857Z'
 resolved_at: '2026-06-09T07:11:46.491448Z'
