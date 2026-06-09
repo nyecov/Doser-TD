@@ -526,5 +526,11 @@
     "kind": "task",
     "status": "done",
     "title": "Upgrade local TrapDoor MCP to v1.2.6"
+  },
+  {
+    "id": "WI-29c1-089",
+    "kind": "task",
+    "status": "in_review",
+    "title": "Verify latest TrapDoor update and Codex skill installation"
   }
 ]

@@ -1,0 +1,33 @@
+id: WI-29c1-089
+title: Verify latest TrapDoor update and Codex skill installation
+description: Check the installed TrapDoor MCP against the latest available release,
+  update it if needed, and verify that TrapDoor's owned `trapdoor` and `trapdoor-semantic`
+  skills are installed correctly and discoverable by Codex CLI.
+status: in_review
+priority: medium
+kind: task
+labels:
+- trapdoor
+- codex
+- skills
+assignee: codex-gpt5
+relates:
+- id: WI-29c1-088
+  relation: relates_to
+collaborators: []
+valid_from: '2026-06-09T13:35:00.836065Z'
+comments:
+- author: agent
+  text: Confirmed TrapDoor MCP 1.2.7 is the latest release. Refreshed all agent skills,
+    removed stale ~rapdoor_mcp-1.2.5.dist-info metadata, and began final Codex registration
+    and packaged-file verification.
+  timestamp: '2026-06-09T13:37:34.681261Z'
+- author: agent
+  text: Final verification in progress.
+  timestamp: '2026-06-09T13:37:55.388398Z'
+- author: agent
+  text: Verification complete; ready for closure.
+  timestamp: '2026-06-09T13:39:49.897479Z'
+metadata: {}
+created_at: '2026-06-09T13:35:00.836065Z'
+updated_at: '2026-06-09T13:39:49.897479Z'
