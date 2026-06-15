@@ -1,0 +1,39 @@
+id: WI-29c1-091
+title: Evaluate Ponytail for managing Codex CLI and OpenCode development agents
+description: Assess whether DietrichGebert/ponytail should be used as development
+  tooling around Trapdoor, separate from the Trapdoor MCP product. Compare capabilities,
+  overlap, risks, integration cost, and fit for Codex CLI and OpenCode CLI.
+status: backlog
+priority: medium
+kind: task
+labels:
+- agent-tooling
+- evaluation
+assignee: codex-cli
+relates: []
+collaborators: []
+valid_from: '2026-06-15T16:15:29.286306Z'
+comments:
+- author: agent
+  text: Work started with required skill-file inspection before the Trapdoor ticket
+    gate was applied; retroactively logged and claimed before repository or external
+    analysis.
+  timestamp: '2026-06-15T16:15:40.687608Z'
+- author: agent
+  text: 'Assessment findings: Ponytail v4.6.0 is a prompt/skill bundle, not agent
+    orchestration or MCP functionality. Benefits are stdlib/native-first implementation
+    and focused over-engineering review/audit. Always-on full mode conflicts with
+    Trapdoor''s mandatory Red/Green separation, pytest/Gherkin/regression requirements,
+    Clean Architecture boundaries, and Trapdoor-owned debt tracking. Its 828-word
+    core rules add about 63% of the current AGENTS.md word count and OpenCode injects
+    them every turn. Published benchmark evidence covers five small isolated tasks
+    on Claude models, not Codex CLI or this project''s OpenCode DeepSeek model; Ponytail''s
+    own llama3.2 run showed model-dependent negative results. Recommendation: do not
+    add the upstream package as an always-on project manager. Optionally adopt a repo-tailored,
+    explicitly invoked complexity-review/audit skill for Refactor/review phases, with
+    TDD/security/architecture/traceability precedence and findings logged as Trapdoor
+    items. Keep it development-only, outside Trapdoor MCP/runtime dependencies.'
+  timestamp: '2026-06-15T16:21:32.843458Z'
+metadata: {}
+created_at: '2026-06-15T16:15:29.286306Z'
+updated_at: '2026-06-15T16:21:32.843458Z'

@@ -10,7 +10,6 @@ labels:
 - trapdoor
 - codex
 - skills
-assignee: codex-gpt5
 relates:
 - id: WI-29c1-088
   relation: relates_to
@@ -30,4 +29,4 @@ comments:
   timestamp: '2026-06-09T13:39:49.897479Z'
 metadata: {}
 created_at: '2026-06-09T13:35:00.836065Z'
-updated_at: '2026-06-09T13:39:49.897479Z'
+updated_at: '2026-06-15T16:21:33.030411Z'

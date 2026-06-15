@@ -532,5 +532,11 @@
     "kind": "task",
     "status": "in_review",
     "title": "Verify latest TrapDoor update and Codex skill installation"
+  },
+  {
+    "id": "WI-29c1-091",
+    "kind": "task",
+    "status": "backlog",
+    "title": "Evaluate Ponytail for managing Codex CLI and OpenCode development agents"
   }
 ]

@@ -1552,8 +1552,37 @@
         "id": "WI-29c1-088",
         "relation": "relates_to",
         "confidence": "extracted"
+      },
+      {
+        "id": "WI-29c1-090",
+        "relation": "causes",
+        "confidence": "extracted"
       }
     ],
+    "tests": [],
+    "referenced_by": [
+      {
+        "id": "WI-29c1-090",
+        "relation": "caused_by",
+        "confidence": "extracted"
+      }
+    ]
+  },
+  "WI-29c1-090": {
+    "children": [],
+    "relates": [
+      {
+        "id": "WI-29c1-089",
+        "relation": "caused_by",
+        "confidence": "extracted"
+      }
+    ],
+    "tests": [],
+    "referenced_by": []
+  },
+  "WI-29c1-091": {
+    "children": [],
+    "relates": [],
     "tests": [],
     "referenced_by": []
   }
