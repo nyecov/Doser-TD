@@ -536,7 +536,7 @@
   {
     "id": "WI-29c1-091",
     "kind": "task",
-    "status": "backlog",
+    "status": "done",
     "title": "Evaluate Ponytail for managing Codex CLI and OpenCode development agents"
   }
 ]

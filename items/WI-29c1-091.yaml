@@ -3,7 +3,7 @@ title: Evaluate Ponytail for managing Codex CLI and OpenCode development agents
 description: Assess whether DietrichGebert/ponytail should be used as development
   tooling around Trapdoor, separate from the Trapdoor MCP product. Compare capabilities,
   overlap, risks, integration cost, and fit for Codex CLI and OpenCode CLI.
-status: backlog
+status: done
 priority: medium
 kind: task
 labels:
@@ -34,6 +34,18 @@ comments:
     TDD/security/architecture/traceability precedence and findings logged as Trapdoor
     items. Keep it development-only, outside Trapdoor MCP/runtime dependencies.'
   timestamp: '2026-06-15T16:21:32.843458Z'
+- author: agent
+  text: External and local analysis completed; preparing the final recommendation.
+  timestamp: '2026-06-15T16:24:07.423129Z'
+- author: agent
+  text: Research deliverable is complete and ready for closure.
+  timestamp: '2026-06-15T16:24:38.995091Z'
+- author: agent
+  text: 'Completed research-only evaluation. No repository files changed and no test
+    design was applicable. Final recommendation: selective, project-tailored review/audit
+    use only; no always-on upstream Ponytail mode and no Trapdoor MCP/runtime integration.'
+  timestamp: '2026-06-15T16:24:47.219476Z'
 metadata: {}
 created_at: '2026-06-15T16:15:29.286306Z'
-updated_at: '2026-06-15T16:21:32.843458Z'
+updated_at: '2026-06-15T16:24:47.219476Z'
+resolved_at: '2026-06-15T16:24:47.219476Z'
