@@ -45,7 +45,23 @@ comments:
     design was applicable. Final recommendation: selective, project-tailored review/audit
     use only; no always-on upstream Ponytail mode and no Trapdoor MCP/runtime integration.'
   timestamp: '2026-06-15T16:24:47.219476Z'
-metadata: {}
+- author: agent
+  text: 'This record was created in the wrong independent project datastore because
+    the user-global Codex MCP configuration hard-pinned the server process to G:\Doser.
+    Canonical replacement: G:\TrapDoor item WI-b46f-330. Root-cause incident: G:\TrapDoor
+    item WI-b46f-329. Cross-project IDs are recorded as provenance only; the two .trapdoor
+    private Git subrepositories remain unrelated.'
+  timestamp: '2026-06-15T16:58:51.758653Z'
+metadata:
+  migration_status: recreated_in_correct_workspace
+  canonical_replacement_id: WI-b46f-330
+  canonical_replacement_workspace: G:\TrapDoor
+  root_cause_incident_id: WI-b46f-329
+  root_cause_incident_workspace: G:\TrapDoor
+  source_workspace: G:\Doser
+  source_instance_id: 29c1
+  archival_reason: Created in wrong workspace due to user-global Codex MCP command
+    forcing G:\Doser as process working directory.
 created_at: '2026-06-15T16:15:29.286306Z'
-updated_at: '2026-06-15T16:24:47.219476Z'
+updated_at: '2026-06-15T16:58:51.758653Z'
 resolved_at: '2026-06-15T16:24:47.219476Z'
